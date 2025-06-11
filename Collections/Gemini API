@@ -1,0 +1,14 @@
+{
+	"info": {
+		"_postman_id": "eefa27af-54f9-4bb6-884d-62cb16a58716",
+		"name": "Gemini API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721875"
+	},
+	"item": [
+		{
+			"name": "Text Generation",
+			"item": []
+		}
+	]
+}
