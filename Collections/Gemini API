@@ -9,6 +9,62 @@
 		{
 			"name": "Text Generation",
 			"item": []
+		},
+		{
+			"name": "Variation Of Parameters",
+			"item": []
+		},
+		{
+			"name": "Image Generation",
+			"item": []
+		},
+		{
+			"name": "Video Generation",
+			"item": []
+		},
+		{
+			"name": "Speech Generation",
+			"item": []
+		},
+		{
+			"name": "Music Generation",
+			"item": []
+		},
+		{
+			"name": "Long Context",
+			"item": []
+		},
+		{
+			"name": "Structured Output",
+			"item": []
+		},
+		{
+			"name": "Thinking",
+			"item": []
+		},
+		{
+			"name": "Function Calling",
+			"item": []
+		},
+		{
+			"name": "Document Understanding",
+			"item": []
+		},
+		{
+			"name": "Image Understanding",
+			"item": []
+		},
+		{
+			"name": "Video Understanding",
+			"item": []
+		},
+		{
+			"name": "Audio Understanding",
+			"item": []
+		},
+		{
+			"name": "Code Execution",
+			"item": []
 		}
 	]
 }
