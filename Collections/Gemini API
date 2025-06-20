@@ -228,7 +228,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Explain how AI works\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"temperature\": {{temperature}}\r\n    }\r\n}",
+							"raw": "// The purpose of topP is to change how the model selects tokens for output.\r\n// Tokens are selected from the most to least probable until the sum of their probabilities equals the topP value.\r\n// Lower topP (e.g., 0.3) = More focused, deterministic responses.\r\n// Higher topP (e.g., 0.9) = More diverse, creative responses.\r\n// Default topP value is 0.95, but here we use 0.8 for a balance between focus and creativity.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topP\": {{topP}} // Adjusts response diversity\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -257,7 +257,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "// The purpose of topK is to change how the model selects tokens for output.\r\n// topK of 3 means that the next token is selected from among the 3 most probabl using the temperature\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topK\": {{topK}} // Controls token selection\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
@@ -281,7 +286,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Explain how AI works\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"temperature\": {{temperature}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
@@ -305,7 +315,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "// stopSequences - specifies the set of character sequences (up to 5) that will stop output generation\r\n// The stop sequence won't be included as part of the response.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"stopSequences\": [\r\n            \"{{character}}\"\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
@@ -329,7 +344,12 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "// sets the maximum number of tokens to include in a candidate.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Describe a futuristic city\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"maxOutputTokens\": {{maxOutputTokens}}// Limits response length\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
