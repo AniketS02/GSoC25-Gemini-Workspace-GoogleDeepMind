@@ -1,87 +1,764 @@
 {
-	"id": "9ac45934-9a10-47d4-8475-2500cf68318f",
-	"name": "Gemini - testing",
-	"values": [
+	"info": {
+		"_postman_id": "eefa27af-54f9-4bb6-884d-62cb16a58716",
+		"name": "Gemini API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721875"
+	},
+	"item": [
 		{
-			"key": "host",
-			"value": "generativelanguage.googleapis.com",
-			"type": "default",
-			"enabled": true
+			"name": "Models",
+			"item": []
 		},
 		{
-			"key": "version",
-			"value": "v1beta",
-			"type": "default",
-			"enabled": true
+			"name": "Text Generation",
+			"item": [
+				{
+					"name": "Generate Text from Text Input",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"How does AI work?\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thinking with Gemini 2.5",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"How does AI work?\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"thinkingConfig\": {\r\n            \"thinkingBudget\": 0\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "System Instructions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"system_instruction\": {\r\n        \"parts\": [\r\n            {\r\n                \"text\": \"You are a cat. Your name is Neko.\"\r\n            }\r\n        ]\r\n    },\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hello there\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multimodal Inputs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Tell me about this instrument\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": \"{{guitar image base64 encoded }}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Streaming Responses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"How does AI work?\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:streamGenerateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:streamGenerateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multi-turn conversations (Chat)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hello\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"model\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Great to meet you. What would you like to know?\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"I have two dogs in my house. How many paws are in my house?\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Streaming Multi-turn conversations (Chat) Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hello\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"model\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Great to meet you. What would you like to know?\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"I have two dogs in my house. How many paws are in my house?\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:streamGenerateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:streamGenerateContent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"key": "model",
-			"value": "gemini-2.0-flash",
-			"type": "default",
-			"enabled": true
+			"name": "Variation Of Parameters",
+			"item": [
+				{
+					"name": "top_p variation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// The purpose of topP is to change how the model selects tokens for output.\r\n// Tokens are selected from the most to least probable until the sum of their probabilities equals the topP value.\r\n// Lower topP (e.g., 0.3) = More focused, deterministic responses.\r\n// Higher topP (e.g., 0.9) = More diverse, creative responses.\r\n// Default topP value is 0.95, but here we use 0.8 for a balance between focus and creativity.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topP\": {{topP}} // Adjusts response diversity\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "top_k variation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// The purpose of topK is to change how the model selects tokens for output.\r\n// topK of 3 means that the next token is selected from among the 3 most probabl using the temperature\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topK\": {{topK}} // Controls token selection\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "temperature variation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Explain how AI works\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"temperature\": {{temperature}}\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stopSequences variation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// stopSequences - specifies the set of character sequences (up to 5) that will stop output generation\r\n// The stop sequence won't be included as part of the response.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"stopSequences\": [\r\n            \"{{character}}\"\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "maxOutputTokens variation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// sets the maximum number of tokens to include in a candidate.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Describe a futuristic city\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"maxOutputTokens\": {{maxOutputTokens}}// Limits response length\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"key": "guitar image base64 encoded ",
-			"value": "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",
-			"type": "default",
-			"enabled": true
+			"name": "Image Generation",
+			"item": [
+				{
+					"name": "Text-and-image-to-image",
+					"item": [
+						{
+							"name": "1.Get the Upload Url",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let upload_url_header = pm.response.headers.get(\"x-goog-upload-url\"); // Get the upload URL from the response headers\r",
+											"if (upload_url_header){\r",
+											"pm.environment.set(\"upload_url_image\", upload_url_header);\r",
+											"}\r",
+											"else{\r",
+											"    console.log(\"Unable to get the upload url , check the API KEY or Gemini-Testing environment variables value\")\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "start",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Header-Content-Type",
+										"value": "{{MIME_TYPE}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Protocol",
+										"value": "resumable",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/upload/{{version}}/files",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"upload",
+										"{{version}}",
+										"files"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.Upload The Image",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();\r",
+											"if(response.file.uri){\r",
+											"    pm.environment.set(\"file_uri_image\",response.file.uri);\r",
+											"}\r",
+											"else{\r",
+											"    console.log(\"Unable to get the file_uri_pdf, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": ""
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_image}}",
+									"host": [
+										"{{upload_url_image}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.Generate Content",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"'Hi, This is a picture of me. Can you add a llama next to me\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"data\": {{file_uri_image}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "text-to-image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hi, can you create a 3d rendered image of a pig with wings and a top hat flying over a happy futuristic scifi city with lots of greenery?\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Image using Imagen 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "start",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Header-Content-Type",
+								"value": "{{MIME_TYPE}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Protocol",
+								"value": "resumable",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"prompt\": \"Robot holding a red skateboard\"\r\n        }\r\n    ],\r\n    \"parameters\": {\r\n        \"sampleCount\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:predict",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:predict"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"key": "temperature",
-			"value": "1.0",
-			"type": "default",
-			"enabled": true
+			"name": "Video Generation",
+			"item": [
+				{
+					"name": "Generate video using Veo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"prompt\": \"Panning wide shot of a calico kitten sleeping in the sunshine\"\r\n        }\r\n    ],\r\n    \"parameters\": {\r\n        \"aspectRatio\": \"16:9\",\r\n        \"personGeneration\": \"dont_allow\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:predictLongRunning",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:predictLongRunning"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"key": "topP",
-			"value": "0.8",
-			"type": "default",
-			"enabled": true
+			"name": "Speech Generation",
+			"item": [
+				{
+					"name": "Single-speaker text-to-speech",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Say cheerfully: Have a wonderful day!\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"AUDIO\"\r\n        ],\r\n        \"speechConfig\": {\r\n            \"voiceConfig\": {\r\n                \"prebuiltVoiceConfig\": {\r\n                    \"voiceName\": \"Kore\"\r\n                }\r\n            }\r\n        }\r\n    },\r\n    \"model\": \"gemini-2.5-flash-preview-tts\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multi-speaker text-to-speech",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"TTS the following conversation between Joe and Jane: Joe: Hows it going today Jane Jane: Not too bad, how about you?\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"AUDIO\"\r\n        ],\r\n        \"speechConfig\": {\r\n            \"multiSpeakerVoiceConfig\": {\r\n                \"speakerVoiceConfigs\": [\r\n                    {\r\n                        \"speaker\": \"Joe\",\r\n                        \"voiceConfig\": {\r\n                            \"prebuiltVoiceConfig\": {\r\n                                \"voiceName\": \"Kore\"\r\n                            }\r\n                        }\r\n                    },\r\n                    {\r\n                        \"speaker\": \"Jane\",\r\n                        \"voiceConfig\": {\r\n                            \"prebuiltVoiceConfig\": {\r\n                                \"voiceName\": \"Puck\"\r\n                            }\r\n                        }\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    },\r\n    \"model\": \"gemini-2.5-flash-preview-tts\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"key": "topK",
-			"value": "10",
-			"type": "default",
-			"enabled": true
+			"name": "Music Generation",
+			"item": []
 		},
 		{
-			"key": "character",
-			"value": "book",
-			"type": "default",
-			"enabled": true
+			"name": "Long Context",
+			"item": []
 		},
 		{
-			"key": "maxOutputTokens",
-			"value": "800",
-			"type": "default",
-			"enabled": true
+			"name": "Structured Output",
+			"item": []
 		},
 		{
-			"key": "Display_Name",
-			"value": "Test Image",
-			"type": "default",
-			"enabled": true
+			"name": "Thinking",
+			"item": []
 		},
 		{
-			"key": "MIME_TYPE",
-			"value": "image/jpeg",
-			"type": "default",
-			"enabled": true
+			"name": "Function Calling",
+			"item": []
 		},
 		{
-			"key": "upload_url_image",
-			"value": "",
-			"type": "any",
-			"enabled": true
+			"name": "Document Understanding",
+			"item": []
 		},
 		{
-			"key": "flie_uri_image",
-			"value": "",
-			"type": "default",
-			"enabled": true
+			"name": "Image Understanding",
+			"item": []
+		},
+		{
+			"name": "Video Understanding",
+			"item": []
+		},
+		{
+			"name": "Audio Understanding",
+			"item": []
+		},
+		{
+			"name": "Code Execution",
+			"item": []
 		}
 	],
-	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2025-06-21T10:19:11.891Z",
-	"_postman_exported_using": "Postman/11.50.6"
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{vault:api key}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
 }
