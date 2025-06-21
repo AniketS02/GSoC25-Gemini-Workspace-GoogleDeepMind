@@ -370,11 +370,250 @@
 		},
 		{
 			"name": "Image Generation",
-			"item": []
+			"item": [
+				{
+					"name": "Text-and-image-to-image",
+					"item": [
+						{
+							"name": "1.Get the Upload Url",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let upload_url_header = pm.response.headers.get(\"x-goog-upload-url\"); // Get the upload URL from the response headers\r",
+											"if (upload_url_header){\r",
+											"pm.environment.set(\"upload_url_image\", upload_url_header);\r",
+											"}\r",
+											"else{\r",
+											"    console.log(\"Unable to get the upload url , check the API KEY or Gemini-Testing environment variables value\")\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "start",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Header-Content-Type",
+										"value": "{{MIME_TYPE}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Protocol",
+										"value": "resumable",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/upload/{{version}}/files",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"upload",
+										"{{version}}",
+										"files"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2.Upload The Image",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();\r",
+											"if(response.file.uri){\r",
+											"    pm.environment.set(\"file_uri_image\",response.file.uri);\r",
+											"}\r",
+											"else{\r",
+											"    console.log(\"Unable to get the file_uri_pdf, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": ""
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_image}}",
+									"host": [
+										"{{upload_url_image}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3.Generate Content",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"'Hi, This is a picture of me. Can you add a llama next to me\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"data\": {{file_uri_image}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "text-to-image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hi, can you create a 3d rendered image of a pig with wings and a top hat flying over a happy futuristic scifi city with lots of greenery?\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Generate Image using Imagen 3",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "start",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Header-Content-Type",
+								"value": "{{MIME_TYPE}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Protocol",
+								"value": "resumable",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"prompt\": \"Robot holding a red skateboard\"\r\n        }\r\n    ],\r\n    \"parameters\": {\r\n        \"sampleCount\": 4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:predict",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:predict"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Video Generation",
-			"item": []
+			"item": [
+				{
+					"name": "Generate video using Veo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instances\": [\r\n        {\r\n            \"prompt\": \"Panning wide shot of a calico kitten sleeping in the sunshine\"\r\n        }\r\n    ],\r\n    \"parameters\": {\r\n        \"aspectRatio\": \"16:9\",\r\n        \"personGeneration\": \"dont_allow\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:predictLongRunning",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:predictLongRunning"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Speech Generation",
