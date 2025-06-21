@@ -755,12 +755,129 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Thinking budgets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Provide a list of 3 famous physicists and their key contributions\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"thinkingConfig\": {\r\n            \"thinkingBudget\": 1024\r\n        //Thinking off:\r\n         //\"thinkingBudget\": 0\r\n         //Turn on dynamic thinking:\r\n         //\"thinkingBudget\": -1\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "Function Calling",
-			"item": []
+			"item": [
+				{
+					"name": "Schedule Meeting",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Schedule a meeting with Bob and Alice for 03/27/2025 at 10:00 AM about the Q3 planning.\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"tools\": [\r\n        {\r\n            \"functionDeclarations\": [\r\n                {\r\n                    \"name\": \"schedule_meeting\",\r\n                    \"description\": \"Schedules a meeting with specified attendees at a given time and date.\",\r\n                    \"parameters\": {\r\n                        \"type\": \"object\",\r\n                        \"properties\": {\r\n                            \"attendees\": {\r\n                                \"type\": \"array\",\r\n                                \"items\": {\r\n                                    \"type\": \"string\"\r\n                                },\r\n                                \"description\": \"List of people attending the meeting.\"\r\n                            },\r\n                            \"date\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"Date of the meeting (e.g., '2024-07-29')\"\r\n                            },\r\n                            \"time\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"Time of the meeting (e.g., '15:00')\"\r\n                            },\r\n                            \"topic\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"The subject or topic of the meeting.\"\r\n                            }\r\n                        },\r\n                        \"required\": [\r\n                            \"attendees\",\r\n                            \"date\",\r\n                            \"time\",\r\n                            \"topic\"\r\n                        ]\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Weather",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"What is the temperature in London?\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"tools\": [\r\n        {\r\n            \"functionDeclarations\": [\r\n                {\r\n                    \"name\": \"get_current_temperature\",\r\n                    \"description\": \"Gets the current temperature for a given location.\",\r\n                    \"parameters\": {\r\n                        \"type\": \"object\",\r\n                        \"properties\": {\r\n                            \"location\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"The city name, e.g. San Francisco\"\r\n                            }\r\n                        },\r\n                        \"required\": [\r\n                            \"location\"\r\n                        ]\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Chart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Create a bar chart titled Quarterly Sales with data: Q1: 50000, Q2: 75000, Q3: 60000.\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"tools\": [\r\n        {\r\n            \"functionDeclarations\": [\r\n                {\r\n                    \"name\": \"create_bar_chart\",\r\n                    \"description\": \"Creates a bar chart given a title, labels, and corresponding values.\",\r\n                    \"parameters\": {\r\n                        \"type\": \"object\",\r\n                        \"properties\": {\r\n                            \"title\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"The title for the chart.\"\r\n                            },\r\n                            \"labels\": {\r\n                                \"type\": \"array\",\r\n                                \"items\": {\r\n                                    \"type\": \"string\"\r\n                                },\r\n                                \"description\": \"List of labels for the data points (e.g.[Q1, Q2, Q3]).\"\r\n                            },\r\n                            \"values\": {\r\n                                \"type\": \"array\",\r\n                                \"items\": {\r\n                                    \"type\": \"number\"\r\n                                },\r\n                                \"description\": \"List of numerical values corresponding to the labels (e.g., [50000, 75000, 60000]).\"\r\n                            }\r\n                        },\r\n                        \"required\": [\r\n                            \"title\",\r\n                            \"labels\",\r\n                            \"values\"\r\n                        ]\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Document Understanding",
