@@ -1017,10 +1017,131 @@
 			"name": "Image Understanding",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "1.Get the Upload Url",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let upload_url_header = pm.response.headers.get(\"x-goog-upload-url\"); // Get the upload URL from the response headers\r",
+									"if (upload_url_header){\r",
+									"pm.environment.set(\"upload_url_image\", upload_url_header);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the upload url , check the API KEY or Gemini-Testing environment variables value\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "start",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Header-Content-Type",
+								"value": "{{MIME_TYPE}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Protocol",
+								"value": "resumable",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/upload/{{version}}/files",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"upload",
+								"{{version}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.Upload The Image",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"if(response.file.uri){\r",
+									"    pm.environment.set(\"file_uri_image\",response.file.uri);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the file_uri_image, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Offset",
+								"value": "0",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "upload, finalize",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": ""
+							}
+						},
+						"url": {
+							"raw": "{{upload_url_image}}",
+							"host": [
+								"{{upload_url_image}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.Generate Content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Caption this image\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"data\": {{file_uri_image}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
 					},
 					"response": []
 				}
@@ -1028,15 +1149,334 @@
 		},
 		{
 			"name": "Video Understanding",
-			"item": []
+			"item": [
+				{
+					"name": "1.Get the Upload Url Video",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let upload_url_header = pm.response.headers.get(\"x-goog-upload-url\"); // Get the upload URL from the response headers\r",
+									"if (upload_url_header){\r",
+									"pm.environment.set(\"upload_url_image\", upload_url_header);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the upload url , check the API KEY or Gemini-Testing environment variables value\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "start",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Header-Content-Type",
+								"value": "{{MIME_TYPE}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Protocol",
+								"value": "resumable",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_Video}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/upload/{{version}}/files",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"upload",
+								"{{version}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.Upload The Video",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"if(response.file.uri){\r",
+									"    pm.environment.set(\"file_uri_video\",response.file.uri);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the file_uri_video, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Offset",
+								"value": "0",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "upload, finalize",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": ""
+							}
+						},
+						"url": {
+							"raw": "{{upload_url_image}}",
+							"host": [
+								"{{upload_url_image}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.Generate Content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Summarize this video. Then create a quiz with an answer key based on the information in this video.\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"data\": {{file_uri_video}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Audio Understanding",
-			"item": []
+			"item": [
+				{
+					"name": "1.Get the Upload Url Audio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let upload_url_header = pm.response.headers.get(\"x-goog-upload-url\"); // Get the upload URL from the response headers\r",
+									"if (upload_url_header){\r",
+									"pm.environment.set(\"upload_url_audio\", upload_url_header);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the upload url , check the API KEY or Gemini-Testing environment variables value\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "start",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Header-Content-Type",
+								"value": "{{MIME_TYPE}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Protocol",
+								"value": "resumable",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_Video}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/upload/{{version}}/files",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"upload",
+								"{{version}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.Upload The Audio",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"if(response.file.uri){\r",
+									"    pm.environment.set(\"file_uri_audio\",response.file.uri);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the file_uri_audio, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Offset",
+								"value": "0",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "upload, finalize",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": ""
+							}
+						},
+						"url": {
+							"raw": "{{upload_url_image}}",
+							"host": [
+								"{{upload_url_image}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.Generate Content",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Summarize this video. Then create a quiz with an answer key based on the information in this video.\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"data\": {{flie_uri_audio}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Code Execution",
-			"item": []
+			"item": [
+				{
+					"name": "Enable code execution",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tools\": [\r\n        {\r\n            \"code_execution\": {}\r\n        }\r\n    ],\r\n    \"contents\": {\r\n        \"parts\": {\r\n            \"text\": \"What is the sum of the first 50 prime numbers? Generate and run code for the calculation, and make sure you get all 50.\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Use code execution in chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tools\": [\r\n        {\r\n            \"code_execution\": {}\r\n        }\r\n    ],\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Can you print \\\"Hello world!\\\"?\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"model\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"\"\r\n                },\r\n                {\r\n                    \"executable_code\": {\r\n                        \"language\": \"PYTHON\",\r\n                        \"code\": \"\\nprint(\\\"hello world!\\\")\\n\"\r\n                    }\r\n                },\r\n                {\r\n                    \"code_execution_result\": {\r\n                        \"outcome\": \"OUTCOME_OK\",\r\n                        \"output\": \"hello world!\\n\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"I have printed \\\"hello world!\\\" using the provided python code block. \\n\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"What is the sum of the first 50 prime numbers? Generate and run code for the calculation, and make sure you get all 50.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
