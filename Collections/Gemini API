@@ -617,19 +617,112 @@
 		},
 		{
 			"name": "Speech Generation",
-			"item": []
-		},
-		{
-			"name": "Music Generation",
-			"item": []
-		},
-		{
-			"name": "Long Context",
-			"item": []
+			"item": [
+				{
+					"name": "Single-speaker text-to-speech",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Say cheerfully: Have a wonderful day!\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"AUDIO\"\r\n        ],\r\n        \"speechConfig\": {\r\n            \"voiceConfig\": {\r\n                \"prebuiltVoiceConfig\": {\r\n                    \"voiceName\": \"Kore\"\r\n                }\r\n            }\r\n        }\r\n    },\r\n    \"model\": \"gemini-2.5-flash-preview-tts\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multi-speaker text-to-speech",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"TTS the following conversation between Joe and Jane: Joe: Hows it going today Jane Jane: Not too bad, how about you?\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"AUDIO\"\r\n        ],\r\n        \"speechConfig\": {\r\n            \"multiSpeakerVoiceConfig\": {\r\n                \"speakerVoiceConfigs\": [\r\n                    {\r\n                        \"speaker\": \"Joe\",\r\n                        \"voiceConfig\": {\r\n                            \"prebuiltVoiceConfig\": {\r\n                                \"voiceName\": \"Kore\"\r\n                            }\r\n                        }\r\n                    },\r\n                    {\r\n                        \"speaker\": \"Jane\",\r\n                        \"voiceConfig\": {\r\n                            \"prebuiltVoiceConfig\": {\r\n                                \"voiceName\": \"Puck\"\r\n                            }\r\n                        }\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    },\r\n    \"model\": \"gemini-2.5-flash-preview-tts\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Structured Output",
-			"item": []
+			"item": [
+				{
+					"name": "Configuring a schema",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"List a few popular cookie recipes, and include the amounts of ingredients.\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseMimeType\": \"application/json\",\r\n        \"responseSchema\": {\r\n            \"type\": \"ARRAY\",\r\n            \"items\": {\r\n                \"type\": \"OBJECT\",\r\n                \"properties\": {\r\n                    \"recipeName\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"ingredients\": {\r\n                        \"type\": \"ARRAY\",\r\n                        \"items\": {\r\n                            \"type\": \"STRING\"\r\n                        }\r\n                    }\r\n                },\r\n                \"propertyOrdering\": [\r\n                    \"recipeName\",\r\n                    \"ingredients\"\r\n                ]\r\n            }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Thinking",
