@@ -8,7 +8,35 @@
 	"item": [
 		{
 			"name": "Models",
-			"item": []
+			"item": [
+				{
+					"name": "fetch model",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Text Generation",
