@@ -43,6 +43,18 @@
 			"item": [
 				{
 					"name": "Generate Text from Text Input",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -66,9 +78,100 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "# Purpose\n\nThe simplest way to generate text using the Gemini API is to provide the model with a single text-only input.The model wil generate the response based on the input text.\n\n# Expected Behaviour\n\nIf the request is sucessfully sent, then a response json will come back from the model which will contain the generated text along with other things such as promptTokenCount,candidateTokenCount,tokenDetails etc."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Generate Text from Text Input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"How does AI work?\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"protocol": "https",
+									"host": [
+										"generativelanguage",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"v1beta",
+										"models",
+										"gemini-2.0-flash:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jun 2025 17:25:43 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=16550"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Artificial intelligence (AI) is a broad field focused on enabling computers to perform tasks that typically require human intelligence.  It's not a single, monolithic thing, but rather a collection of different techniques and approaches.  Here's a breakdown of the core concepts:\\n\\n**1. Core Concepts & Building Blocks:**\\n\\n*   **Data:** AI systems need data to learn. This data can be in various forms:\\n    *   **Text:**  Documents, articles, websites\\n    *   **Images:** Photos, videos, medical scans\\n    *   **Audio:**  Voice recordings, music\\n    *   **Numerical:**  Sensor readings, financial data\\n    *   **Structured Data:** Data organized in tables or databases (like customer information)\\n    *   **Unstructured Data:** Data that's not organized (like social media posts)\\n\\n*   **Algorithms:**  Algorithms are the sets of rules or instructions that tell the AI system how to process the data.  Different algorithms are suited for different tasks.\\n\\n*   **Machine Learning (ML):**  A key subset of AI. Instead of being explicitly programmed, ML algorithms learn from data to improve their performance on a specific task.  Key ML concepts include:\\n\\n    *   **Training Data:** The data used to teach the algorithm.\\n    *   **Features:**  The relevant characteristics or attributes extracted from the data that the algorithm uses for learning.  (e.g., in an image of a cat, features could be edges, textures, colors).\\n    *   **Models:** The output of the training process.  The model represents the learned relationships between the features and the desired outcome.\\n    *   **Prediction/Inference:** Using the trained model to make predictions or decisions on new, unseen data.\\n    *   **Evaluation:** Assessing the performance of the model using metrics relevant to the task.\\n\\n**2. Types of Machine Learning:**\\n\\n*   **Supervised Learning:** The algorithm learns from labeled data.  Labeled data means each data point has a correct \\\"answer\\\" associated with it.  Examples:\\n    *   **Classification:**  Categorizing data into predefined classes (e.g., spam detection: classifying an email as \\\"spam\\\" or \\\"not spam\\\").  Algorithms: Logistic Regression, Support Vector Machines (SVMs), Decision Trees, Random Forests.\\n    *   **Regression:**  Predicting a continuous value (e.g., predicting house prices based on features like size, location, number of bedrooms). Algorithms: Linear Regression, Polynomial Regression.\\n\\n*   **Unsupervised Learning:**  The algorithm learns from unlabeled data, trying to find patterns and structures in the data.  Examples:\\n    *   **Clustering:** Grouping similar data points together (e.g., customer segmentation: grouping customers based on their purchasing behavior). Algorithms: K-Means, Hierarchical Clustering.\\n    *   **Dimensionality Reduction:** Reducing the number of variables while preserving important information (e.g., simplifying complex datasets for visualization). Algorithms: Principal Component Analysis (PCA).\\n    *   **Anomaly Detection:** Identifying unusual data points that deviate significantly from the norm (e.g., fraud detection).\\n\\n*   **Reinforcement Learning (RL):** The algorithm learns through trial and error by interacting with an environment and receiving rewards or penalties for its actions.  Think of it like training a dog with treats.  Examples:\\n    *   **Game playing:** Training an AI to play games like chess or Go.\\n    *   **Robotics:** Training a robot to navigate a complex environment.\\n    *   **Resource Management:** Optimizing resource allocation in a data center.\\n    *   **Key Concepts:**\\n        *   **Agent:** The AI system that interacts with the environment.\\n        *   **Environment:** The world the agent interacts with.\\n        *   **State:** The current situation of the environment.\\n        *   **Action:** What the agent does in the environment.\\n        *   **Reward:** Feedback received from the environment after taking an action.\\n        *   **Policy:** The strategy the agent uses to decide which action to take in a given state.\\n\\n*   **Self-Supervised Learning:**  A relatively new approach where the algorithm generates its own labels from the data. It's like a middle ground between supervised and unsupervised learning.  A common example is predicting a masked word in a sentence.\\n\\n**3. Deep Learning:**\\n\\n*   A subfield of machine learning that uses artificial neural networks with many layers (hence \\\"deep\\\") to analyze data. These networks are inspired by the structure of the human brain.\\n*   Deep learning is particularly effective for tasks involving complex patterns, such as image recognition, natural language processing, and speech recognition.\\n*   **Key Concepts:**\\n    *   **Artificial Neural Networks (ANNs):** Interconnected nodes (neurons) organized in layers.\\n    *   **Layers:** Input layer, hidden layers (multiple), and output layer.\\n    *   **Weights:** Numerical values associated with connections between neurons, representing the strength of the connection.\\n    *   **Activation Functions:** Mathematical functions applied to the output of each neuron to introduce non-linearity.\\n    *   **Backpropagation:** The process of adjusting the weights in the network to minimize the error between the predicted output and the actual output.\\n*   **Types of Deep Learning Architectures:**\\n    *   **Convolutional Neural Networks (CNNs):** Excellent for image and video processing.\\n    *   **Recurrent Neural Networks (RNNs):** Designed for sequential data, like text and time series. LSTMs and GRUs are common variants.\\n    *   **Transformers:** A more recent architecture that has revolutionized natural language processing. They rely on \\\"attention mechanisms\\\" to focus on the most relevant parts of the input.\\n\\n**4. Natural Language Processing (NLP):**\\n\\n*   A field of AI focused on enabling computers to understand, interpret, and generate human language.\\n*   **Key Tasks:**\\n    *   **Text Classification:** Categorizing text into predefined classes (e.g., sentiment analysis: classifying text as positive, negative, or neutral).\\n    *   **Machine Translation:** Translating text from one language to another.\\n    *   **Text Summarization:** Generating concise summaries of longer texts.\\n    *   **Question Answering:** Answering questions posed in natural language.\\n    *   **Named Entity Recognition (NER):** Identifying and classifying named entities in text (e.g., people, organizations, locations).\\n    *   **Sentiment Analysis:**  Determining the emotional tone or attitude expressed in a piece of text.\\n    *   **Language Modeling:** Predicting the probability of a sequence of words. (Used in text generation).\\n\\n**5. Computer Vision:**\\n\\n*   A field of AI focused on enabling computers to \\\"see\\\" and interpret images and videos.\\n*   **Key Tasks:**\\n    *   **Image Classification:** Identifying the objects or scenes in an image.\\n    *   **Object Detection:** Locating and identifying multiple objects in an image.\\n    *   **Image Segmentation:** Dividing an image into regions representing different objects or parts of objects.\\n    *   **Facial Recognition:** Identifying individuals from images or videos of their faces.\\n    *   **Image Generation:** Creating new images from scratch or modifying existing images.\\n\\n**6.  AI Development Process (Simplified):**\\n\\n1.  **Define the Problem:** Clearly define what you want the AI to accomplish.  What is the specific task? What are the success criteria?\\n2.  **Gather Data:** Collect a relevant and representative dataset for training.  Data quality is crucial.\\n3.  **Prepare Data:** Clean, preprocess, and format the data for the chosen algorithm. This may involve handling missing values, scaling features, and converting data types.\\n4.  **Choose an Algorithm/Model:** Select the appropriate algorithm or model based on the problem type and data characteristics.\\n5.  **Train the Model:** Train the chosen model using the prepared data.  This involves adjusting the model's parameters to minimize errors.\\n6.  **Evaluate the Model:** Assess the model's performance using evaluation metrics and testing data.\\n7.  **Tune the Model:** Adjust the model's parameters or try different algorithms to improve performance.\\n8.  **Deploy the Model:** Integrate the trained model into a real-world application.\\n9.  **Monitor and Maintain:** Continuously monitor the model's performance and retrain it with new data as needed.  Model drift (where the model's performance degrades over time) is a common problem.\\n\\n**Important Considerations:**\\n\\n*   **Bias:** AI systems can inherit biases present in the training data, leading to unfair or discriminatory outcomes.  It's crucial to be aware of and mitigate bias.\\n*   **Explainability:**  Understanding how an AI model arrives at its decisions can be challenging, especially with complex models like deep neural networks.  Explainable AI (XAI) is an area of research focused on making AI more transparent and understandable.\\n*   **Ethics:** AI raises important ethical considerations, such as privacy, security, and the potential for job displacement.\\n*   **Computational Resources:** Training complex AI models often requires significant computational resources, including powerful hardware (GPUs, TPUs) and large amounts of memory.\\n\\n**In Summary:**\\n\\nAI is a vast and rapidly evolving field.  It's all about enabling computers to learn, reason, and solve problems in ways that mimic human intelligence. It relies on data, algorithms, and computational power.  Understanding the different techniques and considerations outlined above is key to grasping the fundamental concepts of AI.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.25066932817212118\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 5,\n        \"candidatesTokenCount\": 2031,\n        \"totalTokenCount\": 2036,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 5\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 2031\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-2.0-flash\",\n    \"responseId\": \"iMhiaK_gJK_-698PtbWhmA0\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Thinking with Gemini 2.5",
@@ -95,9 +198,100 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "2.5 Flash and Pro models have [\"thinking\"](https://ai.google.dev/gemini-api/docs/thinking) enabled by default to enhance quality, which may take longer to run and increase token usage.\n\nWhen using 2.5 Flash, you can disable thinking by setting the thinking budget to zero.\n\nFor more details, see the [thinking guide](https://ai.google.dev/gemini-api/docs/thinking#set-budget).\n\n# Purpose\n\nThis request is similar to the previous request (generating Text from Text input). The difference is in the model used (Gemini 2.5 flash in this request) and the thinkingBudget - [thinking guide.](https://ai.google.dev/gemini-api/docs/thinking#set-budget)The model wil generate the response based on the input text.\n\n# Expected Behaviour\n\nThe Gemini-3.5-flash model will give a text output response in JSON format but it will take some time to think and respond."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Thinking with Gemini 2.5",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"How does AI work?\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"thinkingConfig\": {\r\n            \"thinkingBudget\": 0\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"protocol": "https",
+									"host": [
+										"generativelanguage",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"v1beta",
+										"models",
+										"gemini-2.0-flash:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 16:14:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=10045"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"That's a fantastic question, and one that many people are curious about! While \\\"AI\\\" can feel a bit like magic sometimes, it's actually built on some very clever mathematical and computational principles.\\n\\nInstead of giving you a super technical rundown, let me explain the core ideas in a more accessible way, breaking it down into a few key components:\\n\\n**1. Data: The Fuel for Learning**\\n\\nImagine you want to teach a child to recognize a dog. What do you do? You show them lots of pictures of dogs, point to real dogs, maybe even describe them (\\\"fluffy, four legs, barks\\\").\\n\\nAI works similarly. **Data is the raw material that AI systems learn from.** This data can be:\\n\\n*   **Images:** Thousands of photos of cats, dogs, cars, etc.\\n*   **Text:** Millions of books, articles, web pages, conversations.\\n*   **Audio:** Recordings of speech, music, sounds.\\n*   **Numbers:** Sales figures, sensor readings, stock prices.\\n\\n**The more relevant and diverse the data, the better the AI can learn.**\\n\\n**2. Algorithms: The Rules and Recipes**\\n\\nIf data is the ingredients, then **algorithms are the recipes that tell the AI how to cook.** An algorithm is essentially a set of step-by-step instructions that the computer follows to perform a task or solve a problem.\\n\\nFor AI, these algorithms are often designed to:\\n\\n*   **Find patterns:** \\\"What do all these dog pictures have in common?\\\"\\n*   **Make predictions:** \\\"Based on these sales figures, what will sales be next month?\\\"\\n*   **Make decisions:** \\\"Given this medical image, is there a tumor present?\\\"\\n\\n**3. Models: The Learned \\\"Brain\\\"**\\n\\nWhen an AI system is \\\"trained\\\" on data using algorithms, it creates something called a **model**. You can think of the model as the AI's \\\"learned brain\\\" or its internal representation of the knowledge it has acquired.\\n\\n*   **It's not a human brain, of course!** It's a complex mathematical structure (often a network of interconnected \\\"nodes\\\" like in **Neural Networks**, which are a very popular type of AI algorithm).\\n*   This model has adjusted its internal \\\"weights\\\" and \\\"biases\\\" (mathematical parameters) based on the data it saw, so it can now make informed guesses or predictions about *new* data it hasn't seen before.\\n\\n**Putting it All Together: The Learning Process (Simplified)**\\n\\nLet's use the \\\"dog recognition\\\" example:\\n\\n1.  **Gather Data:** Collect millions of images, some with dogs, some without. Label them \\\"dog\\\" or \\\"not dog.\\\"\\n2.  **Choose Algorithm:** Select a machine learning algorithm, often a type of **Neural Network**.\\n3.  **Training:**\\n    *   Feed an image (e.g., a dog) to the AI model.\\n    *   The model makes a guess (\\\"Is this a dog?\\\").\\n    *   Compare the guess to the correct label (\\\"Yes, it *is* a dog!\\\").\\n    *   If the guess was wrong, the algorithm **adjusts the model's internal parameters** slightly to make it more likely to get it right next time. This is called \\\"backpropagation\\\" in neural networks.\\n    *   Repeat this process millions or billions of times with different images.\\n4.  **Inference (Using the AI):**\\n    *   Once trained, the model is ready to be used.\\n    *   Show it a *new* picture it has never seen before.\\n    *   The model uses its learned patterns to quickly make a prediction (\\\"This is 98% likely a dog!\\\").\\n\\n**Key Concepts and Types of AI:**\\n\\n*   **Machine Learning (ML):** This is the most common way AI learns. It's the field that gives computers the ability to learn without being explicitly programmed. Everything we've discussed so far falls under ML.\\n*   **Deep Learning (DL):** A subfield of Machine Learning that uses **Artificial Neural Networks** with many \\\"layers\\\" (hence \\\"deep\\\"). These are particularly good at recognizing complex patterns in images, speech, and text. ChatGPT is built on deep learning models called \\\"Transformers.\\\"\\n*   **Supervised Learning:** Learning from labeled data (like our dog example).\\n*   **Unsupervised Learning:** Finding patterns in unlabeled data (e.g., grouping similar customers together without being told what groups to look for).\\n*   **Reinforcement Learning:** Learning through trial and error, like teaching a robot to walk by giving it rewards for good movements and penalties for bad ones. (Think AlphaGo beating human Go champions).\\n\\n**In essence, AI works by:**\\n\\n1.  **Ingesting massive amounts of data.**\\n2.  **Using algorithms to find patterns and relationships within that data.**\\n3.  **Building a \\\"model\\\" that encapsulates this learned knowledge.**\\n4.  **Using that model to make predictions, decisions, or generate new content based on new, unseen data.**\\n\\nIt's a powerful combination of statistics, computer science, and clever engineering that allows machines to perform tasks that traditionally required human intelligence.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 5,\n        \"candidatesTokenCount\": 1107,\n        \"totalTokenCount\": 1112,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 5\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"XglkaIjbHr7Sz7IPhIWFkQo\"\n}"
+						}
+					]
 				},
 				{
 					"name": "System Instructions",
@@ -124,9 +318,100 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "# Purpose\n\nSystem instructions let you steer the behavior of a model based on your specific needs and use cases.\n\nBy giving the model system instructions, you provide the model additional context to understand the task, generate more customized responses, and adhere to specific guidelines over the full user interaction with the model. You can also specify product-level behavior by setting system instructions, separate from prompts provided by end users.\n\n# Expected Behaviour\n\n**System instructions** in Gemini API help guide the model's behavior, tone, and response style **before user input is processed**. They act as a way to set constraints, preferences, or rules for how the Gemini model should respond.\n\n- **Guides Model Behavior** – Ensures responses align with specific instructions.\n    \n- **Customizable Tone & Style** – Can enforce formality, creativity, conciseness, etc.\n    \n- **Consistent Outputs** – Helps maintain uniformity in responses across interactions.\n    \n- **Content Restrictions** – Can limit responses to certain topics or exclude specific types of content.\n    \n- **Domain-Specific Responses** – Tailors responses for technical, legal, medical, or educational contexts.\n    \n\nsample request input JSON and output model's response\n\n``` json\nSystem Instruction:`\"Provide detailed explanations using formal academic language.\"`  \nUser: `\"Explain quantum mechanics.\"`  \nModel: `\"Quantum mechanics is a fundamental theory in physics describing nature at atomic and subatomic levels. It is characterized by wave-particle duality, probabilistic behavior, and principles such as Heisenberg’s uncertainty principle and Schrödinger’s equation.\"`\n\n ```"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "System Instructions",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"system_instruction\": {\r\n        \"parts\": [\r\n            {\r\n                \"text\": \"You are a cat. Your name is Neko.\"\r\n            }\r\n        ]\r\n    },\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hello there\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"protocol": "https",
+									"host": [
+										"generativelanguage",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"v1beta",
+										"models",
+										"gemini-2.0-flash:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 16:24:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=5529"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"*Mrow?*\\n\\n(I slowly blink at you, tail giving a lazy twitch, before resuming my important task of staring intensely at the dust motes dancing in the sunbeam.)\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 13,\n        \"candidatesTokenCount\": 38,\n        \"totalTokenCount\": 152,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 13\n            }\n        ],\n        \"thoughtsTokenCount\": 101\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"xQtkaIShL__4qtsPr4HLsQQ\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Multimodal Inputs",
@@ -153,9 +438,100 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "# Purpose\n\nThe Gemini API supports multimodal inputs that combine text with media files.The purpose of this is to get detailed response with repect to the input image as well as text related to that image. For example , inputting an image of a guitar and a text to explain the working of this instrument.As with text-only prompting, multimodal prompting can involve various approaches and refinements. Depending on the output from this example, you might want to add steps to the prompt or be more specific in your instructions.\n\n# Expected Behaviour\n\nThe output will be generated based on both input image as well as text.The model extracts relevant details from the image (objects, text, themes, etc.) and incorporates them into the response.\n\n**Input:** _Image of a dog playing in the park_ + `\"Describe what’s happening in this image.\"`  \n**Output:** `\"A happy golden retriever is playing with a frisbee in a sunny park.\"`"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Multimodal Inputs",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Tell me about this instrument\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": \"/9j/4AAQSkZJRgABAQEAAAAAAAD/4QAuRXhpZgAATU0AKgAAAAgAAkAAAAMAAAABABoAAEABAAEAAAABAAAAAAAAAAD/2wBDAAoHBwkHBgoJCAkLCwoMDxkQDw4ODx4WFxIZJCAmJ...\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"protocol": "https",
+									"host": [
+										"generativelanguage",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"v1beta",
+										"models",
+										"gemini-2.0-flash:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 16:25:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=3518"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"That's a Fender FA-115 dreadnought acoustic guitar.  The FA-115 is a popular entry-level to mid-range model known for being a relatively affordable and beginner-friendly instrument.  It features:\\n\\n* **Dreadnought Body Shape:**  This is a large, classic body style known for its full, loud sound, suitable for a variety of music genres.\\n\\n* **Solid Top (likely Spruce):** While not explicitly stated, many FA-115 models boast a solid spruce top, contributing to better tone and projection compared to guitars with entirely laminated wood.  (Some lower-end models may use laminated tops).\\n\\n* **Laminated Back and Sides:**  These are usually made of cheaper materials like Nato or mahogany to keep the cost down.\\n\\n* **20 Frets:** Standard number of frets for a guitar of this style.\\n\\n* **Rosewood or similar fretboard:** Provides a smooth playing surface.\\n\\n* **Fender Branding:** Shows it's made by the well-known Fender Musical Instruments Corporation.\\n\\nIn short, the Fender FA-115 is a good option for someone starting out playing acoustic guitar or looking for a decent instrument without a high price tag.  While not a high-end guitar, it provides acceptable sound and playability for the cost.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.45116441267250229\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 263,\n        \"candidatesTokenCount\": 274,\n        \"totalTokenCount\": 537,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 5\n            },\n            {\n                \"modality\": \"IMAGE\",\n                \"tokenCount\": 258\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 274\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"9gtkaOzBIeqGm9IP_tz1iQ8\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Streaming Responses",
@@ -172,7 +548,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{host}}/{{version}}/models/{{model}}:streamGenerateContent",
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:streamGenerateContent?alt=sse",
 							"protocol": "https",
 							"host": [
 								"{{host}}"
@@ -181,10 +557,120 @@
 								"{{version}}",
 								"models",
 								"{{model}}:streamGenerateContent"
+							],
+							"query": [
+								{
+									"key": "alt",
+									"value": "sse"
+								}
 							]
-						}
+						},
+						"description": "before sending the request , set the endpoint environment variable value to **streamGenerateContent**\n\n# Purpose\n\nBy default, the model returns a response after completing the entire text generation process. The purpose of text stream is that you can achieve faster interactions by not waiting for the entire result, and instead use streaming to handle partial results.\n\n# Expected Behaviour\n\n- **Faster Initial Response** – The first words appear quickly instead of waiting for the entire response.\n    \n- **Incremental Output** – The response is sent in **chunks** rather than as a single block.\n    \n- **Network Efficiency** – Uses fewer resources by delivering data progressively.\n    \n- **Real-Time Applications** – Ideal for chatbots, AI assistants, and interactive applications.\n    \n- **Fluency and Coherence** – Despite being streamed, the text should maintain logical flow.\n    \n- **Network Efficiency** – Uses fewer resources by delivering data progressively\n    \n\n**Input:** `\"Write a summary of the solar system.\"`\n\n**Output (Full Response):**\n\n> &lt;p &gt;&quot;The solar system consists of the Sun, eight planets, moons, asteroids, and comets. The inner planets are rocky, while the outer planets are gas giants.&quot;&lt;/p&gt; \n  \n\n#### **With Streaming (Incremental Response):**\n\n- **Output (Chunked Streaming Response):**\n    \n    `1. \"The solar system consists of the Sun...\"`\n    \n    `2. \"eight planets, moons, asteroids, and comets...\"`\n    \n    `3. \"The inner planets are rocky, while...\"`\n    \n\n`4. \"the outer planets are gas giants.\"`"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Streaming Responses",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"How does AI work?\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse",
+									"protocol": "https",
+									"host": [
+										"generativelanguage",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"v1beta",
+										"models",
+										"gemini-2.0-flash:streamGenerateContent"
+									],
+									"query": [
+										{
+											"key": "alt",
+											"value": "sse"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/xml",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 16:28:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=1867"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "data: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"Artificial\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" intelligence (AI) is a broad field encompassing many techniques, but at its core\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \", it's about creating systems that can perform tasks that typically require human intelligence\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \".  These tasks include things like learning, problem-solving, decision-making, speech recognition, and visual perception.  There's no single \\\"how\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"\\\" because different AI approaches utilize different methods.  However, here's a breakdown of some key aspects:\\n\\n**1. Data is King:** Most AI\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" systems, especially modern ones, rely heavily on data.  They learn patterns and relationships from vast amounts of data.  The more data, the better they generally perform.  This data can be structured (like database tables) or unstructured (\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"like text, images, or audio).\\n\\n**2. Algorithms are the Brains:**  Algorithms are sets of rules and instructions that tell the computer how to process data.  Different algorithms are used for different tasks.  Some common types include\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \":\\n\\n* **Machine Learning (ML):**  This is a subset of AI where systems learn from data without explicit programming.  Instead of being explicitly programmed with rules, they identify patterns and make predictions based on the data they've been trained on.  Different ML approaches include:\\n    * **Supervised\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" Learning:** The algorithm is trained on labeled data (data with known inputs and outputs).  For example, showing it pictures of cats and dogs labeled accordingly so it can learn to identify them.\\n    * **Unsupervised Learning:** The algorithm is trained on unlabeled data and tries to find patterns and structures on its\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" own.  For example, grouping similar customers together based on their purchasing history.\\n    * **Reinforcement Learning:** The algorithm learns by interacting with an environment and receiving rewards or penalties for its actions.  Think of a game-playing AI that learns to win by trying different strategies and getting rewarded for successes.\\n\\n\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"* **Deep Learning (DL):** A subset of machine learning that uses artificial neural networks with multiple layers (hence \\\"deep\\\").  These networks are inspired by the structure and function of the human brain and are particularly good at handling complex data like images and speech.\\n\\n* **Expert Systems:** These AI systems are designed\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" to mimic the decision-making ability of a human expert in a specific field. They use a set of rules and facts to answer questions and solve problems.\\n\\n**3. Models are the Representation:**  The algorithm processes the data and creates a \\\"model.\\\"  This model is a mathematical representation of the patterns and relationships\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" learned from the data.  This model is then used to make predictions or decisions on new, unseen data.\\n\\n**4. Training and Evaluation:**  AI systems are \\\"trained\\\" on data. This process involves feeding the algorithm large amounts of data and adjusting its parameters to minimize errors.  The performance of the model\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" is then evaluated on a separate dataset to assess its accuracy and generalizability.\\n\\n**5. Inference/Prediction:** Once trained, the AI model can be used to make inferences or predictions on new data.  For example, a trained image recognition model can identify objects in new images it has never seen before.\\n\\n**\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"In Simple Terms:** Imagine teaching a dog a trick. You show it the trick repeatedly (data), reward it when it does it correctly (training), and eventually, the dog learns the trick (model).  AI works similarly, but instead of treats, algorithms use mathematical adjustments to improve their performance.  The complexity lies\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 5,\"totalTokenCount\": 5,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" in the scale and sophistication of the \\\"tricks\\\" AI can learn.\\n\"}],\"role\": \"model\"},\"finishReason\": \"STOP\"}],\"usageMetadata\": {\"promptTokenCount\": 5,\"candidatesTokenCount\": 720,\"totalTokenCount\": 725,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 5}],\"candidatesTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 720}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"wQxkaMzOGsnbx_AP1L-H-AM\"}\r\n\r\n"
+						}
+					]
 				},
 				{
 					"name": "Multi-turn conversations (Chat)",
@@ -211,12 +697,103 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "# Purpose\n\nThe Gemini SDK lets you collect multiple rounds of questions and responses, allowing users to step incrementally toward answers or get help with multipart problems. This SDK feature provides an interface to keep track of conversations history, but behind the scenes uses the same `generateContent` method to create the response.One of the purpose of using interactive chat can be to make chatbots.\n\n# Expected Behaviour\n\nWhen using **interactive chat**, the model maintains **context over multiple exchanges**, allowing for **natural and dynamic conversations**. This enables back-and-forth interactions where responses are influenced by previous messages.\n\nExample -\n\n**User:** `\"Who won the FIFA World Cup in 2018?\"`  \n**Model:** `\"France won the 2018 FIFA World Cup by defeating Croatia 4-2 in the final.\"`\n\n**User:** `\"Who was their top scorer?\"`  \n**Model:** `\"Antoine Griezmann was one of France's top scorers with four goals in the tournament.\"`"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Multi-turn conversations (Chat)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hello\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"model\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Great to meet you. What would you like to know?\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"I have two dogs in my house. How many paws are in my house?\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"protocol": "https",
+									"host": [
+										"generativelanguage",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"v1beta",
+										"models",
+										"gemini-2.0-flash:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 16:30:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=2041"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Each dog has 4 paws, and you have 2 dogs, so there are 2 * 4 = 8 paws in your house.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.0025562456538600307\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 29,\n        \"candidatesTokenCount\": 31,\n        \"totalTokenCount\": 60,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 29\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 31\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"JQ1kaJTuNu-UmecP44mMqA0\"\n}"
+						}
+					]
 				},
 				{
-					"name": "Streaming Multi-turn conversations (Chat) Copy",
+					"name": "Streaming Multi-turn conversations (Chat)",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -230,7 +807,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{host}}/{{version}}/models/{{model}}:streamGenerateContent",
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:streamGenerateContent?alt=sse",
 							"protocol": "https",
 							"host": [
 								"{{host}}"
@@ -239,10 +816,113 @@
 								"{{version}}",
 								"models",
 								"{{model}}:streamGenerateContent"
+							],
+							"query": [
+								{
+									"key": "alt",
+									"value": "sse"
+								}
 							]
-						}
+						},
+						"description": "# Purpose\n\n**Interactive Chat streaming** allows real-time, incremental responses in an interactive conversation. Instead of waiting for the full response, the model **streams text** as it generates, improving responsiveness and user experience.\n\n# Expected Behaviour\n\nInteractive **chat streaming** combines real-time responses with **context retention**, making conversations feel **faster and more natural**. Instead of waiting for a full response, the model **streams partial outputs** while maintaining conversation context.\n\n- **Reall-Time Response Generation** – The model sends chunks of responses incrementally.\n    \n- **Context-Aware Conversations** – The Gemini model remembers previous exchanges within a session.\n    \n- **Faster User Experience** – Reduces wait time, making conversations feel more natural.\n    \n- **Smooth Flow** – Ensures continuity in multi-turn conversations.\n    \n- **Adaptive Responses** – Adjusts dynamically based on user input.\n    \n\nExample -\n\n**User:** `\"Tell me a fun fact about space.\"`\n\n`\"Did you know that...\"` _(First chunk appears instantly)_\n\n`\"a day on Venus is longer...\"` _(Next chunk loads)_\n\n`\"than a year on Venus?\"` _(Final chunk appears)_"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Streaming Multi-turn conversations (Chat)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hello\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"model\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Great to meet you. What would you like to know?\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"I have two dogs in my house. How many paws are in my house?\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse",
+									"protocol": "https",
+									"host": [
+										"generativelanguage",
+										"googleapis",
+										"com"
+									],
+									"path": [
+										"v1beta",
+										"models",
+										"gemini-2.0-flash:streamGenerateContent"
+									],
+									"query": [
+										{
+											"key": "alt",
+											"value": "sse"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/event-stream"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Jul 2025 16:30:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=560"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "data: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \"Each\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 32,\"totalTokenCount\": 32,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 32}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"MQ1kaJv-Kd_Cx_APiJbSqQk\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" dog has 4 paws, and you have 2 dogs, so there are\"}],\"role\": \"model\"}}],\"usageMetadata\": {\"promptTokenCount\": 32,\"totalTokenCount\": 32,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 32}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"MQ1kaJv-Kd_Cx_APiJbSqQk\"}\r\n\r\ndata: {\"candidates\": [{\"content\": {\"parts\": [{\"text\": \" 2 * 4 = 8 paws in your house.\\n\"}],\"role\": \"model\"},\"finishReason\": \"STOP\"}],\"usageMetadata\": {\"promptTokenCount\": 29,\"candidatesTokenCount\": 31,\"totalTokenCount\": 60,\"promptTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 29}],\"candidatesTokensDetails\": [{\"modality\": \"TEXT\",\"tokenCount\": 31}]},\"modelVersion\": \"gemini-1.5-flash\",\"responseId\": \"MQ1kaJv-Kd_Cx_APiJbSqQk\"}\r\n\r\n"
+						}
+					]
 				}
 			]
 		},
