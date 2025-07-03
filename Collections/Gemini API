@@ -97,17 +97,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
 									"protocol": "https",
 									"host": [
-										"generativelanguage",
-										"googleapis",
-										"com"
+										"{{host}}"
 									],
 									"path": [
-										"v1beta",
+										"{{version}}",
 										"models",
-										"gemini-2.0-flash:generateContent"
+										"{{model}}:generateContent"
 									]
 								}
 							},
@@ -217,17 +215,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
 									"protocol": "https",
 									"host": [
-										"generativelanguage",
-										"googleapis",
-										"com"
+										"{{host}}"
 									],
 									"path": [
-										"v1beta",
+										"{{version}}",
 										"models",
-										"gemini-2.0-flash:generateContent"
+										"{{model}}:generateContent"
 									]
 								}
 							},
@@ -337,17 +333,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
 									"protocol": "https",
 									"host": [
-										"generativelanguage",
-										"googleapis",
-										"com"
+										"{{host}}"
 									],
 									"path": [
-										"v1beta",
+										"{{version}}",
 										"models",
-										"gemini-2.0-flash:generateContent"
+										"{{model}}:generateContent"
 									]
 								}
 							},
@@ -449,7 +443,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Tell me about this instrument\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": \"/9j/4AAQSkZJRgABAQEAAAAAAAD/4QAuRXhpZgAATU0AKgAAAAgAAkAAAAMAAAABABoAAEABAAEAAAABAAAAAAAAAAD/2wBDAAoHBwkHBgoJCAkLCwoMDxkQDw4ODx4WFxIZJCAmJ...\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Tell me about this instrument\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": \"{{guitar image base64 encoded }}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -457,17 +451,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
 									"protocol": "https",
 									"host": [
-										"generativelanguage",
-										"googleapis",
-										"com"
+										"{{host}}"
 									],
 									"path": [
-										"v1beta",
+										"{{version}}",
 										"models",
-										"gemini-2.0-flash:generateContent"
+										"{{model}}:generateContent"
 									]
 								}
 							},
@@ -583,17 +575,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse",
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:streamGenerateContent?alt=sse",
 									"protocol": "https",
 									"host": [
-										"generativelanguage",
-										"googleapis",
-										"com"
+										"{{host}}"
 									],
 									"path": [
-										"v1beta",
+										"{{version}}",
 										"models",
-										"gemini-2.0-flash:streamGenerateContent"
+										"{{model}}:streamGenerateContent"
 									],
 									"query": [
 										{
@@ -610,7 +600,6 @@
 								{
 									"key": "Content-Type",
 									"value": "application/xml",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								},
@@ -716,17 +705,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
 									"protocol": "https",
 									"host": [
-										"generativelanguage",
-										"googleapis",
-										"com"
+										"{{host}}"
 									],
 									"path": [
-										"v1beta",
+										"{{version}}",
 										"models",
-										"gemini-2.0-flash:generateContent"
+										"{{model}}:generateContent"
 									]
 								}
 							},
@@ -842,17 +829,15 @@
 									}
 								},
 								"url": {
-									"raw": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse",
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:streamGenerateContent?alt=sse",
 									"protocol": "https",
 									"host": [
-										"generativelanguage",
-										"googleapis",
-										"com"
+										"{{host}}"
 									],
 									"path": [
-										"v1beta",
+										"{{version}}",
 										"models",
-										"gemini-2.0-flash:streamGenerateContent"
+										"{{model}}:streamGenerateContent"
 									],
 									"query": [
 										{
@@ -954,9 +939,272 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "## Purpose of topP\n\ntopP is a parameter that affects how model responses to the text input. topP changes how the model **selects tokens for output**. Tokens are selected from the most to least probable until the sum of their probabilities equals the topP value. The default topP value is 0.95. The purpose of topP is to control the diversity and creativity of model's responses.\n\n# Expected Behaviour\n\n| **`topP`** **value** | **Expected behaviour** |\n| --- | --- |\n| Low ( `0.2 - 0.5` ) | The model selects from the most probable tokens, leading to **focused**, **predictable**, and highly **deterministic** responses. Ideal for factual and structured outputs |\n| Medium(`0.7 - 0.9`) | The response is balanced between **coherence** and **creativity**, with some variation in phrasing but still staying on topic. |\n| High(**`0.95 - 1.0`**) | The model includes more diverse token choices, making responses more varied, **creative**, and sometimes **unpredictable**. Ideal for storytelling and brainstorming. |"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Low topP value (0.2)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// The purpose of topP is to change how the model selects tokens for output.\r\n// Tokens are selected from the most to least probable until the sum of their probabilities equals the topP value.\r\n// Lower topP (e.g., 0.3) = More focused, deterministic responses.\r\n// Higher topP (e.g., 0.9) = More diverse, creative responses.\r\n// Default topP value is 0.95, but here we use 0.8 for a balance between focus and creativity.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topP\": {{topP}} // Adjusts response diversity\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:29:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=4844"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Elara wasn't your typical twelve-year-old. While other kids obsessed over pop stars and social media, Elara dreamt of forgotten languages and shimmering, unexplored landscapes.  This fascination led her to a dusty antique shop, tucked away in a cobbled alleyway.  There, amongst chipped teacups and tarnished silver, sat a backpack.  Not just any backpack – this one pulsed with a faint, inner light.\\n\\nIt was made of deep emerald green leather, stitched with silver thread that seemed to shift and shimmer.  Intrigued, Elara touched the leather.  A jolt, like static electricity, ran up her arm.  The shopkeeper, a wizened woman with eyes like polished obsidian, smiled knowingly.\\n\\n\\\"A traveler's companion,\\\" she rasped, her voice like dry leaves rustling. \\\"It chooses its owner, not the other way around.\\\"\\n\\nElara bought the backpack for a handful of coins – a price that felt insignificant compared to the strange pull she felt towards it.\\n\\nThat night, Elara packed the backpack for school.  Inside, she found a worn map, a compass that spun wildly, and a small, leather-bound book filled with strange symbols.  As she zipped it closed, the backpack hummed.  When she opened it again, a perfectly ripe apple sat nestled amongst her textbooks.  Then, a small, fluffy kitten.  Then, a compass that pointed steadily north.\\n\\nOver the next few weeks, the backpack's magic became more pronounced.  It provided Elara with exactly what she needed, when she needed it.  A forgotten history textbook materialized when she was struggling with a test.  A warm blanket appeared on a chilly day.  Once, when she was feeling particularly lonely, a friendly badger popped out, before disappearing as quickly as it arrived.\\n\\nBut the magic wasn't without its quirks.  Sometimes, the backpack's generosity was a little… excessive.  One morning, she found her room overflowing with brightly colored scarves, a collection of antique spoons, and a surprisingly lifelike rubber chicken.  Another time, a flock of miniature, singing birds filled her classroom, causing chaos and delight in equal measure.\\n\\nThe map, however, remained a mystery.  Its lines shifted and changed, revealing glimpses of fantastical places – shimmering waterfalls cascading into crystal lakes, towering trees that scraped the sky, and cities built from amethyst and gold.  Elara knew, deep down, that the backpack wasn't just a source of random objects; it was a key, a gateway to the adventures she'd always dreamed of.\\n\\nOne day, the map settled on a single, clear location: a hidden valley nestled in the heart of the Whispering Mountains.  Elara, armed with her trusty, unpredictable backpack, knew it was time.  She packed a few essentials (and a spare pair of socks, just in case), zipped the bag closed, and stepped into the unknown, ready for whatever magical surprises awaited her in the heart of the mountains.  The backpack hummed, a promise of adventure echoing in its emerald depths.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.24946372854914198\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 8,\n        \"candidatesTokenCount\": 641,\n        \"totalTokenCount\": 649,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 8\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 641\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"XjFmaNirK57_2PgP9tmQsAc\"\n}"
+						},
+						{
+							"name": "Medium topP value (0.7)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// The purpose of topP is to change how the model selects tokens for output.\r\n// Tokens are selected from the most to least probable until the sum of their probabilities equals the topP value.\r\n// Lower topP (e.g., 0.3) = More focused, deterministic responses.\r\n// Higher topP (e.g., 0.9) = More diverse, creative responses.\r\n// Default topP value is 0.95, but here we use 0.8 for a balance between focus and creativity.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topP\": {{topP}} // Adjusts response diversity\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:30:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=4811"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Elara clutched the worn leather straps of the backpack, its brass buckle gleaming faintly in the dim light of the antique shop. It wasn't the most beautiful backpack, far from it.  The leather was scratched, the stitching loose in places, but something about it called to her.  The old shopkeeper, a wizened woman with eyes like polished amber, simply smiled knowingly when Elara asked the price.  \\\"For you, child,\\\" she croaked, \\\"it's free.\\\"\\n\\nElara, a struggling artist with a penchant for the unusual, couldn't resist.  She slung the backpack over her shoulder, feeling a strange warmth spread through her.  Back home, she unpacked her meager belongings, placing a half-eaten apple and a charcoal sketch into its surprisingly spacious interior.  When she reached for the apple again, it was gone.  In its place sat a perfectly ripe, juicy peach.\\n\\nIntrigued, she tossed in a crumpled five-dollar bill.  She pulled out a crisp twenty.  A chipped paintbrush became a set of sable brushes, meticulously crafted.  The backpack wasn't just enlarging things; it was improving them, upgrading them.  It was a magic backpack.\\n\\nWord of Elara's \\\"lucky bag\\\" spread quickly through her artist community.  Soon, she was inundated with requests.  A struggling musician traded a rusty harmonica for a gleaming, perfectly tuned instrument.  A writer with writer's block exchanged a blank notebook for one filled with the start of a compelling novel.  Elara, initially hesitant, found herself drawn into the role of a benevolent fairy godmother, using the backpack to help others achieve their dreams.\\n\\nBut the magic wasn't without its quirks.  One day, a despondent sculptor gave Elara a broken clay figure, hoping for a miracle.  The backpack, however, didn't repair it.  Instead, it transformed it into a magnificent, life-sized bronze statue, far beyond the sculptor's skill.  The statue, though beautiful, was so large it nearly filled Elara's tiny apartment.\\n\\nAnother time, a nervous chef placed a simple omelet into the bag, hoping for a culinary masterpiece.  Out came a magnificent soufflé, but it was infused with a strange, slightly spicy, alien flavor that no one could quite identify.\\n\\nElara realized the backpack wasn't just upgrading things; it was interpreting desires, sometimes in unexpected ways.  It amplified potential, but it also amplified flaws, imperfections, and anxieties.  The magic wasn't about getting what you wanted, but about facing what you truly needed.\\n\\nShe learned to approach the backpack with caution and empathy, listening to the needs of those who sought its help.  She stopped thinking of it as a tool for wish fulfillment and started seeing it as a catalyst for growth.  The magic backpack, she discovered, wasn't about shortcuts to success, but about uncovering the hidden potential within herself and others, one surprisingly transformed object at a time.  And that, she realized, was a far more valuable kind of magic.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.37210798559721953\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 8,\n        \"candidatesTokenCount\": 644,\n        \"totalTokenCount\": 652,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 8\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 644\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"gzFmaJOfC57_2PgP9tmQsAc\"\n}"
+						},
+						{
+							"name": "High topP value (1.0)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// The purpose of topP is to change how the model selects tokens for output.\r\n// Tokens are selected from the most to least probable until the sum of their probabilities equals the topP value.\r\n// Lower topP (e.g., 0.3) = More focused, deterministic responses.\r\n// Higher topP (e.g., 0.9) = More diverse, creative responses.\r\n// Default topP value is 0.95, but here we use 0.8 for a balance between focus and creativity.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topP\": {{topP}} // Adjusts response diversity\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:31:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=4630"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Elara clutched the worn leather straps of the backpack, its faded crimson a stark contrast to the grey, slate-stone buildings surrounding her.  She’d found it abandoned in a dusty attic, tucked behind a moth-eaten tapestry. It wasn't particularly beautiful, nor was it exceptionally large, but something about its quiet, ancient hum had drawn her in.\\n\\nThat hum, she discovered, was the secret to its magic.\\n\\nThe first time she used it, she needed pencils for her art class.  She thought, \\\"Pencils,\\\" and *poof*, a box of perfectly sharpened graphite pencils materialized inside.  Next, it was a forgotten library book, a particularly tricky physics problem she'd been struggling with.  She pictured the book, its title and author clear in her mind, and there it was, pages crisp and unmarked.\\n\\nWord about Elara's miraculous backpack spread through her school like wildfire. Soon, requests began pouring in.  A lost hamster?  Inside the backpack it appeared, healthy and slightly disgruntled.  A forgotten birthday gift for her best friend Liam?  A gleaming silver locket nestled amongst perfectly-folded origami cranes materialized, reflecting the light from above.\\n\\nBut Elara quickly learned the backpack held limitations.  She couldn't conjure living creatures from scratch, just retrieve ones that were lost or misplaced.  And the more she asked, the more tired the backpack seemed to become, the crimson fading further until it was nearly brown.\\n\\nOne day, Liam approached Elara, his face etched with worry. His grandmother, a renowned botanist, had lost a rare, almost extinct orchid.  It was the last of its kind, and its loss could devastate her.  Liam pleaded with Elara to use the backpack, his eyes shining with a desperate hope.\\n\\nElara hesitated.  The backpack felt heavy, the hum almost a whisper now.  She knew that this would push it to its limits.  She visualised the orchid, its delicate petals, the vibrant shade of its bloom, its unique leaf pattern.  She focused all her energy, all her hope, into the thought.\\n\\nThe backpack pulsed with a faint, almost imperceptible glow.  Then, slowly, agonizingly slowly, a single, perfect bloom appeared inside. Its petals, impossibly delicate, unfurled, their vibrant hues radiating into the room.\\n\\nAs Elara carefully withdrew the orchid, a deep weariness settled on her. The backpack was almost lifeless, the leather dull and lifeless. The hum had ceased entirely. It seemed the magic was fully spent.  Overcome with a mixture of relief and sadness, Elara vowed to never overuse its power in the future.\\n\\nShe decided to keep the backpack, a testament to its extraordinary, limited powers.  It was no longer a source of endless wonders, but a reminder of the responsibility that came with even the smallest amount of magic, and a beautiful story, whispered only to Liam, of the time magic found its way into their world.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.87974521136167949\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 8,\n        \"candidatesTokenCount\": 617,\n        \"totalTokenCount\": 625,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 8\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 617\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"sTFmaI2tDZ7_2PgP9tmQsAc\"\n}"
+						}
+					]
 				},
 				{
 					"name": "top_k variation",
@@ -965,7 +1213,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "// The purpose of topK is to change how the model selects tokens for output.\r\n// topK of 3 means that the next token is selected from among the 3 most probabl using the temperature\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topK\": {{topK}} // Controls token selection\r\n    }\r\n}",
+							"raw": "// The purpose of topK is to change how the model selects tokens for output.\r\n// topK of 3 means that the next token is selected from among the 3 most probable using the temperature\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topK\": {{topK}} // Controls token selection\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -983,9 +1231,272 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "# Purpose\n\n`topK` changes how the model selects tokens for output. A `topK` of 1 means the selected token is the most probable among all the tokens in the model's vocabulary, while a `topK` of 3 means that the next token is selected from among the 3 most probable using the temperature. Tokens are further filtered based on `topP` with the final token selected using temperature sampling.\n\n# Expected Behaviour\n\n| **`topK`** **value** | **Expected Behaviour** |\n| --- | --- |\n| 1 - 10 | The model picks the most probable token from a very limited set.Responses are highly deterministic. The same prompt produces consistent output.Best for structured, factual, and instruction-based content. |\n| 20 - 50 | The model chooses from a broader selection of words, increasing variation.  <br>Responses balance coherence and creativity.  <br>Best for natural conversation, chatbots, and informative writing |\n| 100 - 200 | The model selects from a much wider range of words, making responses more diverse.  <br>Responses become less predictable, potentially more imaginative but also less structured.  <br>Best for storytelling, creative writing, and brainstorming. |"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Low topK value (10)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// The purpose of topK is to change how the model selects tokens for output.\r\n// topK of 3 means that the next token is selected from among the 3 most probabl using the temperature\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topK\": {{topK}} // Controls token selection\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:32:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=4810"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Elara clutched the worn leather straps of the backpack, its faded emerald green hinting at a history older than her grandmother.  She’d found it tucked away in the attic, nestled amongst moth-eaten quilts and forgotten toys.  It wasn't just old; it felt… alive.\\n\\nThe first sign was the smell – a faint, intoxicating blend of pine needles, sea salt, and something indefinably magical.  Then, as she zipped it open, a cascade of shimmering, iridescent dust spilled out, settling like tiny, joyful stars on the dusty attic floor.  Inside, the backpack was surprisingly spacious, larger than its external dimensions suggested.\\n\\nThat night, Elara packed it for a camping trip with her friend Finn.  She added a tent, sleeping bag, and some trail mix, but curiously, the backpack felt lighter than it should.  When they arrived at their campsite, a gust of wind unexpectedly whipped through the trees, and Elara, rummaging for her water bottle, found a gleaming thermos instead, filled with steaming hot cocoa.  The cocoa wasn't on her packing list.\\n\\nThe next day, they were hiking, the trail winding upwards through a dense forest.  Finn tripped, his ankle twisting painfully.  Elara, panicked, reached into her backpack for a first-aid kit. Instead, she pulled out a small, intricately carved wooden box.  Inside, nestled on a bed of velvet, lay a perfect, shimmering moonstone.  As she placed it on Finn’s injured ankle, a soothing warmth spread through the area, and the pain vanished.\\n\\nOver the next few days, the backpack continued to surprise them.  A sudden downpour brought forth a waterproof tarp, appearing as if from thin air.  A hungry pang was answered with a basket overflowing with juicy berries and warm bread.  It seemed to anticipate their every need, adapting its contents to the situation.\\n\\nBut the backpack's magic wasn't without its quirks.  One evening, Elara reached for her map, only to pull out a squawking parrot wearing a tiny monocle.  Another time, a perfectly formed miniature replica of the Eiffel Tower emerged, causing Finn to howl with laughter.  The backpack's surprises were unpredictable, a chaotic symphony of useful and utterly bizarre items.\\n\\nAs they packed up to leave, Elara felt a pang of sadness.  The backpack, more than just a convenient container, had become a companion on their adventure.  She slipped her hand into its depths, and this time, it wasn't a practical item that emerged, but a small, smooth stone, warm to the touch.  It felt like a thank you, a memory of the magical journey they’d shared.\\n\\nThe backpack's magic faded over time, its contents reverting to the mundane.  But Elara kept it, the emerald green leather now even more faded, a tangible reminder of the extraordinary adventures that had sprung from a seemingly ordinary, magical backpack.  The small, smooth stone, however, remained perpetually warm in her pocket, a silent promise of more unexpected wonders to come.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.51472634764103875\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 8,\n        \"candidatesTokenCount\": 642,\n        \"totalTokenCount\": 650,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 8\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 642\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"9zFmaNv1D-OTmecPk9OkiAs\"\n}"
+						},
+						{
+							"name": "Medium topK value (50)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// The purpose of topK is to change how the model selects tokens for output.\r\n// topK of 3 means that the next token is selected from among the 3 most probable using the temperature\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topK\": {{topK}} // Controls token selection\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:32:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=5046"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Elara wasn't expecting a magic backpack.  She’d expected a boring, beige, canvas thing for her hiking trip with her grumpy grandfather, not a shimmering, midnight-blue satchel that seemed to hum with barely-contained energy.  Grandpa, bless his crotchety heart, had simply presented it, a twinkle in his usually-unblinking eye.  \\\"A little something,\\\" he'd mumbled, \\\"for the journey.\\\"\\n\\nThe journey was supposed to be a week-long trek through the Whispering Woods, a place Grandpa claimed held more secrets than the library of Alexandria.  Elara, a city girl, was less than thrilled.  The first day was unremarkable, the backpack surprisingly comfortable, even when carrying her hefty load.  But on the second day, as a sudden downpour threatened to soak them to the bone, Elara rummaged inside for her rain poncho.  Instead, she pulled out… a perfectly dry, fluffy, yellow raincoat.\\n\\nGrandpa, watching her with a smirk, explained, \\\"It anticipates your needs, child.  Quite useful in a place as unpredictable as the Whispering Woods.\\\"\\n\\nThe following days were a testament to the backpack's uncanny abilities.  A seemingly endless supply of perfectly ripe berries appeared when they needed sustenance.  A sturdy, magically-appearing rope rescued them from a treacherous ravine.  A miniature, self-folding tent popped out when night fell.  Even a first-aid kit materialized when Elara scraped her knee.\\n\\nElara, initially skeptical, began to rely on the magic backpack completely.  But the deeper they went into the woods, the more she sensed a subtle unease.  The backpack, while helpful, seemed to subtly guide them, leading them down paths Grandpa hadn’t planned.  The humming intensified, becoming a low thrum that vibrated through her bones.\\n\\nOne evening, as they camped near a hidden waterfall, Grandpa finally revealed the truth. The backpack wasn’t just any magic item; it was a guardian, tasked with protecting a hidden grove sacred to the Whispering Woods.  It had chosen Elara, sensing her kind heart, to lead her – and unwittingly, Grandpa – to its location.\\n\\nThe grove was a breathtaking spectacle, filled with glowing flora and creatures she’d only read about in fairy tales.  But it was threatened.  A creeping blight, a dark magic, was slowly consuming its life force.  The backpack pulsed with light, urging Elara to help.\\n\\nElara, armed with nothing but her wit and the backpack's seemingly endless resources, spent the next few days battling the blight.  She used the backpack's magical tools – shimmering dust to heal the plants, tiny, glowing creatures to fight off the encroaching darkness – to restore the grove to its former glory.\\n\\nWhen the last tendril of the blight withered, the backpack glowed brightly, then dimmed, its magic seemingly spent.  It returned to being an ordinary, if somewhat worn, blue satchel.  But Elara felt no disappointment.  She had experienced magic, not just in the form of a wondrous backpack, but in the power of kindness and courage.  And as she and Grandpa walked out of the woods, hand-in-hand, she knew that the true magic lay not in the enchanted object, but in the journey it had helped them share.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.55880860076553518\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 8,\n        \"candidatesTokenCount\": 696,\n        \"totalTokenCount\": 704,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 8\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 696\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"HTJmaNSAO5CQm9IPgImIiQU\"\n}"
+						},
+						{
+							"name": "High topK value (200)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// The purpose of topK is to change how the model selects tokens for output.\r\n// topK of 3 means that the next token is selected from among the 3 most probable using the temperature\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"topK\": {{topK}} // Controls token selection\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:33:43 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=4573"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Elara wasn't your typical twelve-year-old.  While other kids obsessed over pop stars and social media, Elara dreamed of adventure.  So, when her eccentric Great-Aunt Millie passed away, leaving her a battered, leather backpack, Elara felt a surge of something more than just sadness; it was anticipation.\\n\\nThe backpack was unremarkable at first glance, smelling faintly of woodsmoke and old books. But then, as Elara zipped it open, a gust of warm, spiced air rushed out, carrying the scent of cinnamon and pine needles. Inside, nestled amongst a faded map and a tarnished compass, lay a single, perfectly ripe mango.  Elara, who’d had toast for breakfast, devoured it instantly.  It tasted like sunshine and summer holidays.\\n\\nThe next day, feeling bolder, Elara packed her schoolbooks into the magic backpack.  When she arrived at school, her history textbook was mysteriously replaced by a first-hand account of the Roman conquest of Britain, penned on parchment and smelling faintly of charcoal.  Her math textbook had transformed into a set of enchanted abacuses that solved equations with a satisfying click.\\n\\nWord spread. Soon, Elara’s backpack was the talk of the school.  Some whispered of magic, others of elaborate pranks.  But Elara knew.  She could ask the backpack for anything –  a specific book, a tool, even a snack – and it would appear.  It seemed to anticipate her needs, even before she knew them herself.\\n\\nOne day, Elara’s best friend, Leo, confessed that he'd been having trouble with his grandfather, a renowned but reclusive sculptor who’d fallen into a deep depression.  Elara, remembering the map inside the backpack, felt a surge of hope.\\n\\nThat night, she asked the backpack for help.  The next morning, the backpack contained not just a tool kit, but also a small, clay bird, perfectly sculpted, the detail so fine it seemed almost alive.  She knew it was a message, an offering from her grandfather, channeled somehow through the magic of the bag.\\n\\nFollowing the faded map, Elara and Leo found their way to a hidden studio nestled deep within the woods.  Leo's grandfather, frail but with a spark rekindled in his eyes, was amazed by the clay bird.  It was a style he'd abandoned years ago, a style that only he could recognize.\\n\\nThe reunion was emotional, but it was the backpack that brokered it.  It hadn’t simply provided a tool or a clue, it had facilitated a connection, healing the rift between Leo and his grandfather.\\n\\nElara understood then the true power of the magic backpack. It wasn’t about acquiring material things, but about fostering connections and solving problems.  It was a catalyst for adventure, yes, but more importantly, it was a conduit for kindness and understanding.  And that, she realized, was a far greater adventure than any she could have imagined.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.62016904296875\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 8,\n        \"candidatesTokenCount\": 625,\n        \"totalTokenCount\": 633,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 8\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 625\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"UzJmaLnTHvS2ld8P_KPZiAU\"\n}"
+						}
+					]
 				},
 				{
 					"name": "temperature variation",
@@ -1012,9 +1523,272 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "# Purpose\n\n`temperature` controls the randomness of the output. Use higher values for more creative responses, and lower values for more deterministic responses. Values can range from \\[0.0, 2.0\\].it's purpose is to change the response according to the requirements and level of creative response.\n\n# Expected Behaviour\n\nsample input request JSON\n\n``` json\n{\n        \"contents\": [{\n            \"parts\":[\n                {\"text\": \"Describe a futuristic city in 2 lines\"} // Request JSON payload\n            ]\n        }],\n        \"generationConfig\": {\n            \"temperature\": {{temperature}} // Controls randomness\n        }\n}\n\n ```\n\nExpected output response\n\n| **temperature value** | **expected response** |\n| --- | --- |\n| 0.2 | Gleaming chrome towers pierced a sky perpetually twilight, their shadows falling on streets where hovercars zipped between bioluminescent gardens. Beneath, a network of subterranean tunnels pulsed with the city's unseen lifeblood. |\n| 0.7 | Gleaming chrome towers pierce a perpetually twilight sky, their shadows cast upon streets humming with autonomous vehicles and holographic advertisements. Below, bioluminescent flora illuminates pathways winding through verdant, vertical farms |\n| 1.0 | Gleaming chrome towers pierced a sky perpetually bathed in neon, while autonomous vehicles zipped silently through levitating roadways. Below, citizens blended seamlessly with holographic advertisements and bioluminescent flora |"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Low Temperature Value (0.2)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Explain how AI works\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"temperature\": {{temperature}}\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:35:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=6277"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Artificial intelligence (AI) is a broad field encompassing many techniques, but at its core, it's about creating systems that can perform tasks that typically require human intelligence.  These tasks include things like learning, reasoning, problem-solving, perception, and natural language understanding.  There's no single \\\"how it works\\\" answer, as different AI approaches use different methods.  However, we can break it down into key concepts:\\n\\n**1. Data is King:**  AI systems learn from data.  The more relevant and high-quality data they're trained on, the better they perform. This data can be anything from images and text to sensor readings and financial transactions.\\n\\n**2. Algorithms are the Engine:**  Algorithms are sets of rules and statistical techniques that AI systems use to process data and learn patterns.  These algorithms are the \\\"brains\\\" of the system, determining how it analyzes information and makes decisions.  Different algorithms are suited for different tasks.\\n\\n**3. Learning Paradigms:**  There are several ways AI systems learn:\\n\\n* **Supervised Learning:** The AI is trained on a labeled dataset, meaning the data is already tagged with the correct answers.  The algorithm learns to map inputs to outputs based on these examples.  Think of teaching a dog tricks – you show them what to do and reward them for correct behavior.  Examples include image classification (identifying objects in pictures) and spam detection.\\n\\n* **Unsupervised Learning:** The AI is trained on an unlabeled dataset.  The algorithm's job is to find patterns and structures in the data without explicit guidance.  This is like asking a child to sort toys based on their similarities – they figure out the categories themselves.  Examples include clustering (grouping similar data points) and dimensionality reduction (simplifying complex data).\\n\\n* **Reinforcement Learning:** The AI learns through trial and error by interacting with an environment.  It receives rewards for desirable actions and penalties for undesirable ones.  This is like training a robot to navigate a maze – it learns by trying different paths and getting rewarded for reaching the goal.  Examples include game playing (AlphaGo) and robotics control.\\n\\n**4. Models are the Representation:**  During the learning process, the AI system creates a model that represents the patterns and relationships it has learned from the data.  This model can be a complex mathematical equation, a neural network, or another type of representation.  The model is what allows the AI to make predictions or decisions on new, unseen data.\\n\\n**5. Neural Networks (a common approach):**  Neural networks are a type of algorithm inspired by the structure and function of the human brain.  They consist of interconnected nodes (neurons) organized in layers.  Information flows through the network, and the connections between nodes are adjusted during training to improve the network's performance.  Deep learning uses very deep neural networks with many layers to learn complex patterns.\\n\\n**In short:** AI systems learn from data using algorithms to create models that can perform intelligent tasks.  The specific techniques used depend on the task and the type of data available.  While the field is complex, the fundamental principles revolve around learning from data and using that learning to make predictions or decisions.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.12346383749720562\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 4,\n        \"candidatesTokenCount\": 664,\n        \"totalTokenCount\": 668,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 4\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 664\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"rzJmaJaGFPysnvgPrcy4iAg\"\n}"
+						},
+						{
+							"name": "Medium Temperature value (0.7)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Explain how AI works\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"temperature\": {{temperature}}\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:36:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=6524"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Artificial intelligence (AI) is a broad field encompassing many techniques, but at its core, it aims to create systems that can perform tasks that typically require human intelligence.  These tasks include things like learning, reasoning, problem-solving, perception, and language understanding.  There's no single \\\"how it works\\\" answer, as different AI approaches use different methods. However, we can break it down into key concepts:\\n\\n**1. Data is King:**  AI systems learn from data.  The more relevant and high-quality data they're trained on, the better they perform.  This data can be anything from images and text to sensor readings and financial transactions.\\n\\n**2. Algorithms are the Engine:**  Algorithms are sets of rules and statistical techniques that AI systems use to process data and learn patterns.  These algorithms are the \\\"brains\\\" of the system, determining how it learns, makes decisions, and solves problems.  Different algorithms are suited for different tasks.  Some common types include:\\n\\n* **Machine Learning (ML):**  This is a subset of AI where systems learn from data without explicit programming.  Instead of being explicitly told what to do, they identify patterns and make predictions based on the data they've seen.  There are several types of ML, including:\\n    * **Supervised Learning:** The algorithm is trained on labeled data (e.g., images labeled as \\\"cat\\\" or \\\"dog\\\").  It learns to map inputs to outputs based on these labels.\\n    * **Unsupervised Learning:** The algorithm is trained on unlabeled data and tries to find structure or patterns in the data on its own (e.g., clustering similar data points together).\\n    * **Reinforcement Learning:** The algorithm learns through trial and error by interacting with an environment. It receives rewards for good actions and penalties for bad actions, learning to maximize its reward over time.\\n\\n* **Deep Learning (DL):** A subfield of ML that uses artificial neural networks with multiple layers (hence \\\"deep\\\").  These networks are inspired by the structure and function of the human brain and can learn complex patterns from vast amounts of data.  Deep learning is particularly powerful for tasks like image recognition, natural language processing, and speech recognition.\\n\\n* **Expert Systems:** These AI systems are based on rules and knowledge provided by human experts.  They use these rules to make decisions and solve problems in a specific domain.\\n\\n\\n**3. Models are the Output:** After training on data using chosen algorithms, the AI system creates a \\\"model.\\\" This model is a representation of the patterns and relationships learned from the data.  It's what the AI uses to make predictions or decisions on new, unseen data.\\n\\n**4. Evaluation and Iteration:** AI systems are constantly evaluated to measure their performance.  This involves testing the model on new data and comparing its predictions to the actual results.  Based on this evaluation, the system may be retrained or improved to enhance its accuracy and efficiency.  This iterative process is crucial for refining AI systems and making them more robust.\\n\\n\\nIn short, AI works by combining data, algorithms, and computational power to create models that can learn from data, make predictions, and solve problems.  The specific techniques used depend on the task and the available data.  The field is constantly evolving, with new algorithms and approaches being developed all the time.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.13815491206364261\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 4,\n        \"candidatesTokenCount\": 694,\n        \"totalTokenCount\": 698,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 4\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 694\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"6zJmaLeOKY3H2PgP3czb4Ao\"\n}"
+						},
+						{
+							"name": "High Temperature value (1.0)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Explain how AI works\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"temperature\": {{temperature}}\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:37:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=5173"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"AI doesn't work in a single, unified way.  Instead, it encompasses a broad range of techniques and approaches, all aiming to mimic aspects of human intelligence.  However, we can break down how many AI systems function into these key components:\\n\\n**1. Data:**  AI systems learn from data.  The more relevant and high-quality data they are trained on, the better they perform. This data can be anything from images and text to sensor readings and financial transactions.\\n\\n**2. Algorithms:** These are the sets of rules and calculations that the AI uses to process the data.  Different AI techniques use different algorithms.  Some common types include:\\n\\n* **Machine Learning (ML):** This is a core component of many AI systems.  Instead of being explicitly programmed, ML algorithms learn patterns and relationships from data.  They improve their performance over time through experience (exposure to more data).  Key types of ML include:\\n    * **Supervised Learning:** The algorithm is trained on labeled data (data where the correct answer is already known).  For example, showing an image classifier many pictures of cats and dogs, labeled accordingly.\\n    * **Unsupervised Learning:** The algorithm is trained on unlabeled data and tries to find patterns and structure on its own.  For example, clustering similar customers together based on their purchase history.\\n    * **Reinforcement Learning:** The algorithm learns through trial and error, receiving rewards for correct actions and penalties for incorrect ones.  This is often used in robotics and game playing.\\n\\n* **Deep Learning (DL):** A subset of ML that uses artificial neural networks with multiple layers (hence \\\"deep\\\").  These networks are inspired by the structure and function of the human brain.  Deep learning excels at tasks involving complex patterns and large amounts of data, such as image recognition, natural language processing, and speech recognition.\\n\\n* **Expert Systems:** These systems mimic the decision-making ability of a human expert in a specific domain.  They use a set of rules and knowledge bases to arrive at conclusions.\\n\\n**3. Model:**  The algorithm, after being trained on the data, creates a \\\"model.\\\" This model is a representation of the patterns and relationships learned from the data.  It's what the AI uses to make predictions or decisions on new, unseen data.\\n\\n**4. Inference/Prediction:** Once a model is trained, it can be used to make inferences or predictions on new data.  This is the stage where the AI actually performs its task, like classifying an image, translating text, or recommending a product.\\n\\n**5. Evaluation:** The performance of the AI system is constantly evaluated to identify areas for improvement.  This involves measuring the accuracy, precision, and other relevant metrics of the model's predictions.\\n\\n\\n**In Simple Terms:** Imagine teaching a dog a trick.  The data is the many times you show the dog the trick and reward it for doing it correctly. The algorithm is the method of training (positive reinforcement). The model is the dog's learned behavior. Inference is the dog performing the trick when you ask. Evaluation is assessing how well the dog learned the trick.\\n\\nIt's crucial to remember that AI systems are tools.  Their capabilities are defined by the data they are trained on, the algorithms they use, and the way they are designed and implemented.  They are not inherently conscious or sentient, but they can perform complex tasks that previously required human intelligence.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.19969957330253688\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 4,\n        \"candidatesTokenCount\": 712,\n        \"totalTokenCount\": 716,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 4\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 712\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"GjNmaJ_WN86BnvgPyLjriQ0\"\n}"
+						}
+					]
 				},
 				{
 					"name": "stopSequences variation",
@@ -1041,9 +1815,98 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "# Purpose\n\n`stopSequences` specifies the set of character sequences (up to 5) that will stop output generation. If specified, the API will stop at the first appearance of a `stop_sequence`. The stop sequence won't be included as part of the response.\n\n# Expected Behaviour\n\n``` json\n{\n        \"contents\": [{\n            \"parts\":[\n                {\"text\": \"Write a story about a magic backpack.\"} // Request JSON payload\n            ]\n        }],\n        \"generationConfig\": {\n            \"stopSequences\":[\n                \"{{character}}\"\n            ]\n        }\n}\n\n ```\n\nExpected response (character = \"magic\" )\n\n``` json\n{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Elara wasn't your typical twelve-year-old. While other kids obsessed over pop stars and social media, Elara dreamt of faraway lands and forgotten histories.  Her dream took a decidedly literal turn the day she found it: a worn, leather \"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -5.7647722032335071\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 8,\n        \"candidatesTokenCount\": 54,\n        \"totalTokenCount\": 62,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 8\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 54\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\"\n}\n\n ```"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "stopSequences variation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// stopSequences - specifies the set of character sequences (up to 5) that will stop output generation\r\n// The stop sequence won't be included as part of the response.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Write a story about a magic backpack.\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"stopSequences\": [\r\n            \"{{character}}\"\r\n        ]\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:38:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=822"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Elara wasn't your typical twelve-year-old.  While her peers obsessed over pop stars and social media, Elara dreamt of faraway lands and forgotten lore. So when her eccentric Great-Aunt Millie bequeathed her a worn leather \"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.34203475952148438\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 8,\n        \"candidatesTokenCount\": 50,\n        \"totalTokenCount\": 58,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 8\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 50\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"ZzNmaLneOOScmecPrM3gqQ4\"\n}"
+						}
+					]
 				},
 				{
 					"name": "maxOutputTokens variation",
@@ -1070,9 +1933,98 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "# Purpose\n\n`maxOutputTokens` sets the maximum number of tokens to include in a candidate.\n\n# Expected Behaviour\n\nIf the value of maxOutputToken is less , then the output response length will also be short and if the maxOutputToken value is high then the output will be of larger length.\n\ninput - Describe a futuristic city.\n\n| **maxOutputTokens** | **Expected Behaviour** |\n| --- | --- |\n| 20 | Aeon City sprawls across a series of interconnected, bioluminescent towers that pierce a perpetually twilight |\n| 100 | Anya City hummed with a silent energy. Skyscrapers, sleek and bioluminescent, pierced the perpetually twilight sky, their surfaces shifting colours in a mesmerizing, coordinated dance programmed by central AI. Flying vehicles, more like iridescent dragonfly swarms than clunky machines, zipped between the buildings, their paths a complex ballet choreographed by a city-wide traffic management system. The streets below were largely pedestrianized, vibrant oases of vertical farms and shimmering holographic advertisements that reacted to passersby |"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "maxOutputTokens variation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "// sets the maximum number of tokens to include in a candidate.\r\n{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Describe a futuristic city\"\r\n                } // Request JSON payload\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"maxOutputTokens\": {{maxOutputTokens}}// Limits response length\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Jul 2025 07:39:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=2955"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Neo-Kyoto hummed with a silent energy. Towering structures, crafted from polished obsidian and shimmering bioluminescent alloys, scraped the perpetually twilight sky, their forms mimicking the elegant curves of ancient pagodas yet scaled to impossible heights.  Hovercars, sleek and silent, zipped between the buildings, their paths illuminated by interwoven holographic pathways that shifted and reformed with the city's dynamic flow.\\n\\nBelow the sky-piercing towers, sprawling vertical farms pulsed with emerald and sapphire light, their hydroponic systems a constant, rhythmic heartbeat in the cityscape.  Elevated walkways, lined with holographic advertisements that shimmered and shifted with the viewer's perspective, connected the different levels, weaving a complex network of interconnected spaces.  Citizens, clad in sleek, adaptive clothing that changed color and texture with their mood, moved with a fluid grace, a blend of human and technological integration.\\n\\nThe air, purified by advanced atmospheric processors, was crisp and clean, tinged with the scent of blossoming synthetic cherry trees lining the lower levels.  Robots, indistinguishable from humans in many cases, seamlessly integrated into the urban fabric, performing tasks from waste management to advanced medical care.  Drones, tiny and efficient, buzzed silently, delivering packages and monitoring the city's intricate systems.\\n\\nNeo-Kyoto wasn't just a city; it was a living, breathing organism.  Its infrastructure was a symphony of interconnected systems, constantly adapting and evolving, fueled by renewable energy sources and guided by a sophisticated AI that managed every aspect of urban life with graceful efficiency.  Yet, amidst the technological marvel, pockets of traditional Japanese culture persisted – serene gardens nestled amongst towering skyscrapers, tea ceremonies held in minimalist holographic environments, and the whisper of ancient traditions woven into the futuristic tapestry.  It was a city where the past and the future co-existed in a harmonious, breathtaking embrace.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.56451773136220085\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 4,\n        \"candidatesTokenCount\": 376,\n        \"totalTokenCount\": 380,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 4\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 376\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"ojNmaKrKLNugmecPwYihoAc\"\n}"
+						}
+					]
 				}
 			]
 		},
