@@ -2283,11 +2283,11 @@
 												},
 												{
 													"key": "X-Goog-Upload-URL",
-													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAzVGcjMR2JNmYGyKnkCI-TrhdOvgu3zbk&upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
+													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key= API KEY&upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
 												},
 												{
 													"key": "X-Goog-Upload-Control-URL",
-													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAzVGcjMR2JNmYGyKnkCI-TrhdOvgu3zbk&upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
+													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key= API KEY&upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
 												},
 												{
 													"key": "X-Goog-Upload-Chunk-Granularity",
