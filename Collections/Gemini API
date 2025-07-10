@@ -2189,7 +2189,7 @@
 											},
 											{
 												"key": "X-Goog-Upload-Header-Content-Type",
-												"value": "{{MIME_TYPE}}",
+												"value": "{{MIME_TYPE_IMAGE}}",
 												"type": "text"
 											},
 											{
@@ -2283,7 +2283,7 @@
 												},
 												{
 													"key": "X-Goog-Upload-URL",
-													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key= API key &upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
+													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=API Key&upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
 												},
 												{
 													"key": "X-Goog-Upload-Control-URL",
@@ -2486,7 +2486,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"file_uri\": \"{{file_uri_image}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Caption this image.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+											"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE_IMAGE}}\",\r\n                        \"file_uri\": \"{{file_uri_image}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Caption this image.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3206,9 +3206,98 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "## Generating content with thinking\n\nInitiating a request with a thinking model is similar to any other content generation request. The key difference lies in specifying one of the [models with thinking support](https://ai.google.dev/gemini-api/docs/thinking#supported-models) in the `model` field."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Generating content with thinking",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Explain the concept of Occam's Razor and provide a simple, everyday example.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jul 2025 12:49:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=11131"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Occam's Razor is a philosophical principle and problem-solving heuristic that states: **\\\"Among competing hypotheses, the one with the fewest assumptions should be selected.\\\"**\\n\\nIn simpler terms, it suggests that when you have multiple explanations for a phenomenon, and all of them fit the observed facts, the *simplest* one (the one that requires the fewest \\\"leaps of faith\\\" or unproven assumptions) is usually the most likely to be correct.\\n\\nIt's important to understand that Occam's Razor does **not** state that the simplest explanation is *always* true. Rather, it suggests that it is the most *probable* or the best starting point for investigation, especially when there isn't evidence to support a more complex theory. It's a guideline for parsimony (thriftiness) in explanation, helping us \\\"shave off\\\" unnecessary complexities.\\n\\nThe principle is attributed to William of Ockham (or Occam), a 14th-century Franciscan friar and logician.\\n\\n---\\n\\n### Simple, Everyday Example: Your Car Won't Start\\n\\n**Scenario:** You wake up, get in your car, turn the key, and it just clicks or makes no sound at all. The car won't start.\\n\\n**Competing Hypotheses:**\\n\\n1.  **Complex Explanation:** \\\"Overnight, a highly advanced, tiny, invisible alien race landed their spaceship in your engine compartment. They have a strange custom of temporarily disabling human vehicles as a prank before taking off again, and they've just finished their prank.\\\"\\n    *   *Assumptions:* Invisible aliens, advanced technology, specific pranking customs, landing silently, no physical trace. (Many assumptions, highly improbable).\\n\\n2.  **Simple Explanation:** \\\"The car battery is dead.\\\"\\n    *   *Assumptions:* Car batteries can die (common knowledge), you might have left the lights on, or it's old. (Very few, common assumptions).\\n\\n**Applying Occam's Razor:**\\n\\nOccam's Razor would strongly favor the **simple explanation** (dead battery). While the alien prank *could* theoretically be true (we can't definitively *disprove* it without examining the universe), it requires far too many unsupported assumptions. The dead battery explanation relies on known facts about cars and common occurrences. You'd likely check the battery first, and in most cases, that would be the solution.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 17,\n        \"candidatesTokenCount\": 504,\n        \"totalTokenCount\": 1729,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 17\n            }\n        ],\n        \"thoughtsTokenCount\": 1208\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"7hNtaPPICuKuqtsPgL_MqAs\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Thinking budgets",
@@ -3235,9 +3324,98 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "## Thinking budgets\n\nThe `thinkingBudget` parameter guides the model on the number of thinking tokens to use when generating a response. A higher token count generally allows for more detailed reasoning, which can be beneficial for tackling more [complex tasks](https://ai.google.dev/gemini-api/docs/thinking#tasks). If latency is more important, use a lower budget or disable thinking by setting `thinkingBudget` to 0. Setting the `thinkingBudget` to -1 turns on **dynamic thinking**, meaning the model will adjust the budget based on the complexity of the request.\n\nThe `thinkingBudget` is only [supported](https://ai.google.dev/gemini-api/docs/thinking#supported-models) in Gemini 2.5 Flash, 2.5 Pro, and 2.5 Flash-Lite. Depending on the prompt, the model might overflow or underflow the token budget.\n\nThe following are `thinkingBudget` configuration details for each model type.\n\nStartFragment\n\n| Model | Default setting  <br>(Thinking budget is not set) | Range | Disable thinking | Turn on dynamic thinking |\n| --- | --- | --- | --- | --- |\n| **2.5 Pro** | Dynamic thinking: Model decides when and how much to think | `128` to `32768` | N/A: Cannot disable thinking | `thinkingBudget = -1` |\n| **2.5 Flash** | Dynamic thinking: Model decides when and how much to think | `0` to `24576` | `thinkingBudget = 0` | `thinkingBudget = -1` |\n| **2.5 Flash Lite** | Model does not think | `512` to `24576` | `thinkingBudget = 0` | `thinkingBudget = -1` |"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Thinking budgets",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Provide a list of 3 famous physicists and their key contributions\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"thinkingConfig\": {\r\n            \"thinkingBudget\": 1024\r\n        //Thinking off:\r\n         //\"thinkingBudget\": 0\r\n         //Turn on dynamic thinking:\r\n         //\"thinkingBudget\": -1\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jul 2025 12:50:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=20634"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Of course! Here are three of the most famous and influential physicists in history and their key contributions.\\n\\n### 1. Isaac Newton (1643-1727)\\n\\nA cornerstone of the scientific revolution, Newton's work laid the foundation for classical mechanics, which dominated scientific thought for over 200 years.\\n\\n*   **Key Contributions:**\\n    *   **Three Laws of Motion:** These laws describe the relationship between an object and the forces acting upon it. They are fundamental to understanding the motion of everything from a thrown ball to planetary orbits.\\n    *   **Law of Universal Gravitation:** Newton formulated the law describing the gravitational attraction between two masses. This was the first theory to explain that the same force keeping us on the ground is also what holds the moon in orbit around the Earth.\\n    *   **Calculus:** He co-developed calculus (along with Gottfried Leibniz), a new branch of mathematics essential for solving complex problems in physics and engineering.\\n    *   **Optics:** He demonstrated that white light is composed of a spectrum of colors by splitting it with a prism, and he invented the reflecting telescope.\\n\\n### 2. Albert Einstein (1879-1955)\\n\\nEinstein is arguably the most famous scientist of the 20th century. His work fundamentally changed our understanding of space, time, gravity, and the universe.\\n\\n*   **Key Contributions:**\\n    *   **Theory of Special Relativity:** Published in 1905, this theory redefined our concepts of space and time, showing that they are relative to the observer's motion.\\n    *   **Mass-Energy Equivalence (E=mc²):** This iconic equation, a consequence of special relativity, reveals that mass and energy are two forms of the same thing. It is the foundational principle behind nuclear energy and atomic weapons.\\n    *   **Theory of General Relativity:** Published in 1915, this is Einstein's theory of gravity. It describes gravity not as a force, but as a curvature of spacetime caused by mass and energy. Its predictions, such as the bending of light by gravity and the existence of black holes, have been repeatedly confirmed.\\n    *   **Photoelectric Effect:** He explained this phenomenon by proposing that light exists as discrete packets of energy called \\\"photons,\\\" a foundational concept for quantum theory for which he won the Nobel Prize in Physics in 1921.\\n\\n### 3. Marie Curie (1867-1934)\\n\\nA pioneering physicist and chemist, Marie Curie was a trailblazer in the field of radioactivity and is the only person to have won the Nobel Prize in two different scientific fields.\\n\\n*   **Key Contributions:**\\n    *   **Theory of Radioactivity:** She coined the term \\\"radioactivity\\\" to describe the phenomenon of energy being emitted from atomic nuclei. Her research was crucial in developing our understanding of atomic structure.\\n    *   **Discovery of New Elements:** Working alongside her husband, Pierre Curie, she discovered two new radioactive elements: **polonium** (named after her native Poland) and **radium**.\\n    *   **Development of Mobile X-ray Units:** During World War I, she developed mobile X-ray units, known as \\\"petites Curies,\\\" to help field surgeons locate shrapnel and other injuries in wounded soldiers, saving countless lives.\\n    *   **Isolation of Radium:** She successfully isolated pure radium, which allowed for a deeper study of its properties and its use in medicine, particularly for treating cancer.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 12,\n        \"candidatesTokenCount\": 739,\n        \"totalTokenCount\": 1444,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 12\n            }\n        ],\n        \"thoughtsTokenCount\": 693\n    },\n    \"modelVersion\": \"gemini-2.5-pro\",\n    \"responseId\": \"ExRtaNTdL9ipmtkPr66PyAs\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -3269,9 +3447,98 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "## API Endpoint: Generate Content\n\nThis endpoint allows users to generate content based on provided input and tool declarations. It is primarily used for scheduling meetings by invoking specific functions.\n\n### HTTP Method\n\n- **POST**\n    \n\n### Endpoint\n\n- `https://{{host}}/{{version}}/models/{{model}}:generateContent`\n    \n\n### Request Body Parameters\n\nThe request body must be in JSON format and includes the following parameters:\n\n- **contents** (Array of Objects): A list of content pieces to be processed.\n    \n    - **role** (String): The role of the user providing the input (e.g., \"user\").\n        \n    - **parts** (Array of Objects): Contains the messages from the user.\n        \n        - **text** (String): The actual message content (e.g., \"Schedule a meeting with Bob...\").\n            \n- **tools** (Array of Objects): A list of tools that can be used to fulfill the request.\n    \n    - **functionDeclarations** (Array of Objects): Definitions of functions that can be invoked.\n        \n        - **name** (String): The name of the function (e.g., \"schedule_meeting\").\n            \n        - **description** (String): A brief description of what the function does.\n            \n        - **parameters** (Object): Specifies the parameters required for the function.\n            \n            - **type** (String): The data type of the parameters (e.g., \"object\").\n                \n            - **properties** (Object): Contains the specific properties for the function parameters.\n                \n                - **attendees** (Array of Strings): List of people attending the meeting (required).\n                    \n                - **date** (String): Date of the meeting (e.g., '2023-10-20').\n                    \n                - **time** (String): Time of the meeting (e.g., '15:00').\n                    \n                - **topic** (String): The subject or topic of the meeting.\n                    \n\n### Expected Response Format\n\nThe response will be a JSON object containing the following fields:\n\n- **candidates** (Array of Objects): A list of generated content candidates.\n    \n    - **content** (Object): The generated content.\n        \n        - **parts** (Array of Objects): Contains the function call details.\n            \n            - **functionCall** (Object): Details about the invoked function.\n                \n                - **name** (String): The name of the invoked function.\n                    \n                - **args** (Object): The arguments passed to the function, including attendees, time, topic, and date.\n                    \n            - **thoughtSignature** (String): A signature representing the thought process behind the response.\n                \n        - **role** (String): The role of the content provider.\n            \n    - **finishReason** (String): Reason for finishing the generation.\n        \n    - **index** (Integer): Index of the candidate in the response array.\n        \n- **usageMetadata** (Object): Metadata about the token usage.\n    \n    - **promptTokenCount** (Integer): Count of tokens used in the prompt.\n        \n    - **candidatesTokenCount** (Integer): Count of tokens used in the candidates.\n        \n    - **totalTokenCount** (Integer): Total count of tokens used.\n        \n    - **promptTokensDetails** (Array of Objects): Details about the tokens used in the prompt.\n        \n        - **modality** (String): The modality of the tokens.\n            \n        - **tokenCount** (Integer): Count of tokens for the modality.\n            \n    - **thoughtsTokenCount** (Integer): Count of tokens used in thoughts.\n        \n- **modelVersion** (String): The version of the model used for generation.\n    \n- **responseId** (String): Unique identifier for the response.\n    \n\nThis endpoint is crucial for automating meeting scheduling and enhancing user productivity through intelligent content generation."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Schedule Meeting",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Schedule a meeting with Bob and Alice for 03/27/2025 at 10:00 AM about the Q3 planning.\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"tools\": [\r\n        {\r\n            \"functionDeclarations\": [\r\n                {\r\n                    \"name\": \"schedule_meeting\",\r\n                    \"description\": \"Schedules a meeting with specified attendees at a given time and date.\",\r\n                    \"parameters\": {\r\n                        \"type\": \"object\",\r\n                        \"properties\": {\r\n                            \"attendees\": {\r\n                                \"type\": \"array\",\r\n                                \"items\": {\r\n                                    \"type\": \"string\"\r\n                                },\r\n                                \"description\": \"List of people attending the meeting.\"\r\n                            },\r\n                            \"date\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"Date of the meeting (e.g., '2024-07-29')\"\r\n                            },\r\n                            \"time\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"Time of the meeting (e.g., '15:00')\"\r\n                            },\r\n                            \"topic\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"The subject or topic of the meeting.\"\r\n                            }\r\n                        },\r\n                        \"required\": [\r\n                            \"attendees\",\r\n                            \"date\",\r\n                            \"time\",\r\n                            \"topic\"\r\n                        ]\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jul 2025 12:50:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=1328"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"functionCall\": {\n                            \"name\": \"schedule_meeting\",\n                            \"args\": {\n                                \"attendees\": [\n                                    \"Bob\",\n                                    \"Alice\"\n                                ],\n                                \"time\": \"10:00\",\n                                \"topic\": \"Q3 planning\",\n                                \"date\": \"2025-03-27\"\n                            }\n                        },\n                        \"thoughtSignature\": \"CooEAVSoXO7lc1xmLLFSuXyFLsDEW6UPHPQRzWVL9qSLi2T6V+m4nBTvYlxKlIgu3CefAVrG3HAIHuZNLiiFhtfZlhNEiumO/qGHI+C17mtZ5qAY1Ib2xubFa8l84JJ8eBBf7/r2fVcXTVv3HjktQhgAqEgoVtTP6BBFZXN23yhoJ5lxm4ZBHsVdFYIvrO/S8X++scNQeo6E9tmG3BOqsnvTAm2jvIR5VMUXygx1OJPd/AsS89F/NAorDzNX9Gk2c33OfNnlC35l3k6mBKzDEubq66Heu+9V8UqUbXZLfqCrVOOi84QKcC7tWW0KWHvdyknlBEhwKqqCUBZXME7IrDpcEBcoY3TBf447UQiu5uonlIiFOsXTSj6UxjXIJYkNZJA6Teb/Zb/OBHdyYVqzFZ5xBJADPZBpyXmGV9Nm+/pPojYt46qn6QF9MThdA6rq3mwOaNdxqp1Tp8teSGiqsYC1qOX/wM/jqedn+A8BRnVYMglINWzBENLHkGdU2KUo8h/+pth3EG61GDzHSA6LQ/Y6fjmN8n+VyRwrRt9rUbCoY9qG7ku8D8hoQKz7XjnI3fN26hq/ThLgJvjKuxrQBPnf7DwsWqypRwqDBSEbdC9P8xl61KO4poijQCMxIoodyqMqoeS3MSQXM+E0S9kMvkffUuBrnvNGJsFUnR6s4e9RWv0+VKsgslTAkUVS\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 165,\n        \"candidatesTokenCount\": 49,\n        \"totalTokenCount\": 376,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 165\n            }\n        ],\n        \"thoughtsTokenCount\": 162\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"KhRtaPXDIoeL6dkPkJDOqQ4\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Get Weather",
@@ -3298,9 +3565,98 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "## Generate Content Endpoint\n\nThis endpoint allows users to generate content based on specified inputs and tools. It processes a request containing user-defined content and tool declarations, returning structured responses that include generated content and usage metadata.\n\n### Request\n\n**Method:** POST  \n**URL:** `https://{{host}}/{{version}}/models/{{model}}:generateContent`\n\n#### Request Body\n\nThe request body must be in JSON format and includes the following structure:\n\n- **contents** (Array): A list of content objects.\n    \n    - **role** (String): The role of the user, e.g., \"user\".\n        \n    - **parts** (Array): An array of parts that contain the text input.\n        \n        - **text** (String): The actual text input from the user.\n            \n- **tools** (Array): A list of tool objects that define functions to be used.\n    \n    - **functionDeclarations** (Array): A list of function declarations.\n        \n        - **name** (String): The name of the function to be called.\n            \n        - **description** (String): A description of what the function does.\n            \n        - **parameters** (Object): The parameters required for the function.\n            \n            - **type** (String): The type of the parameters (should be \"object\").\n                \n            - **properties** (Object): The properties of the parameters.\n                \n                - **location** (String): A description of the expected input (e.g., city name).\n                    \n            - **required** (Array): An array of required parameter names.\n                \n\n#### Example Request Body\n\n``` json\n{\n  \"contents\": [\n    {\n      \"role\": \"user\",\n      \"parts\": [\n        {\n          \"text\": \"What is the temperature in Lon ...\"\n        }\n      ]\n    }\n  ],\n  \"tools\": [\n    {\n      \"functionDeclarations\": [\n        {\n          \"name\": \"get_current_temperature\",\n          \"description\": \"Gets the current temperature for a specified location.\",\n          \"parameters\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"location\": {\n                \"type\": \"string\",\n                \"description\": \"The city name, e.g. San Francisco.\"\n              }\n            },\n            \"required\": [\"location\"]\n          }\n        }\n      ]\n    }\n  ]\n}\n\n ```\n\n### Response\n\nThe response will be in JSON format and contains the following structure:\n\n- **candidates** (Array): A list of candidate responses generated by the model.\n    \n    - **content** (Object): Contains the generated content.\n        \n        - **parts** (Array): An array of parts that include:\n            \n            - **functionCall** (Object): Information about any function calls made.\n                \n                - **name** (String): The name of the function called.\n                    \n                - **args** (Object): The arguments passed to the function.\n                    \n                    - **location** (String): The location parameter used in the function call.\n                        \n            - **thoughtSignature** (String): A signature of the thought process behind the generated content.\n                \n        - **role** (String): The role associated with the generated content.\n            \n    - **finishReason** (String): The reason for the completion of the response.\n        \n    - **index** (Integer): The index of the candidate in the list.\n        \n- **usageMetadata** (Object): Metadata about the usage of tokens.\n    \n    - **promptTokenCount** (Integer): The number of tokens used in the prompt.\n        \n    - **candidatesTokenCount** (Integer): The number of tokens used in the candidates.\n        \n    - **totalTokenCount** (Integer): The total number of tokens used.\n        \n    - **promptTokensDetails** (Array): Details about the tokens used in the prompt.\n        \n        - **modality** (String): The modality of the tokens.\n            \n        - **tokenCount** (Integer): The count of tokens for the modality.\n            \n    - **thoughtsTokenCount** (Integer): The number of tokens used for thoughts.\n        \n- **modelVersion** (String): The version of the model used for generating the response.\n    \n- **responseId** (String): A unique identifier for the response.\n    \n\n#### Example Response\n\n``` json\n{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"functionCall\": {\n              \"name\": \"\",\n              \"args\": {\n                \"location\": \"\"\n              }\n            },\n            \"thoughtSignature\": \"\"\n          }\n        ],\n        \"role\": \"\"\n      },\n      \"finishReason\": \"\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 0,\n    \"candidatesTokenCount\": 0,\n    \"totalTokenCount\": 0,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"\",\n        \"tokenCount\": 0\n      }\n    ],\n    \"thoughtsTokenCount\": 0\n  },\n  \"modelVersion\": \"\",\n  \"responseId\": \"\"\n}\n\n ```"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Weather",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"What is the temperature in London?\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"tools\": [\r\n        {\r\n            \"functionDeclarations\": [\r\n                {\r\n                    \"name\": \"get_current_temperature\",\r\n                    \"description\": \"Gets the current temperature for a given location.\",\r\n                    \"parameters\": {\r\n                        \"type\": \"object\",\r\n                        \"properties\": {\r\n                            \"location\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"The city name, e.g. San Francisco\"\r\n                            }\r\n                        },\r\n                        \"required\": [\r\n                            \"location\"\r\n                        ]\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jul 2025 12:50:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=1146"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"functionCall\": {\n                            \"name\": \"get_current_temperature\",\n                            \"args\": {\n                                \"location\": \"London\"\n                            }\n                        },\n                        \"thoughtSignature\": \"CqcEAVSoXO46SHY+/gwf+IIUpkK8W+muaY7WstayaSSPPYsqsKHLknTeG1ncfnQISpRI0vt3OwV+LdN8q95pgic7CuDIP+i3gSSkszA0y2Ijvb1SNml+VFgBfJfFheEWcA+wJzH+8SA2teyvt5KNF3hqIY9yeMqxC80p6mKhA2u84C0f88nWZMQXXOS0r9nchk9UuVyPxIHMdoGdp7GjqzRIrpYfqlF4KXeWUyzA+dK3Cqa2/1804VZNf5kV/nCkHvMDqy4wagELM3UA8CXISegPWgJMljZcjTtVACm0E3+mDzNES+7ZnmLd3xt+6MbScbf5lMqS8UPEq2lS/IIGAcpeoAsxxUo1gg7SOly57qFnPzDKOlmdX0XILf+2Kov4Kg/XRfP8TIBQM80O3rtmGkXY1s8YFqkIS0LcMeyMPxtvUKvGb8U1J9WctjILg747cnfUYCw+G3O03PVkrp4tuFk5+qRgjKwsvb2yiwygXFQDHvj0WkXGTLZwOeD3Mptp79Q+DmJO8EVhO1YUFLnGAcMKQjMHJkaZAPvVfMB4dp5eqFmpI5tCEidRM/7HoTJuI0Q3bxjHHsOc1O9BSnforfgaDA6JwBS3ZZR6mYCYQoOYXLVqIyZv5uiYCKGBTrYngGFGwREvLkdB1KDsXDrPGT8s+N8nzBSfphk+C+B95zAK4MtsWDMZHZ3u1Wa+nBDJ2VdNQI37zjrMJZCZM6XXjyF0y6DI2ZvBjcc=\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 60,\n        \"candidatesTokenCount\": 17,\n        \"totalTokenCount\": 193,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 60\n            }\n        ],\n        \"thoughtsTokenCount\": 116\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"MBRtaIitDqy9qtsPzfuOqQs\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Chart",
@@ -3327,9 +3683,98 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "### API Endpoint: Generate Content for Models\n\nThis endpoint allows users to generate content based on specified inputs using a model. It is particularly useful for creating visual representations, such as charts, by providing necessary parameters.\n\n#### Request Format\n\n- **Method**: POST\n    \n- **URL**: `https://{{host}}/{{version}}/models/{{model}}:generateContent`\n    \n\n#### Request Body\n\nThe request body should be in JSON format and must include the following structure:\n\n``` json\n{\n  \"contents\": [\n    {\n      \"role\": \"user\",\n      \"parts\": [\n        {\n          \"text\": \"Your input text here\"\n        }\n      ]\n    }\n  ],\n  \"tools\": [\n    {\n      \"functionDeclarations\": [\n        {\n          \"name\": \"create_bar_chart\",\n          \"description\": \"Creates a bar chart given a title and data.\",\n          \"parameters\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"title\": {\n                \"type\": \"string\",\n                \"description\": \"The title for the chart.\"\n              },\n              \"labels\": {\n                \"type\": \"array\",\n                \"items\": {\n                  \"type\": \"string\"\n                },\n                \"description\": \"List of labels for the data points.\"\n              },\n              \"values\": {\n                \"type\": \"array\",\n                \"items\": {\n                  \"type\": \"number\"\n                },\n                \"description\": \"List of numerical values corresponding to the labels.\"\n              }\n            },\n            \"required\": [\"title\"]\n          }\n        }\n      ]\n    }\n  ]\n}\n\n ```\n\n- **Contents**: An array containing user input, where each part includes the role of the user and the text input.\n    \n- **Tools**: An array of tools that define the functions to be executed. Each tool can declare functions with their respective parameters.\n    \n\n#### Response Format\n\nThe response will also be in JSON format and will contain the following structure:\n\n``` json\n{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"functionCall\": {\n              \"name\": \"\",\n              \"args\": {\n                \"labels\": [\"\"],\n                \"title\": \"\",\n                \"values\": [0]\n              }\n            },\n            \"thoughtSignature\": \"\"\n          }\n        ],\n        \"role\": \"\"\n      },\n      \"finishReason\": \"\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 0,\n    \"candidatesTokenCount\": 0,\n    \"totalTokenCount\": 0,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"\",\n        \"tokenCount\": 0\n      }\n    ],\n    \"thoughtsTokenCount\": 0\n  },\n  \"modelVersion\": \"\",\n  \"responseId\": \"\"\n}\n\n ```\n\n- **Candidates**: An array of generated content candidates, where each candidate includes the generated parts and the reason for finishing.\n    \n- **Usage Metadata**: Information about token usage, including counts for prompt tokens, candidates tokens, and total token count.\n    \n- **Model Version**: The version of the model used for the request.\n    \n- **Response ID**: A unique identifier for the response.\n    \n\nEnsure that the request body adheres to the specified format to receive a valid response."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create Chart",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Create a bar chart titled Quarterly Sales with data: Q1: 50000, Q2: 75000, Q3: 60000.\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"tools\": [\r\n        {\r\n            \"functionDeclarations\": [\r\n                {\r\n                    \"name\": \"create_bar_chart\",\r\n                    \"description\": \"Creates a bar chart given a title, labels, and corresponding values.\",\r\n                    \"parameters\": {\r\n                        \"type\": \"object\",\r\n                        \"properties\": {\r\n                            \"title\": {\r\n                                \"type\": \"string\",\r\n                                \"description\": \"The title for the chart.\"\r\n                            },\r\n                            \"labels\": {\r\n                                \"type\": \"array\",\r\n                                \"items\": {\r\n                                    \"type\": \"string\"\r\n                                },\r\n                                \"description\": \"List of labels for the data points (e.g.[Q1, Q2, Q3]).\"\r\n                            },\r\n                            \"values\": {\r\n                                \"type\": \"array\",\r\n                                \"items\": {\r\n                                    \"type\": \"number\"\r\n                                },\r\n                                \"description\": \"List of numerical values corresponding to the labels (e.g., [50000, 75000, 60000]).\"\r\n                            }\r\n                        },\r\n                        \"required\": [\r\n                            \"title\",\r\n                            \"labels\",\r\n                            \"values\"\r\n                        ]\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Jul 2025 12:51:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=1412"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"functionCall\": {\n                            \"name\": \"create_bar_chart\",\n                            \"args\": {\n                                \"labels\": [\n                                    \"Q1\",\n                                    \"Q2\",\n                                    \"Q3\"\n                                ],\n                                \"title\": \"Quarterly Sales\",\n                                \"values\": [\n                                    50000,\n                                    75000,\n                                    60000\n                                ]\n                            }\n                        },\n                        \"thoughtSignature\": \"CtUDAVSoXO5K2ghZpwFnUqgk4Tdd4R5Z1Y+m9AwH5meTPg+bPylYRAbdeztH4tt8QrI1xFdNk9uAVRFcPERuHBc3kDps9YH/8adrBYvVDoLoronl0IP81MxjM+QmKKteZjlMlMt4XfKFpz1AsQETcVif9S+Jj68cJx/uWkked+vZ0RNrIXd1HLr9aLfbW40el+Kl+ma77lCAYgkf+PerEAiJsLxauuu4QJJ+rdqf9qDsshCXqy7ojGzL1/suHEmi0zHdQQbdnOTnw8z5EsIRKQC76XQaVqt91pjcigExio9Wp9B677NURu5USFcM2WpDM13LpgcINZRx8bxOt6cfL0jR9nZIwL/dUIg1kz0pu1sYOmdKSr2KRhMrjxcG0QNpco7HDSuTngaztZLsHDSP2GkCehjY+1/oXC5pdjOal29Yf8o78yst/mQ1peALyZYhyATDXTtAphqsE28ZulWvj9P1LCl0DgUg/pVU9VQrbBAOL+uR3BI33JMP1IocyjC79Il9yN6aJ3t6iEbhVZIUn7m7qFhJ/Y/gtLARBnhr8jNSBlr4hbncaMo79Ie9IJzEhuou2cHplgZb7dbiKzOWf1slGhdG27TyaT97jnJsZdsIZQ6aVYALwQ==\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 173,\n        \"candidatesTokenCount\": 56,\n        \"totalTokenCount\": 393,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 173\n            }\n        ],\n        \"thoughtsTokenCount\": 164\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"NxRtaL62MbWLmtkPobXJkQI\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -3337,133 +3782,570 @@
 			"name": "Document Understanding",
 			"item": [
 				{
-					"name": "Document : 1.Get the upload url for PDF",
-					"event": [
+					"name": "As Encoded PDF",
+					"item": [
 						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"let upload_url_header = pm.response.headers.get(\"x-goog-upload-url\"); // Get the upload URL from the response headers\r",
-									"if (upload_url_header){\r",
-									"pm.environment.set(\"upload_url_PDF\", upload_url_header);\r",
-									"}\r",
-									"else{\r",
-									"    console.log(\"Unable to get the upload url , check the API KEY or Gemini-Testing environment variables value\")\r",
-									"}"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-Goog-Upload-Command",
-								"value": "start",
-								"type": "text"
+							"name": "PDF Input",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"application/pdf\",\r\n                        \"data\": \"{{Encoded document}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Summarize this document\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								},
+								"description": "Go to the command prompt of your local machine and enter the following command\n\n`certutil -encode input.pdf output.b64`\n\n1. Place your `input.pdf` file in the same directory where you're running CMD (or specify full path).\n    \n2. Run the above command in CMD.\n    \n3. It will create a new file called `output.b64` that contains the Base64-encoded string of the PDF.\n    \n4. open the file and remove the -------BEGIN CERTIFICATE------------ and ----END CERTIFICATE----------------\n    \n5. Copy the remaining base64 string\n    \n6. paste it in the `Encoded Document` Environment variable present in the Gemini-Testing Environment."
 							},
-							{
-								"key": "X-Goog-Upload-Header-Content-Type",
-								"value": "{{MIME_TYPE}}",
-								"type": "text"
-							},
-							{
-								"key": "X-Goog-Upload-Protocol",
-								"value": "resumable",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_PDF}}\"\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"response": [
+								{
+									"name": "PDF input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"application/pdf\",\r\n                        \"data\": \"{{Encoded document}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Summarize this document\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+											"protocol": "https",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"{{version}}",
+												"models",
+												"{{model}}:generateContent"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Referer"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 08 Jul 2025 12:49:12 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "scaffolding on HTTPServer2"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Server-Timing",
+											"value": "gfet4t7; dur=12897"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"This document is primarily composed of **Lorem Ipsum placeholder text**, indicating it serves as a **template or a layout demonstration** rather than containing specific informational content.\\n\\nKey features and elements observed include:\\n\\n*   **Titles and Headings:** Prominent titles like \\\"Lorem ipsum\\\" and \\\"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\\\" along with various subheadings (e.g., \\\"Maecenas mauris lectus, lobortis et purus mattis, blandit dictum tellus.\\\").\\n*   **Paragraphs:** Extensive blocks of text formatted into multiple paragraphs.\\n*   **Bulleted Lists:** Several sections utilize bullet points.\\n*   **Bar Chart:** Page 1 includes a bar chart with generic \\\"Column\\\" and \\\"Row\\\" labels, displaying numerical data.\\n*   **Table:** Page 2 contains a simple table with placeholder column and row data.\\n*   **Image:** Page 4 features an image of a laptop keyboard.\\n*   **Repetition:** Several text blocks and headings are repeated across different pages (e.g., the \\\"Maecenas mauris lectus...\\\" section appears on multiple pages), further emphasizing its role as a layout example.\\n\\nIn essence, the document showcases various textual and visual formatting elements within a multi-page structure, typical of a document design proof or placeholder content.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 1294,\n        \"candidatesTokenCount\": 265,\n        \"totalTokenCount\": 2615,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 4\n            },\n            {\n                \"modality\": \"DOCUMENT\",\n                \"tokenCount\": 1290\n            }\n        ],\n        \"thoughtsTokenCount\": 1056\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"yBNtaImeCP_zqtsPv-vEqA4\"\n}"
 								}
-							}
-						},
-						"url": {
-							"raw": "https://{{host}}/upload/{{version}}/files",
-							"protocol": "https",
-							"host": [
-								"{{host}}"
+							]
+						}
+					]
+				},
+				{
+					"name": "Upload PDF",
+					"item": [
+						{
+							"name": "Document : 1.Get the upload url for PDF",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let upload_url_header = pm.response.headers.get(\"x-goog-upload-url\"); // Get the upload URL from the response headers\r",
+											"if (upload_url_header){\r",
+											"pm.environment.set(\"upload_url_PDF\", upload_url_header);\r",
+											"}\r",
+											"else{\r",
+											"    console.log(\"Unable to get the upload url , check the API KEY or Gemini-Testing environment variables value\")\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
 							],
-							"path": [
-								"upload",
-								"{{version}}",
-								"files"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Document : 2.Upload The PDF",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"const response = pm.response.json();\r",
-									"if(response.file.uri){\r",
-									"    pm.environment.set(\"file_uri_PDF\",response.file.uri);\r",
-									"}\r",
-									"else{\r",
-									"    console.log(\"Unable to get the file_uri_PDF, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
-									"}"
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "start",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Header-Content-Type",
+										"value": "{{MIME_TYPE_PDF}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Protocol",
+										"value": "resumable",
+										"type": "text"
+									}
 								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-Goog-Upload-Offset",
-								"value": "0",
-								"type": "text"
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_PDF}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/upload/{{version}}/files",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"upload",
+										"{{version}}",
+										"files"
+									]
+								},
+								"description": "To make this request , the following values must be obtained first :\n\n- MIME_TYPE_PDF\n    \n\nIt is the type of the video (example - application/pdf). To get this follow the steps below :\n\n1. copy this command : `file -b --mime-type \"${PDF_PATH}\"` (replace PDF_PATH with the path of the pdf saved on your local machine example - C/Users/John/Desktop/Docs/sample_pdf.pdf )\n    \n\n<img src=\"https://content.pstmn.io/04c67200-1a52-4cd1-aa06-b8d43c3ef0d7/U2NyZWVuc2hvdCAyMDI1LTA3LTEwIDEyMzM0OC5wbmc=\" alt=\"\" height=\"191\" width=\"1919\">\n\n1. Paste it in the command prompt of your local machine and put the value in the `MIME_TYPE_PDF`environment variable present in the Gemini-Testing Environment.\n    \n\n- DISPLAY_NAME_PDF\n    \n\nSet a display name of your video for future reference and storage.Save it in the `DISPLAY_NAME_PDF` environment variable.\n\nNow , send the POST request.\n\n**NOTE :** Once the above tasks are completed and the POST request is sent, the `upload_url_pdf` environment variable will be automatically set with the upload URL. This URL will then be used as the endpoint for uploading the video."
 							},
-							{
-								"key": "X-Goog-Upload-Command",
-								"value": "upload, finalize",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "file",
-							"file": {
-								"src": ""
-							}
+							"response": [
+								{
+									"name": "Document : 1.Get the upload url for PDF",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Goog-Upload-Command",
+												"value": "start",
+												"type": "text"
+											},
+											{
+												"key": "X-Goog-Upload-Header-Content-Type",
+												"value": "{{MIME_TYPE_PDF}}",
+												"type": "text"
+											},
+											{
+												"key": "X-Goog-Upload-Protocol",
+												"value": "resumable",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_PDF}}\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{host}}/upload/{{version}}/files",
+											"protocol": "https",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"upload",
+												"{{version}}",
+												"files"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain; charset=utf-8"
+										},
+										{
+											"key": "X-GUploader-UploadID",
+											"value": "ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA"
+										},
+										{
+											"key": "X-Goog-Upload-Status",
+											"value": "active"
+										},
+										{
+											"key": "X-Goog-Upload-URL",
+											"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA&upload_protocol=resumable"
+										},
+										{
+											"key": "X-Goog-Upload-Control-URL",
+											"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA&upload_protocol=resumable"
+										},
+										{
+											"key": "X-Goog-Upload-Chunk-Granularity",
+											"value": "8388608"
+										},
+										{
+											"key": "X-Goog-Upload-Header-x-google-esf-cloud-client-params",
+											"value": "backend_service_name: \"generativelanguage.googleapis.com\" backend_fully_qualified_method: \"google.ai.generativelanguage.v1beta.FileService.CreateFile\""
+										},
+										{
+											"key": "X-Goog-Upload-Header-X-Google-Session-Info",
+											"value": "GgQYECgLIAE6IxIhZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29t"
+										},
+										{
+											"key": "X-Goog-Upload-Header-X-Google-Backends",
+											"value": "unix:/tmp/esfbackend.1751969205.834630.1315945"
+										},
+										{
+											"key": "X-Goog-Upload-Header-Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "X-Goog-Upload-Header-X-Google-Security-Signals",
+											"value": "FRAMEWORK=ONE_PLATFORM,ENV=borg,ENV_DEBUG=borg_user:genai-api;borg_job:prod.genai-api"
+										},
+										{
+											"key": "X-Goog-Upload-Header-Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "X-Goog-Upload-Header-Vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "X-Goog-Upload-Header-Vary",
+											"value": "Referer"
+										},
+										{
+											"key": "X-Goog-Upload-Header-X-Google-GFE-Backend-Request-Cost",
+											"value": "9.4228"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 09 Jul 2025 10:09:49 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "UploadServer"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
 						},
-						"url": {
-							"raw": "{{upload_url_PDF}}",
-							"host": [
-								"{{upload_url_PDF}}"
+						{
+							"name": "Document : 2.Upload The PDF",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();\r",
+											"if(response.file.uri){\r",
+											"    pm.environment.set(\"file_uri_PDF\",response.file.uri);\r",
+											"}\r",
+											"else{\r",
+											"    console.log(\"Unable to get the file_uri_PDF, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "postman-cloud:///1f05cace-9f28-4200-b674-226a7e2c9942"
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_PDF}}",
+									"host": [
+										"{{upload_url_PDF}}"
+									]
+								},
+								"description": "- In the body section of this request, upload the pdf from your local machine to the binary type in the body.\n    \n- Once the video is uploaded and the POST request is sent, the `file_uri_pdf` environment variable will be automatically updated. This URI will be used for content generation ijn the next request."
+							},
+							"response": [
+								{
+									"name": "Document : 2.Upload The PDF",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-Goog-Upload-Offset",
+												"value": "0",
+												"type": "text"
+											},
+											{
+												"key": "X-Goog-Upload-Command",
+												"value": "upload, finalize",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "file",
+											"file": {
+												"src": "postman-cloud:///1f05cace-9f28-4200-b674-226a7e2c9942"
+											}
+										},
+										"url": {
+											"raw": "{{upload_url_PDF}}",
+											"host": [
+												"{{upload_url_PDF}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "X-GUploader-UploadID",
+											"value": "ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA"
+										},
+										{
+											"key": "X-Goog-Upload-Status",
+											"value": "final"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Referer"
+										},
+										{
+											"key": "Content-Length",
+											"value": "541"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 09 Jul 2025 10:10:23 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "UploadServer"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"file\": {\n        \"name\": \"files/dta7rmx6j7kt\",\n        \"displayName\": \"Test PDF\",\n        \"mimeType\": \"application/pdf\",\n        \"sizeBytes\": \"469513\",\n        \"createTime\": \"2025-07-09T10:10:23.813124Z\",\n        \"updateTime\": \"2025-07-09T10:10:23.813124Z\",\n        \"expirationTime\": \"2025-07-11T10:10:23.773719369Z\",\n        \"sha256Hash\": \"ZTgzMDE0ZTcxZmM4ZTc3MmI3Njg5YTNmMWM4NjI4YTJlZjI4NTJhMWEzOGUzMWJkZGFmODIzNjE1NTcwZTcwOQ==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/dta7rmx6j7kt\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Document : 3.Generate Content",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Summarize the document.\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE_PDF}}\",\r\n                        \"file_uri\": \"{{file_uri_PDF}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								},
+								"description": "- Now that everything's done, just tell the model to generate content based on the PDF Uploaded."
+							},
+							"response": [
+								{
+									"name": "Document : 3.Generate Content",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Summarize the document.\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE_PDF}}\",\r\n                        \"file_uri\": \"{{file_uri_PDF}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+											"protocol": "https",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"{{version}}",
+												"models",
+												"{{model}}:generateContent"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=UTF-8"
+										},
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "X-Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Referer"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 09 Jul 2025 10:12:50 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "scaffolding on HTTPServer2"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "0"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Server-Timing",
+											"value": "gfet4t7; dur=10578"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"The document is a sample or placeholder document, primarily composed of \\\"Lorem ipsum\\\" text. Its main purpose appears to be to demonstrate document layout and formatting rather than conveying specific information.\\n\\nIt includes various structural and visual components such as:\\n*   Headings and subheadings\\n*   Paragraphs of text\\n*   Bulleted lists\\n*   A bar chart visualizing \\\"Column 1,\\\" \\\"Column 2,\\\" and \\\"Column 3\\\" across \\\"Row 1\\\" to \\\"Row 4\\\"\\n*   A data table with \\\"Lorem ipsum\\\" headers\\n*   An image of a laptop keyboard\\n\\nMuch of the textual content is repeated across multiple pages to fill space. Therefore, the document does not contain any specific factual or substantive information to summarize beyond its structure and design elements.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 1295,\n        \"candidatesTokenCount\": 161,\n        \"totalTokenCount\": 2619,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 5\n            },\n            {\n                \"modality\": \"DOCUMENT\",\n                \"tokenCount\": 1290\n            }\n        ],\n        \"thoughtsTokenCount\": 1163\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"okBuaIvIEtjUz7IP9PiNqAk\"\n}"
+								}
 							]
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Document : 3.Generate Content",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"'Hi, This is a picture of me. Can you add a llama next to me\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"data\": {{file_uri_PDF}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						}
-					},
-					"response": []
+					]
 				}
 			]
 		},
@@ -3500,7 +4382,7 @@
 							},
 							{
 								"key": "X-Goog-Upload-Header-Content-Type",
-								"value": "{{MIME_TYPE}}",
+								"value": "{{MIME_TYPE_IMAGE}}",
 								"type": "text"
 							},
 							{
@@ -3529,9 +4411,138 @@
 								"{{version}}",
 								"files"
 							]
-						}
+						},
+						"description": "# Purpose\n\nThe purpose of this request is to get the upload url in order to upload an image so that it can be used to Generate Content using the Gemini Models.\n\nTo make this request , the following values must be obtained first :\n\n- MIME_TYPE_IMAGE\n    \n\nIt is the type of the video (example - image/jpeg). To get this follow the steps below :\n\n1. copy this command : `file -b --mime-type \"${IMAGE_PATH}\"` (replace IMAGE_PATH with the path of the Image saved on your local machine example - (C/Users/John/Desktop/Docs/sample_image.jpeg)\n    \n2. Paste it in the command prompt of your local machine and put the value in the `MIME_TYPE_IMAGE`environment variable present in the Gemini-Testing Environment.\n    \n\n- DISPLAY_NAME_IMAGE\n    \n\nSet a display name of your video for future reference and storage.Save it in the `DISPLAY_NAME_IMAGE` environment variable.\n\nNow , send the POST request.\n\n**NOTE :** Once the above tasks are completed and the POST request is sent, the `upload_url_image`environment variable will be automatically set with the upload URL. This URL will then be used as the endpoint for uploading the video.\n\n# Expected Behaviour\n\nThe response body will be empty and the headers will contain \\[\"key\":\"X-Goog-Upload-URL\"\\] whose value will be automatically stored in the `upload_url_image` environment variable which will be used as an endpoint in the next request to upload the image."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "1.Get the Upload Url",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "start",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Header-Content-Type",
+										"value": "{{MIME_TYPE}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Protocol",
+										"value": "resumable",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/upload/{{version}}/files",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"upload",
+										"{{version}}",
+										"files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH88JusAV2h3bx-1SCyXFU6NA377QofTrC9GYyrHtPvIG6s-mqQRNERCu663EQtOwoL_thx4pANFLWIksyj00uqVRARQLENLRAv6XHuexzQ"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "active"
+								},
+								{
+									"key": "X-Goog-Upload-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88JusAV2h3bx-1SCyXFU6NA377QofTrC9GYyrHtPvIG6s-mqQRNERCu663EQtOwoL_thx4pANFLWIksyj00uqVRARQLENLRAv6XHuexzQ&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Control-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88JusAV2h3bx-1SCyXFU6NA377QofTrC9GYyrHtPvIG6s-mqQRNERCu663EQtOwoL_thx4pANFLWIksyj00uqVRARQLENLRAv6XHuexzQ&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Chunk-Granularity",
+									"value": "8388608"
+								},
+								{
+									"key": "X-Goog-Upload-Header-x-google-esf-cloud-client-params",
+									"value": "backend_service_name: \"generativelanguage.googleapis.com\" backend_fully_qualified_method: \"google.ai.generativelanguage.v1beta.FileService.CreateFile\""
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Session-Info",
+									"value": "GgQYECgLIAE6IxIhZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29t"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Backends",
+									"value": "unix:/tmp/esfbackend.1751970584.759356.2792584"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Security-Signals",
+									"value": "FRAMEWORK=ONE_PLATFORM,ENV=borg,ENV_DEBUG=borg_user:genai-api;borg_job:prod.genai-api"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-GFE-Backend-Request-Cost",
+									"value": "12.9404"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 07:45:37 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
 				},
 				{
 					"name": "2.Upload The Image",
@@ -3570,7 +4581,7 @@
 						"body": {
 							"mode": "file",
 							"file": {
-								"src": ""
+								"src": "postman-cloud:///1f057e51-0c8a-4e80-a4de-5718fd6e71c9"
 							}
 						},
 						"url": {
@@ -3578,9 +4589,88 @@
 							"host": [
 								"{{upload_url_image}}"
 							]
-						}
+						},
+						"description": "- In the body section of this request, upload the image from your local machine to the binary type in the body section of the request.\n    \n- Once the image is uploaded and the POST request is sent, the `file_uri_image` environment variable will be automatically updated. This URI will be used for content generation in the next request."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "2.Upload The Image",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "postman-cloud:///1f057e51-0c8a-4e80-a4de-5718fd6e71c9"
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_image}}",
+									"host": [
+										"{{upload_url_image}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH88JusAV2h3bx-1SCyXFU6NA377QofTrC9GYyrHtPvIG6s-mqQRNERCu663EQtOwoL_thx4pANFLWIksyj00uqVRARQLENLRAv6XHuexzQ"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "final"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Length",
+									"value": "532"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 07:45:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"file\": {\n        \"name\": \"files/3zvkqbepok2z\",\n        \"displayName\": \"Test\",\n        \"mimeType\": \"image/jpeg\",\n        \"sizeBytes\": \"224374\",\n        \"createTime\": \"2025-07-09T07:45:53.997681Z\",\n        \"updateTime\": \"2025-07-09T07:45:53.997681Z\",\n        \"expirationTime\": \"2025-07-11T07:45:53.949894693Z\",\n        \"sha256Hash\": \"MWQ0MDkxM2YyOWZjMjU5NWMwNjgwZjdkNDUzZTM5Y2IwZTdhMjM0ZjFmYzk3ZDBlNmJhZmEzNTg3NDNjNGNlYg==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/3zvkqbepok2z\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "3.Generate Content",
@@ -3589,15 +4679,116 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Caption this image\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"data\": {{file_uri_image}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE_IMAGE}}\",\r\n                        \"file_uri\": \"{{file_uri_image}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Caption this image.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
-						}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						},
+						"description": "- Now that everything's done, just tell the model to generate content based on the Image Uploaded."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "3.Generate Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"file_uri\": \"{{file_uri_image}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Caption this image.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 07:57:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=9589"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Here are a few options for captioning this image, ranging from descriptive to more poetic:\\n\\n**Descriptive:**\\n\\n*   \\\"A breathtaking sunset paints the sky and ocean in vibrant hues of gold and orange, reflecting beautifully on the wet sand of a rugged beach, with dramatic cliffs towering on the right.\\\"\\n*   \\\"Golden hour at its finest: the sun dips below the horizon, casting a warm, shimmering glow across the water and illuminating the textured face of the coastal cliffs.\\\"\\n*   \\\"The sun sets over a tranquil ocean, its light creating a dazzling path on the wet sand, framed by a majestic rock formation on the right.\\\"\\n\\n**Evocative/Poetic:**\\n\\n*   \\\"Nature's masterpiece unfolding as the sun sets, bathing the rugged coastline in a warm, ethereal glow.\\\"\\n*   \\\"Lost in the golden embrace of a perfect beach sunset, where the waves whisper secrets to the ancient cliffs.\\\"\\n*   \\\"Where the sky meets the sea in a symphony of light and shadow, kissed by the last rays of the sun.\\\"\\n\\n**Short & Sweet (Good for social media):**\\n\\n*   \\\"Golden hour magic on the coast.\\\"\\n*   \\\"Sunset perfection.\\\"\\n*   \\\"Pure serenity by the sea.\\\"\\n*   \\\"Coastal dreams.\\\"\\n*   \\\"Breathtaking view to end the day.\\\"\\n\\n**You can also add relevant hashtags, such as:**\\n#Sunset #BeachSunset #GoldenHour #CoastalLife #NaturePhotography #Landscape #OceanView #Cliffs #TravelGram #BeautifulDestinations #Peaceful #Serene #BeachLife\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 262,\n        \"candidatesTokenCount\": 328,\n        \"totalTokenCount\": 1747,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 4\n            },\n            {\n                \"modality\": \"IMAGE\",\n                \"tokenCount\": 258\n            }\n        ],\n        \"thoughtsTokenCount\": 1157\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"7CBuaLziHpatz7IP2oXD8Ak\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -3634,7 +4825,7 @@
 							},
 							{
 								"key": "X-Goog-Upload-Header-Content-Type",
-								"value": "{{MIME_TYPE}}",
+								"value": "{{MIME_TYPE_VIDEO}}",
 								"type": "text"
 							},
 							{
@@ -3663,9 +4854,138 @@
 								"{{version}}",
 								"files"
 							]
-						}
+						},
+						"description": "# Purpose\n\nThe purpose of this request is to get the upload url in order to upload a video so that it can be used to Generate Content using the Gemini Models.\n\nTo make this request , the following values must be obtained first :\n\n- MIME_TYPE_VIDEO\n    \n\nIt is the type of the video (example - video/mp4). To get this follow the steps below :\n\n1. copy this command : `file -b --mime-type \"${VIDEO_PATH}\"` (replace VIDEO_PATH with the path of the Image saved on your local machine example - (C/Users/John/Desktop/Docs/sample_video.mp4)\n    \n2. Paste it in the command prompt of your local machine and put the value in the `MIME_TYPE_VIDEO`environment variable present in the Gemini-Testing Environment.\n    \n\n- DISPLAY_NAME_VIDEO\n    \n\nSet a display name of your video for future reference and storage.Save it in the `DISPLAY_NAME_VIDEO` environment variable.\n\nNow , send the POST request.\n\n**NOTE :** Once the above tasks are completed and the POST request is sent, the `upload_url_video`environment variable will be automatically set with the upload URL. This URL will then be used as the endpoint for uploading the video.\n\n# Expected Behaviour\n\nThe response body will be empty and the headers will contain \\[\"key\":\"X-Goog-Upload-URL\"\\] whose value will be automatically stored in the `upload_url_video` environment variable which will be used as an endpoint in the next request to upload the video."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Video : 1.Get the Upload Url Video",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "start",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Header-Content-Type",
+										"value": "{{MIME_TYPE}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Protocol",
+										"value": "resumable",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_Video}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/upload/{{version}}/files",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"upload",
+										"{{version}}",
+										"files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH8-bVrCDwQBxjjuMnuDjjEDIXB_JqaEBRCZ4ageLZSQJXIFbkbtApSJLiB0QDh5I6TgThK-jogt9u-5E6YvnelyWdAv9NUopCnj4FA3C0w"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "active"
+								},
+								{
+									"key": "X-Goog-Upload-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH8-bVrCDwQBxjjuMnuDjjEDIXB_JqaEBRCZ4ageLZSQJXIFbkbtApSJLiB0QDh5I6TgThK-jogt9u-5E6YvnelyWdAv9NUopCnj4FA3C0w&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Control-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH8-bVrCDwQBxjjuMnuDjjEDIXB_JqaEBRCZ4ageLZSQJXIFbkbtApSJLiB0QDh5I6TgThK-jogt9u-5E6YvnelyWdAv9NUopCnj4FA3C0w&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Chunk-Granularity",
+									"value": "8388608"
+								},
+								{
+									"key": "X-Goog-Upload-Header-x-google-esf-cloud-client-params",
+									"value": "backend_service_name: \"generativelanguage.googleapis.com\" backend_fully_qualified_method: \"google.ai.generativelanguage.v1beta.FileService.CreateFile\""
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Session-Info",
+									"value": "GgQYECgLIAE6IxIhZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29t"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Backends",
+									"value": "unix:/tmp/esfbackend.1751969191.963185.2991656"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Security-Signals",
+									"value": "FRAMEWORK=ONE_PLATFORM,ENV=borg,ENV_DEBUG=borg_user:genai-api;borg_job:prod.genai-api"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-GFE-Backend-Request-Cost",
+									"value": "18.8693"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 08:56:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
 				},
 				{
 					"name": "2.Upload The Video",
@@ -3704,7 +5024,7 @@
 						"body": {
 							"mode": "file",
 							"file": {
-								"src": ""
+								"src": "postman-cloud:///1f05ca20-3a33-43d0-9084-97cdf553930c"
 							}
 						},
 						"url": {
@@ -3712,9 +5032,88 @@
 							"host": [
 								"{{upload_url_image}}"
 							]
-						}
+						},
+						"description": "- In the body section of this request, upload the video from your local machine to the binary type in the body section of the request.\n    \n- Once the image is uploaded and the POST request is sent, the `file_uri_`video environment variable will be automatically updated. This URI will be used for content generation in the next request."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "2.Upload The Video",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "postman-cloud:///1f05ca20-3a33-43d0-9084-97cdf553930c"
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_image}}",
+									"host": [
+										"{{upload_url_image}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH8-bVrCDwQBxjjuMnuDjjEDIXB_JqaEBRCZ4ageLZSQJXIFbkbtApSJLiB0QDh5I6TgThK-jogt9u-5E6YvnelyWdAv9NUopCnj4FA3C0w"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "final"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Length",
+									"value": "542"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 08:56:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"file\": {\n        \"name\": \"files/edos4jwxumh0\",\n        \"displayName\": \"test video\",\n        \"mimeType\": \"video/mp4\",\n        \"sizeBytes\": \"2266719\",\n        \"createTime\": \"2025-07-09T08:56:41.645286Z\",\n        \"updateTime\": \"2025-07-09T08:56:41.645286Z\",\n        \"expirationTime\": \"2025-07-11T08:56:41.436403464Z\",\n        \"sha256Hash\": \"MzE5NDRiYzU5ZTgxOTBiMmIxYWZiZjM4NjQzODIyNWE4YWU0NmU2YmI3MDBjNTAyYTljNjQyYTBjMjZiOWYzMA==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/edos4jwxumh0\",\n        \"state\": \"PROCESSING\",\n        \"source\": \"UPLOADED\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "3.Generate Content",
@@ -3723,15 +5122,116 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Summarize this video. Then create a quiz with an answer key based on the information in this video.\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"data\": {{file_uri_video}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE_VIDEO}}\",\r\n                        \"file_uri\": \"{{file_uri_video}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Summarize this video. Then create a quiz with an answer key based on the information in this video.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
-						}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						},
+						"description": "- Now that everything's done, just tell the model to generate content based on the videoUploaded."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "3.Generate Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"file_uri\": \"{{file_uri_video}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Summarize this video. Then create a quiz with an answer key based on the information in this video.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 08:57:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=13607"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"This video is a tranquil montage showcasing various animals in their natural habitats. It opens with a herd of horses, predominantly brown with one white horse, galloping through shallow water along a sandy beach as waves break in the background. The scene then shifts to a group of brown birds (likely boobies) perched on a grassy dune, with some taking flight. Following this, several seals are seen on a sandy shore, including a distinctive light-colored pup interacting with darker adults. The video then presents a vast colony of white birds with yellow heads (identified as gannets) densely packed on an open, earthy terrain. A close-up shot features a furry, brown-grey marmot-like animal peacefully munching on green grass. Finally, a koala is shown resting in the crook of a tree, partially obscured by leaves, and lets out a soft yawn. The video concludes with a wider view of the massive gannet colony under a partly cloudy sky, with many birds on the ground and some soaring overhead, emphasizing the scale of their gathering by the ocean.\\n\\n---\\n\\n**Video Quiz:**\\n\\n1.  What animals are shown running on the beach at the beginning of the video?\\n2.  What color is one of the horses that stands out from the rest on the beach?\\n3.  What type of environment are the brown birds seen in before some of them take flight?\\n4.  What is a unique physical characteristic of one of the seals shown on the shore?\\n5.  Describe the appearance of the large colony of white birds.\\n6.  What activity is the furry, brown-grey animal (marmot-like) engaged in?\\n7.  What animal is shown resting and yawning in a tree?\\n\\n---\\n\\n**Answer Key:**\\n\\n1.  Horses\\n2.  White\\n3.  A grassy dune/hill\\n4.  It is light-colored / white.\\n5.  They are white with yellow/golden heads and black-tipped wings.\\n6.  Eating grass.\\n7.  A koala.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 8871,\n        \"candidatesTokenCount\": 430,\n        \"totalTokenCount\": 10884,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 21\n            },\n            {\n                \"modality\": \"VIDEO\",\n                \"tokenCount\": 7890\n            },\n            {\n                \"modality\": \"AUDIO\",\n                \"tokenCount\": 960\n            }\n        ],\n        \"thoughtsTokenCount\": 1583\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"5C5uaLLSKt6gz7IP0MWzsQs\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -3768,7 +5268,7 @@
 							},
 							{
 								"key": "X-Goog-Upload-Header-Content-Type",
-								"value": "{{MIME_TYPE}}",
+								"value": "{{MIME_TYPE_AUDIO}}",
 								"type": "text"
 							},
 							{
@@ -3779,7 +5279,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_Video}}\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_Audio}}\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3797,9 +5297,138 @@
 								"{{version}}",
 								"files"
 							]
-						}
+						},
+						"description": "# Purpose\n\nThe purpose of this request is to get the upload url in order to upload a video so that it can be used to Generate Content using the Gemini Models.\n\nTo make this request , the following values must be obtained first :\n\n- MIME_TYPE_AUDIO\n    \n\nIt is the type of the video (example - audio/mp3). To get this follow the steps below :\n\n1. copy this command : `file -b --mime-type \"${AUDIO_PATH}\"` (replace AUDIO_PATH with the path of the audio saved on your local machine example - (C/Users/John/Desktop/Docs/sample_audio.mp3)\n    \n2. Paste it in the command prompt of your local machine and put the value in the `MIME_TYPE_AUDIO`environment variable present in the Gemini-Testing Environment.\n    \n\n- DISPLAY_NAME_AUDIO\n    \n\nSet a display name of your video for future reference and storage.Save it in the `DISPLAY_NAME_AUDIO` environment variable.\n\nNow , send the POST request.\n\n**NOTE :** Once the above tasks are completed and the POST request is sent, the `upload_url_audio`environment variable will be automatically set with the upload URL. This URL will then be used as the endpoint for uploading the video.\n\n# Expected Behaviour\n\nThe response body will be empty and the headers will contain \\[\"key\":\"X-Goog-Upload-URL\"\\] whose value will be automatically stored in the `upload_url_audio` environment variable which will be used as an endpoint in the next request to upload the audio."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "1.Get the Upload Url Audio",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "start",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Header-Content-Type",
+										"value": "{{MIME_TYPE_AUDIO}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Protocol",
+										"value": "resumable",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_Audio}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/upload/{{version}}/files",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"upload",
+										"{{version}}",
+										"files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH88afeaynYN3j1j-bje50UXkc5x-1LQpeecLBMTnBGpeeKkJ2Rl4Or8Q84gMuOCB8CjmyEayQI8hXJtlLTKw-2UcdOk9kSVIi2lRJkCu7bk"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "active"
+								},
+								{
+									"key": "X-Goog-Upload-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88afeaynYN3j1j-bje50UXkc5x-1LQpeecLBMTnBGpeeKkJ2Rl4Or8Q84gMuOCB8CjmyEayQI8hXJtlLTKw-2UcdOk9kSVIi2lRJkCu7bk&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Control-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88afeaynYN3j1j-bje50UXkc5x-1LQpeecLBMTnBGpeeKkJ2Rl4Or8Q84gMuOCB8CjmyEayQI8hXJtlLTKw-2UcdOk9kSVIi2lRJkCu7bk&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Chunk-Granularity",
+									"value": "8388608"
+								},
+								{
+									"key": "X-Goog-Upload-Header-x-google-esf-cloud-client-params",
+									"value": "backend_service_name: \"generativelanguage.googleapis.com\" backend_fully_qualified_method: \"google.ai.generativelanguage.v1beta.FileService.CreateFile\""
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Session-Info",
+									"value": "GgQYECgLIAE6IxIhZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29t"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Backends",
+									"value": "unix:/tmp/esfbackend.1751966697.12916.2725853"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Security-Signals",
+									"value": "FRAMEWORK=ONE_PLATFORM,ENV=borg,ENV_DEBUG=borg_user:genai-api;borg_job:prod.genai-api"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-GFE-Backend-Request-Cost",
+									"value": "14.2951"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 09:16:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
 				},
 				{
 					"name": "2.Upload The Audio",
@@ -3813,7 +5442,7 @@
 									"    pm.environment.set(\"file_uri_audio\",response.file.uri);\r",
 									"}\r",
 									"else{\r",
-									"    console.log(\"Unable to get the file_uri_audio, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
+									"    console.log(\"Unable to get the file_uri_audio, kindly check the audio uploaded ,upload_url_audio and the headers\")\r",
 									"}"
 								],
 								"type": "text/javascript",
@@ -3838,34 +5467,226 @@
 						"body": {
 							"mode": "file",
 							"file": {
-								"src": ""
+								"src": "postman-cloud:///1f05ca58-5bcf-4d80-af2e-d447158c82ae"
 							}
 						},
 						"url": {
-							"raw": "{{upload_url_image}}",
+							"raw": "{{upload_url_audio}}",
 							"host": [
-								"{{upload_url_image}}"
+								"{{upload_url_audio}}"
 							]
-						}
+						},
+						"description": "- In the body section of this request, upload the audio from your local machine to the binary type in the body section of the request.\n    \n- Once the audio is uploaded and the POST request is sent, the `file_uri_audio` environment variable will be automatically updated. This URI will be used for content generation ijn the next request."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "2.Upload The Audio",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "postman-cloud:///1f05ca58-5bcf-4d80-af2e-d447158c82ae"
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_audio}}",
+									"host": [
+										"{{upload_url_audio}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH8_dRKjppRwBgzY8DTMpUS32k6GZ0ie5H24VD44mPwSmjRcsuEw0DKZDFWqZY6SaDnHtLLYu2cFUUAjifPmUVAra2p4s2xXaWuin4emIgCY"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "final"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Length",
+									"value": "538"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 09:18:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"file\": {\n        \"name\": \"files/5saelucbuy17\",\n        \"displayName\": \"Test audio\",\n        \"mimeType\": \"audio/mp3\",\n        \"sizeBytes\": \"2158877\",\n        \"createTime\": \"2025-07-09T09:18:15.997028Z\",\n        \"updateTime\": \"2025-07-09T09:18:15.997028Z\",\n        \"expirationTime\": \"2025-07-11T09:18:15.863243938Z\",\n        \"sha256Hash\": \"MDM2MmE2NGY2YzBkY2I3MzQ3YjRhZjhiYjIyODI4ZDc2NTkxMmQ1OGE4YmVjZWE1OGZmNjEwNDYwY2Q4Mzk2Yg==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/5saelucbuy17\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "3.Generate Content",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Summarize this video. Then create a quiz with an answer key based on the information in this video.\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"data\": {{flie_uri_audio}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"responseModalities\": [\r\n            \"TEXT\",\r\n            \"IMAGE\"\r\n        ]\r\n    }\r\n}",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                 {\r\n                    \"text\": \"Describe this audio clip.\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE_AUDIO}}\",\r\n                        \"file_uri\": \"{{file_uri_audio}}\"\r\n                    }\r\n                }\r\n               \r\n            ]\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
-						}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						},
+						"description": "- Now that everything's done, just tell the model to generate content based on the audio Uploaded."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "3.Generate Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                 {\r\n                    \"text\": \"Describe this audio clip.\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE_AUDIO}}\",\r\n                        \"file_uri\": \"{{file_uri_audio}}\"\r\n                    }\r\n                }\r\n               \r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 09:18:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=7807"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"This audio clip is dominated by **Dual-Tone Multi-Frequency (DTMF) tones**, commonly known as **touch-tones** or **telephone keypad sounds**.\\n\\nThe clip features a sequence of these beeping tones, which evolve throughout:\\n\\n*   **Initial Phase (0:00 - ~0:08):** Starts with a steady, almost rhythmic alternating pattern of two different DTMF tones, reminiscent of a continuous busy signal or a specific data tone.\\n*   **Faster Sequences (~0:08 - ~0:24):** The pattern then shifts to more rapid, complex sequences of tones, resembling numbers being dialed quickly on a phone keypad or modem-like communication. The specific tones and rhythm change multiple times within this period.\\n*   **Rhythmic Presses (~0:24 - ~0:32):** The tones then become more distinct, individual \\\"beeps,\\\" spaced out in a rhythmic fashion, like someone pressing different keys on a phone at a consistent pace.\\n*   **Varying Patterns (~0:32 - End):** The clip continues with variations of these DTMF patterns, sometimes returning to faster sequences, other times maintaining a more distinct, rhythmic quality.\\n\\nOverall, the audio sounds like an automated process involving telephone dialing or data transmission using touch-tones, with distinct phases and evolving patterns.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 1732,\n        \"candidatesTokenCount\": 279,\n        \"totalTokenCount\": 2665,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 5\n            },\n            {\n                \"modality\": \"AUDIO\",\n                \"tokenCount\": 1727\n            }\n        ],\n        \"thoughtsTokenCount\": 654\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"9DNuaN-aC96JmtkPnNXXoQ4\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -3897,9 +5718,98 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "## Generate Content API\n\nThis endpoint allows users to generate content based on specified tools and input text. It utilizes a model to process the request and return generated content.\n\n### Request\n\n**Method:** POST  \n**Endpoint:** `https://{{host}}/{{version}}/models/{{model}}:generateContent`\n\n#### Request Body\n\nThe request body must be in JSON format and includes the following parameters:\n\n- `tools` (Array of Objects): A list of tools to be used in generating content. Each tool can specify different functionalities.\n    \n    - `code_execution` (Object): An optional tool for executing code.\n        \n- `contents` (Object): Contains the content to be processed.\n    \n    - `parts` (Object):\n        \n        - `text` (String): The input text that the model will use to generate content. For example, \"What is the sum of the first 5 ...\".\n            \n\n### Response\n\nThe response will be a JSON object containing the following structure:\n\n- `candidates` (Array of Objects): A list of generated content candidates.\n    \n    - `content` (Object): Contains the generated content.\n        \n        - `parts` (Array of Objects):\n            \n            - `text` (String): The generated text.\n                \n        - `role` (String): The role associated with the generated content.\n            \n- `finishReason` (String): The reason for finishing the generation process.\n    \n- `index` (Integer): The index of the candidate in the list.\n    \n- `usageMetadata` (Object): Metadata about the usage of tokens during the request.\n    \n    - `promptTokenCount` (Integer): The count of tokens used in the prompt.\n        \n    - `candidatesTokenCount` (Integer): The count of tokens used in the candidates.\n        \n    - `totalTokenCount` (Integer): The total count of tokens used.\n        \n    - `promptTokensDetails` (Array of Objects): Details about the tokens used in the prompt.\n        \n        - `modality` (String): The modality of the tokens.\n            \n        - `tokenCount` (Integer): The count of tokens for that modality.\n            \n    - `toolUsePromptTokenCount` (Integer): The count of tokens used for tool prompts.\n        \n    - `toolUsePromptTokensDetails` (Array of Objects): Details about the tokens used for tool prompts.\n        \n        - `modality` (String): The modality of the tokens.\n            \n        - `tokenCount` (Integer): The count of tokens for that modality.\n            \n    - `thoughtsTokenCount` (Integer): The count of tokens used for thoughts.\n        \n- `modelVersion` (String): The version of the model used for content generation.\n    \n- `responseId` (String): A unique identifier for the response.\n    \n\nThis structure allows users to understand the generated content and the token usage associated with their request."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Enable code execution",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tools\": [\r\n        {\r\n            \"code_execution\": {}\r\n        }\r\n    ],\r\n    \"contents\": {\r\n        \"parts\": {\r\n            \"text\": \"What is the sum of the first 50 prime numbers? Generate and run code for the calculation, and make sure you get all 50.\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 07:42:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=9397"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"To find the sum of the first 50 prime numbers, I will generate the prime numbers one by one and add them to a list until I have 50. Then I will sum the numbers in the list.\\n\\nHere's the plan:\\n1.  Define a function `is_prime` to check if a number is prime.\\n2.  Initialize an empty list `primes` and a variable `num` starting from 2.\\n3.  Loop until the `primes` list contains 50 numbers:\\n    *   Check if `num` is prime using `is_prime`.\\n    *   If `num` is prime, add it to the `primes` list.\\n    *   Increment `num`.\\n4.  Calculate the sum of all numbers in the `primes` list.\\n\\n\"\n                    },\n                    {\n                        \"executableCode\": {\n                            \"language\": \"PYTHON\",\n                            \"code\": \"def is_prime(n):\\n    if n < 2:\\n        return False\\n    for i in range(2, int(n**0.5) + 1):\\n        if n % i == 0:\\n            return False\\n    return True\\n\\nprimes = []\\nnum = 2\\nwhile len(primes) < 50:\\n    if is_prime(num):\\n        primes.append(num)\\n    num += 1\\n\\nsum_of_primes = sum(primes)\\n\\nprint(f\\\"The first 50 prime numbers are: {primes}\\\")\\nprint(f\\\"The sum of the first 50 prime numbers is: {sum_of_primes}\\\")\\n\"\n                        }\n                    },\n                    {\n                        \"codeExecutionResult\": {\n                            \"outcome\": \"OUTCOME_OK\",\n                            \"output\": \"The first 50 prime numbers are: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229]\\nThe sum of the first 50 prime numbers is: 5117\\n\"\n                        }\n                    },\n                    {\n                        \"text\": \"The sum of the first 50 prime numbers is 5117.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 31,\n        \"candidatesTokenCount\": 343,\n        \"totalTokenCount\": 1204,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 31\n            }\n        ],\n        \"toolUsePromptTokenCount\": 718,\n        \"toolUsePromptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 718\n            }\n        ],\n        \"thoughtsTokenCount\": 112\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"Vx1uaMaSLqLqqtsPkOuBwAs\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Use code execution in chat",
@@ -3926,9 +5836,98 @@
 								"models",
 								"{{model}}:generateContent"
 							]
-						}
+						},
+						"description": "## Endpoint Description\n\nThis endpoint is designed to generate content based on provided tools and user input. It processes a request containing specific instructions and returns generated content along with metadata regarding the usage of tokens.\n\n### Request Format\n\n- **Method**: POST\n    \n- **URL**: `https://{{host}}/{{version}}/models/{{model}}:generateContent`\n    \n\n#### Request Body\n\nThe request body must be in JSON format and contains the following structure:\n\n``` json\n{\n  \"tools\": [\n    {\n      \"code_execution\": {}\n    }\n  ],\n  \"contents\": [\n    {\n      \"role\": \"user\",\n      \"parts\": [\n        {\n          \"text\": \"Your input text here\"\n        }\n      ]\n    }\n  ]\n}\n\n ```\n\n- **tools**: An array of tools to be utilized in generating the content. Each tool can have specific configurations.\n    \n    - **code_execution**: An object that may include settings for code execution (currently empty).\n        \n- **contents**: An array of content objects that represent the input from the user.\n    \n    - **role**: The role of the content provider (e.g., \"user\").\n        \n    - **parts**: An array of text parts that make up the content.\n        \n        - **text**: The actual text input from the user.\n            \n\n### Response Structure\n\nThe response will be in JSON format and includes the following fields:\n\n``` json\n{\n  \"candidates\": [\n    {\n      \"content\": {\n        \"parts\": [\n          {\n            \"text\": \"Generated content here\"\n          }\n        ],\n        \"role\": \"role of the content\"\n      },\n      \"finishReason\": \"Reason for finishing the generation\",\n      \"index\": 0\n    }\n  ],\n  \"usageMetadata\": {\n    \"promptTokenCount\": 0,\n    \"candidatesTokenCount\": 0,\n    \"totalTokenCount\": 0,\n    \"promptTokensDetails\": [\n      {\n        \"modality\": \"modality type\",\n        \"tokenCount\": 0\n      }\n    ],\n    \"toolUsePromptTokenCount\": 0,\n    \"toolUsePromptTokensDetails\": [\n      {\n        \"modality\": \"modality type\",\n        \"tokenCount\": 0\n      }\n    ],\n    \"thoughtsTokenCount\": 0\n  },\n  \"modelVersion\": \"version of the model used\",\n  \"responseId\": \"unique identifier for the response\"\n}\n\n ```\n\n- **candidates**: An array of generated content candidates.\n    \n    - **content**: Contains the generated content.\n        \n        - **parts**: An array of text parts in the generated content.\n            \n        - **role**: Role associated with the generated content.\n            \n    - **finishReason**: A string indicating why the generation finished.\n        \n    - **index**: An index for the candidate in the response.\n        \n- **usageMetadata**: Information about token usage.\n    \n    - **promptTokenCount**: Number of tokens used in the prompt.\n        \n    - **candidatesTokenCount**: Number of tokens used in the candidates.\n        \n    - **totalTokenCount**: Total number of tokens used.\n        \n    - **promptTokensDetails**: Details of prompt tokens used, including modality and count.\n        \n    - **toolUsePromptTokenCount**: Number of tokens used for tool prompts.\n        \n    - **toolUsePromptTokensDetails**: Details of tokens used for tool prompts.\n        \n    - **thoughtsTokenCount**: Number of tokens used for thoughts.\n        \n- **modelVersion**: The version of the model that processed the request.\n    \n- **responseId**: A unique identifier for the response generated by the API.\n    \n\nThis endpoint allows for flexible content generation based on user input and specified tools, facilitating a variety of applications in content creation and interaction."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Use code execution in chat",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tools\": [\r\n        {\r\n            \"code_execution\": {}\r\n        }\r\n    ],\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Can you print \\\"Hello world!\\\"?\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"model\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"\"\r\n                },\r\n                {\r\n                    \"executable_code\": {\r\n                        \"language\": \"PYTHON\",\r\n                        \"code\": \"\\nprint(\\\"hello world!\\\")\\n\"\r\n                    }\r\n                },\r\n                {\r\n                    \"code_execution_result\": {\r\n                        \"outcome\": \"OUTCOME_OK\",\r\n                        \"output\": \"hello world!\\n\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"I have printed \\\"hello world!\\\" using the provided python code block. \\n\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"What is the sum of the first 50 prime numbers? Generate and run code for the calculation, and make sure you get all 50.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 07:42:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=10114"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"To find the sum of the first 50 prime numbers, I will implement a function to check for primality and then iterate through numbers, adding primes to a list until 50 primes are found. Finally, I will sum the numbers in the list.\\n\\nHere's the code and the result:\\n\\n\"\n                    },\n                    {\n                        \"executableCode\": {\n                            \"language\": \"PYTHON\",\n                            \"code\": \"import math\\n\\ndef is_prime(n):\\n    if n < 2:\\n        return False\\n    for i in range(2, int(math.sqrt(n)) + 1):\\n        if n % i == 0:\\n            return False\\n    return True\\n\\nprimes = []\\nnum = 2\\nwhile len(primes) < 50:\\n    if is_prime(num):\\n        primes.append(num)\\n    num += 1\\n\\nsum_of_primes = sum(primes)\\n\\nprint(f\\\"The first 50 prime numbers are: {primes}\\\")\\nprint(f\\\"The sum of the first 50 prime numbers is: {sum_of_primes}\\\")\\n\"\n                        }\n                    },\n                    {\n                        \"codeExecutionResult\": {\n                            \"outcome\": \"OUTCOME_OK\",\n                            \"output\": \"The first 50 prime numbers are: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229]\\nThe sum of the first 50 prime numbers is: 5117\\n\"\n                        }\n                    },\n                    {\n                        \"text\": \"The sum of the first 50 prime numbers is 5117.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 58,\n        \"candidatesTokenCount\": 236,\n        \"totalTokenCount\": 1034,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 58\n            }\n        ],\n        \"toolUsePromptTokenCount\": 633,\n        \"toolUsePromptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 633\n            }\n        ],\n        \"thoughtsTokenCount\": 107\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"aR1uaNCnOov6qtsP0P6GwAs\"\n}"
+						}
+					]
 				}
 			]
 		}
