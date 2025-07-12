@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "eefa27af-54f9-4bb6-884d-62cb16a58716",
 		"name": "Gemini API",
+		"description": "<img src=\"https://content.pstmn.io/ee4527eb-bf4b-4f20-be35-7f224b69c5e4/aW1hZ2UucG5n\" alt=\"Welcome%20to%20the%20Gemini%20API%20Collection\" width=\"1866\" height=\"1400\">\n\nThis is a Gemini Workspace for interacting with Google's Gemini APIs, providing a central hub for exploration, integration, and troubleshooting.Thus streamlining the process for developers to get started with Gemini and reduce the initial learning curve.\n\n# Get Started\n\n## Step 1 : Fork the collection\n\nYou cannot directly make changes to the orignal collection , so you need to fork it first before using it. To fork the collection , simply click the fork button on the top right side.With the new update the developers can now send API requests without forking the workspace or collection. You can also click the below button to fork the collection.\n\n<img src=\"https://content.pstmn.io/3a5b447d-6821-42c8-9218-87fcc06176ba/Zm9yayBpbWcucG5n\">\n\n## Step 2 : Getting the API key\n\nTo get started working with Gemini APIs, you must first be authorized to access them. The easiest way to authenticate to the Gemini API is to configure an API key.\n\n1. Go to the [Google AI Studio ](https://aistudio.google.com/prompts/new_chat) and click on **Get API key button**.\n    \n\n<img src=\"https://content.pstmn.io/32c9c665-ad5a-4538-b86e-11b1c007c7fc/MXN0IEd1aWRlLnBuZw==\">\n\n2\\. Click on **Create API key button** to create the API key.\n\n<img src=\"https://content.pstmn.io/7c531cdf-2128-40ed-8f66-17a1acf126fb/R3VpZGUgMi5wbmc=\">\n\n3\\. Copy the generated API key and you are good to go !\n\n## Step 3 : Configure your API key in Postman Vault\n\nNow that you have generated your API key , it's time to store it in **Postman Vault** so that it can be used as an authorization to access the Gemini API's and send requests.\n\n#### Why we recommend storing your Gemini API key in Postman Vault ?\n\nPostman provides a Vault for storing sensitive data locally. Data stored in this vault is not synced with Postman Cloud and can only be accessed in your local Postman Instance.\n\n> We recommend using [Postman Vault](https://learning.postman.com/docs/sending-requests/postman-vault/postman-vault-secrets/) to store sensitive data. \n  \n\n1. Click on the vault button present on the bottom right corner of the Gemini API collection or use the shorcut key : `Ctrl + Shift + V` to access the vault.\n    \n\n<img src=\"https://content.pstmn.io/e2006ad3-469d-4405-834c-d47061ec512d/U2NyZWVuc2hvdCAyMDI1LTA3LTExIDEzMDQzNS5wbmc=\">\n\n2\\. After Opening Postman vault, paste your API key as a value to key - api key\n\n<img src=\"https://content.pstmn.io/8057e938-19fe-45eb-a59f-a20481bd321f/aW1hZ2UucG5n\" width=\"1381\" height=\"437\">\n\n## Step 4 : Configure auth token and Project Id\n\nGo to the Gemini - Testing Environment to store the Project Id and authentication token for your project.\n\n<img src=\"https://content.pstmn.io/f88f1e74-33f2-46e0-b11e-26e0763dc8d0/aW1hZ2UucG5n\" width=\"1331\" height=\"746\">\n\nand now that you have configured the key , you can start exploring the collection !",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42721875"
 	},
@@ -2283,11 +2284,11 @@
 												},
 												{
 													"key": "X-Goog-Upload-URL",
-													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=API Key&upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
+													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
 												},
 												{
 													"key": "X-Goog-Upload-Control-URL",
-													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=API key&upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
+													"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH89k-v9sQWeT-K-OL24W0XLwpWHXuwgoqQtF3VcP6ZlkJ3VFmHXz_sLoacwbXetmTVp8PCXrlUFENqp-SjsgyaR58fGcB2SLFVQCMI_4vfo&upload_protocol=resumable"
 												},
 												{
 													"key": "X-Goog-Upload-Chunk-Granularity",
@@ -5926,6 +5927,362 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"To find the sum of the first 50 prime numbers, I will implement a function to check for primality and then iterate through numbers, adding primes to a list until 50 primes are found. Finally, I will sum the numbers in the list.\\n\\nHere's the code and the result:\\n\\n\"\n                    },\n                    {\n                        \"executableCode\": {\n                            \"language\": \"PYTHON\",\n                            \"code\": \"import math\\n\\ndef is_prime(n):\\n    if n < 2:\\n        return False\\n    for i in range(2, int(math.sqrt(n)) + 1):\\n        if n % i == 0:\\n            return False\\n    return True\\n\\nprimes = []\\nnum = 2\\nwhile len(primes) < 50:\\n    if is_prime(num):\\n        primes.append(num)\\n    num += 1\\n\\nsum_of_primes = sum(primes)\\n\\nprint(f\\\"The first 50 prime numbers are: {primes}\\\")\\nprint(f\\\"The sum of the first 50 prime numbers is: {sum_of_primes}\\\")\\n\"\n                        }\n                    },\n                    {\n                        \"codeExecutionResult\": {\n                            \"outcome\": \"OUTCOME_OK\",\n                            \"output\": \"The first 50 prime numbers are: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229]\\nThe sum of the first 50 prime numbers is: 5117\\n\"\n                        }\n                    },\n                    {\n                        \"text\": \"The sum of the first 50 prime numbers is 5117.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 58,\n        \"candidatesTokenCount\": 236,\n        \"totalTokenCount\": 1034,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 58\n            }\n        ],\n        \"toolUsePromptTokenCount\": 633,\n        \"toolUsePromptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 633\n            }\n        ],\n        \"thoughtsTokenCount\": 107\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"aR1uaNCnOov6qtsP0P6GwAs\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Count Tokens",
+			"item": [
+				{
+					"name": "Text Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"The quick brown fox jumps over the lazy dog.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:countTokens",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:countTokens"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Text Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"The quick brown fox jumps over the lazy dog.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:countTokens",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:countTokens"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Jul 2025 06:58:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=284"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"totalTokens\": 10,\n    \"promptTokensDetails\": [\n        {\n            \"modality\": \"TEXT\",\n            \"tokenCount\": 10\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Chat Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hi, my name is Bob.\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"model\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hi Bob\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:countTokens",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:countTokens"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Chat Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"role\": \"user\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hi, my name is Bob.\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"role\": \"model\",\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Hi Bob\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:countTokens",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:countTokens"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Jul 2025 07:13:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=1560"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"totalTokens\": 11,\n    \"promptTokensDetails\": [\n        {\n            \"modality\": \"TEXT\",\n            \"tokenCount\": 11\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Media Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Tell me about this instrument\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": \"{{guitar image base64 encoded}}\" // Base64 image of a guitar. Note: Always strip off the metadata from the image (e.g data:image/png;base64,)\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:countTokens",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:countTokens"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Media Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Tell me about this instrument\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": \"{{guitar image base64 encoded}}\" // Base64 image of a guitar. Note: Always strip off the metadata from the image (e.g data:image/png;base64,)\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:countTokens",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:countTokens"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Jul 2025 07:15:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=1823"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"totalTokens\": 263,\n    \"promptTokensDetails\": [\n        {\n            \"modality\": \"TEXT\",\n            \"tokenCount\": 5\n        },\n        {\n            \"modality\": \"IMAGE\",\n            \"tokenCount\": 258\n        }\n    ]\n}"
 						}
 					]
 				}
