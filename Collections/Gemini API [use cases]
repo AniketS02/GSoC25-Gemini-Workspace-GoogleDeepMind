@@ -1,0 +1,1392 @@
+{
+	"info": {
+		"_postman_id": "d9955f84-eb3c-4610-89b6-dce8c92e4259",
+		"name": "Gemini API [use cases]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721875"
+	},
+	"item": [
+		{
+			"name": "News Reporting Video",
+			"item": [
+				{
+					"name": "upload request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let upload_url_header = pm.response.headers.get(\"x-goog-upload-url\"); // Get the upload URL from the response headers\r",
+									"if (upload_url_header){\r",
+									"pm.environment.set(\"upload_url_image\", upload_url_header);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the upload url , check the API KEY or Gemini-Testing environment variables value\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "start",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Header-Content-Type",
+								"value": "{{MIME_TYPE_IMAGE}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Protocol",
+								"value": "resumable",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/upload/{{version}}/files",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"upload",
+								"{{version}}",
+								"files"
+							]
+						},
+						"description": "# Purpose\n\nThe purpose of this request is to get the upload url in order to upload an image so that it can be used to Generate Content using the Gemini Models.\n\nTo make this request , the following values must be obtained first :\n\n- MIME_TYPE_IMAGE\n    \n\nIt is the type of the video (example - image/jpeg). To get this follow the steps below :\n\n1. copy this command : `file -b --mime-type \"${IMAGE_PATH}\"` (replace IMAGE_PATH with the path of the Image saved on your local machine example - (C/Users/John/Desktop/Docs/sample_image.jpeg)\n    \n2. Paste it in the command prompt of your local machine and put the value in the `MIME_TYPE_IMAGE`environment variable present in the Gemini-Testing Environment.\n    \n\n- DISPLAY_NAME_IMAGE\n    \n\nSet a display name of your video for future reference and storage.Save it in the `DISPLAY_NAME_IMAGE` environment variable.\n\nNow , send the POST request.\n\n**NOTE :** Once the above tasks are completed and the POST request is sent, the `upload_url_image`environment variable will be automatically set with the upload URL. This URL will then be used as the endpoint for uploading the video.\n\n# Expected Behaviour\n\nThe response body will be empty and the headers will contain \\[\"key\":\"X-Goog-Upload-URL\"\\] whose value will be automatically stored in the `upload_url_image` environment variable which will be used as an endpoint in the next request to upload the image."
+					},
+					"response": [
+						{
+							"name": "upload request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "start",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Header-Content-Type",
+										"value": "{{MIME_TYPE_IMAGE}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Protocol",
+										"value": "resumable",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/upload/{{version}}/files",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"upload",
+										"{{version}}",
+										"files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "active"
+								},
+								{
+									"key": "X-Goog-Upload-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Control-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Chunk-Granularity",
+									"value": "8388608"
+								},
+								{
+									"key": "X-Goog-Upload-Header-x-google-esf-cloud-client-params",
+									"value": "backend_service_name: \"generativelanguage.googleapis.com\" backend_fully_qualified_method: \"google.ai.generativelanguage.v1beta.FileService.CreateFile\""
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Session-Info",
+									"value": "GgQYECgLIAE6IxIhZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29t"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Backends",
+									"value": "unix:/tmp/esfbackend.1753996952.100257.360953"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Security-Signals",
+									"value": "FRAMEWORK=ONE_PLATFORM,ENV=borg,ENV_DEBUG=borg_user:genai-api;borg_job:prod.genai-api"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-GFE-Backend-Request-Cost",
+									"value": "23.9583"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 07:36:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "upload newspaper",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"if(response.file.uri){\r",
+									"    pm.environment.set(\"file_uri_image\",response.file.uri);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the file_uri_image, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Offset",
+								"value": "0",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "upload, finalize",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "postman-cloud:///1f06eaaa-3d49-48c0-9128-c2af6ad1e884"
+							}
+						},
+						"url": {
+							"raw": "{{upload_url_image}}",
+							"host": [
+								"{{upload_url_image}}"
+							]
+						},
+						"description": "- In the body section of this request, upload the image from your local machine to the binary type in the body section of the request.\n    \n- Once the image is uploaded and the POST request is sent, the `file_uri_image` environment variable will be automatically updated. This URI will be used for content generation in the next request."
+					},
+					"response": [
+						{
+							"name": "upload newspaper",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "postman-cloud:///1f06eaaa-3d49-48c0-9128-c2af6ad1e884"
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_image}}",
+									"host": [
+										"{{upload_url_image}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "final"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Length",
+									"value": "537"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 07:39:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"file\": {\n        \"name\": \"files/mvu6fu5w6z35\",\n        \"displayName\": \"Newspaper\",\n        \"mimeType\": \"image/jpeg\",\n        \"sizeBytes\": \"138575\",\n        \"createTime\": \"2025-08-01T07:39:32.542854Z\",\n        \"updateTime\": \"2025-08-01T07:39:32.542854Z\",\n        \"expirationTime\": \"2025-08-03T07:39:32.352333055Z\",\n        \"sha256Hash\": \"NGZiY2FhMTFjNDZiZmYyMmFhNTM1Y2FkM2E5MDY5MmU5N2Y3ZGJkZmUyY2JmMzgxNzAzMGYzYWFiMGFiMWUyMQ==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/mvu6fu5w6z35\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "generating newscasting script",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"You are a Journalist. You are presenting a news at the new york times square on camera based on information you've gotten from the newspaper shared with you. Write a script for your newscasting.\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"file_uri\": \"{{file_uri_image}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						},
+						"description": "- Now that everything's done, just tell the model to generate content based on the Image Uploaded."
+					},
+					"response": [
+						{
+							"name": "3.Generate Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"file_uri\": \"{{file_uri_image}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Caption this image.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 07:57:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=9589"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Here are a few options for captioning this image, ranging from descriptive to more poetic:\\n\\n**Descriptive:**\\n\\n*   \\\"A breathtaking sunset paints the sky and ocean in vibrant hues of gold and orange, reflecting beautifully on the wet sand of a rugged beach, with dramatic cliffs towering on the right.\\\"\\n*   \\\"Golden hour at its finest: the sun dips below the horizon, casting a warm, shimmering glow across the water and illuminating the textured face of the coastal cliffs.\\\"\\n*   \\\"The sun sets over a tranquil ocean, its light creating a dazzling path on the wet sand, framed by a majestic rock formation on the right.\\\"\\n\\n**Evocative/Poetic:**\\n\\n*   \\\"Nature's masterpiece unfolding as the sun sets, bathing the rugged coastline in a warm, ethereal glow.\\\"\\n*   \\\"Lost in the golden embrace of a perfect beach sunset, where the waves whisper secrets to the ancient cliffs.\\\"\\n*   \\\"Where the sky meets the sea in a symphony of light and shadow, kissed by the last rays of the sun.\\\"\\n\\n**Short & Sweet (Good for social media):**\\n\\n*   \\\"Golden hour magic on the coast.\\\"\\n*   \\\"Sunset perfection.\\\"\\n*   \\\"Pure serenity by the sea.\\\"\\n*   \\\"Coastal dreams.\\\"\\n*   \\\"Breathtaking view to end the day.\\\"\\n\\n**You can also add relevant hashtags, such as:**\\n#Sunset #BeachSunset #GoldenHour #CoastalLife #NaturePhotography #Landscape #OceanView #Cliffs #TravelGram #BeautifulDestinations #Peaceful #Serene #BeachLife\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 262,\n        \"candidatesTokenCount\": 328,\n        \"totalTokenCount\": 1747,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 4\n            },\n            {\n                \"modality\": \"IMAGE\",\n                \"tokenCount\": 258\n            }\n        ],\n        \"thoughtsTokenCount\": 1157\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"7CBuaLziHpatz7IP2oXD8Ak\"\n}"
+						},
+						{
+							"name": "generating newscasting script",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"You are a Journalist. You are presenting a news at the new york times square on camera based on information you've gotten from the newspaper shared with you. Write a script for your newscasting.\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"file_uri\": \"{{file_uri_image}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 07:41:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=6228"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"**(Camera opens on a shot of Times Square, bustling with activity.  The camera then focuses on a newscaster, impeccably dressed, standing in front of a backdrop featuring The New York Times logo.)**\\n\\n**Newscaster:** Good evening, and welcome to Times Square.  I'm [Your Name], bringing you the latest headlines from The New York Times.\\n\\n**(The camera shows a close-up of the newscaster.)**\\n\\n**Newscaster:**  Today's news is a curious mix of the personal and the profoundly global.  First, a local story:  Katie Nicholson, a New York resident, celebrates her 50th birthday today, officially entering the ranks of what the Daily News charmingly refers to as \\\"the wrinkly oldies.\\\"  We wish her a very happy birthday!\\n\\n**(A picture of Katie Nicholson, from the Daily News article, is briefly displayed on screen.)**\\n\\n**Newscaster:** But while one New Yorker marks a milestone, a much larger story unfolds across continents.  China’s ambitious investment in moose infrastructure is paying off handsomely.  The country has expanded its moose pasture dramatically, leading to a significant increase in moose population and transforming China into a net exporter of moose for the first time. This is good news for neighbouring Mongolia, which has long struggled with a shortage of moose, but also raises questions about the changing balance of trade in the far east.\\n\\n**(A simple graphic showing the increase in China's moose population could be displayed here.)**\\n\\n**Newscaster:**  The impact reaches even further.  Scientists are studying the implications of this surge in moose numbers, particularly in relation to the recent unusual activity around the moon.  Preliminary research suggests a previously unforeseen connection, a finding that's sure to stimulate further investigation.\\n\\n**(The camera shows a wider shot of Times Square, with the New York Times building visible in the background.)**\\n\\n**Newscaster:**  We will keep you updated on both these stories as they develop.  For now, from the heart of Times Square, thank you for watching.  And goodnight.\\n\\n**(The camera focuses on the newscaster one last time before fading to black.)**\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.48195407443576388\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 298,\n        \"candidatesTokenCount\": 450,\n        \"totalTokenCount\": 748,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 40\n            },\n            {\n                \"modality\": \"IMAGE\",\n                \"tokenCount\": 258\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 450\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"k2-MaI_iL4Ku3NoP1_qUmQE\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Generate Quiz From Textbook",
+			"item": [
+				{
+					"name": "upload request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let upload_url_header = pm.response.headers.get(\"x-goog-upload-url\"); // Get the upload URL from the response headers\r",
+									"if (upload_url_header){\r",
+									"pm.environment.set(\"upload_url_PDF\", upload_url_header);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the upload url , check the API KEY or Gemini-Testing environment variables value\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "start",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Header-Content-Type",
+								"value": "{{MIME_TYPE_PDF}}",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Protocol",
+								"value": "resumable",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_PDF}}\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/upload/{{version}}/files",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"upload",
+								"{{version}}",
+								"files"
+							]
+						},
+						"description": "To make this request , the following values must be obtained first :\n\n- MIME_TYPE_PDF\n    \n\nIt is the type of the video (example - application/pdf). To get this follow the steps below :\n\n1. copy this command : `file -b --mime-type \"${PDF_PATH}\"` (replace PDF_PATH with the path of the pdf saved on your local machine example - C/Users/John/Desktop/Docs/sample_pdf.pdf )\n    \n\n<img src=\"https://content.pstmn.io/04c67200-1a52-4cd1-aa06-b8d43c3ef0d7/U2NyZWVuc2hvdCAyMDI1LTA3LTEwIDEyMzM0OC5wbmc=\" alt=\"\" height=\"191\" width=\"1919\">\n\n1. Paste it in the command prompt of your local machine and put the value in the `MIME_TYPE_PDF`environment variable present in the Gemini-Testing Environment.\n    \n\n- DISPLAY_NAME_PDF\n    \n\nSet a display name of your video for future reference and storage.Save it in the `DISPLAY_NAME_PDF` environment variable.\n\nNow , send the POST request.\n\n**NOTE :** Once the above tasks are completed and the POST request is sent, the `upload_url_pdf` environment variable will be automatically set with the upload URL. This URL will then be used as the endpoint for uploading the video."
+					},
+					"response": [
+						{
+							"name": "Document : 1.Get the upload url for PDF",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "start",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Header-Content-Type",
+										"value": "{{MIME_TYPE_PDF}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Protocol",
+										"value": "resumable",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_PDF}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/upload/{{version}}/files",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"upload",
+										"{{version}}",
+										"files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "active"
+								},
+								{
+									"key": "X-Goog-Upload-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Control-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Chunk-Granularity",
+									"value": "8388608"
+								},
+								{
+									"key": "X-Goog-Upload-Header-x-google-esf-cloud-client-params",
+									"value": "backend_service_name: \"generativelanguage.googleapis.com\" backend_fully_qualified_method: \"google.ai.generativelanguage.v1beta.FileService.CreateFile\""
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Session-Info",
+									"value": "GgQYECgLIAE6IxIhZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29t"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Backends",
+									"value": "unix:/tmp/esfbackend.1751969205.834630.1315945"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Security-Signals",
+									"value": "FRAMEWORK=ONE_PLATFORM,ENV=borg,ENV_DEBUG=borg_user:genai-api;borg_job:prod.genai-api"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-GFE-Backend-Request-Cost",
+									"value": "9.4228"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 10:09:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "upload request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "start",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Header-Content-Type",
+										"value": "{{MIME_TYPE_PDF}}",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Protocol",
+										"value": "resumable",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_PDF}}\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/upload/{{version}}/files",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"upload",
+										"{{version}}",
+										"files"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "active"
+								},
+								{
+									"key": "X-Goog-Upload-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Control-URL",
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
+								},
+								{
+									"key": "X-Goog-Upload-Chunk-Granularity",
+									"value": "8388608"
+								},
+								{
+									"key": "X-Goog-Upload-Header-x-google-esf-cloud-client-params",
+									"value": "backend_service_name: \"generativelanguage.googleapis.com\" backend_fully_qualified_method: \"google.ai.generativelanguage.v1beta.FileService.CreateFile\""
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Session-Info",
+									"value": "GgQYECgLIAE6IxIhZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29t"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Backends",
+									"value": "unix:/tmp/esfbackend.1753996933.118013.1592662"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-Security-Signals",
+									"value": "FRAMEWORK=ONE_PLATFORM,ENV=borg,ENV_DEBUG=borg_user:genai-api;borg_job:prod.genai-api"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "X-Goog-Upload-Header-Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "X-Goog-Upload-Header-X-Google-GFE-Backend-Request-Cost",
+									"value": "16.2238"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 07:45:39 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "upload text book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();\r",
+									"if(response.file.uri){\r",
+									"    pm.environment.set(\"file_uri_PDF\",response.file.uri);\r",
+									"}\r",
+									"else{\r",
+									"    console.log(\"Unable to get the file_uri_PDF, kindly check the audio uploaded ,upload_url_video and the headers\")\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Goog-Upload-Offset",
+								"value": "0",
+								"type": "text"
+							},
+							{
+								"key": "X-Goog-Upload-Command",
+								"value": "upload, finalize",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "postman-cloud:///1f06eaf1-14fc-4ce0-8a85-7068dc519972"
+							}
+						},
+						"url": {
+							"raw": "{{upload_url_PDF}}",
+							"host": [
+								"{{upload_url_PDF}}"
+							]
+						},
+						"description": "- In the body section of this request, upload the pdf from your local machine to the binary type in the body.\n    \n- Once the video is uploaded and the POST request is sent, the `file_uri_pdf` environment variable will be automatically updated. This URI will be used for content generation ijn the next request."
+					},
+					"response": [
+						{
+							"name": "upload text book",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "postman-cloud:///1f06eabe-df25-44f0-b1c6-91776e8deae3"
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_PDF}}",
+									"host": [
+										"{{upload_url_PDF}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "final"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Length",
+									"value": "518"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 07:49:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"file\": {\n        \"name\": \"files/e07k7i825g1y\",\n        \"displayName\": \"history_book\",\n        \"mimeType\": \"application/pdf\",\n        \"createTime\": \"2025-08-01T07:49:43.934521Z\",\n        \"updateTime\": \"2025-08-01T07:49:43.934521Z\",\n        \"expirationTime\": \"2025-08-03T07:49:43.796168282Z\",\n        \"sha256Hash\": \"ZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NQ==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/e07k7i825g1y\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
+						},
+						{
+							"name": "upload text book Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "postman-cloud:///1f06eabe-df25-44f0-b1c6-91776e8deae3"
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_PDF}}",
+									"host": [
+										"{{upload_url_PDF}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "final"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Length",
+									"value": "518"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 07:49:44 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"file\": {\n        \"name\": \"files/e07k7i825g1y\",\n        \"displayName\": \"history_book\",\n        \"mimeType\": \"application/pdf\",\n        \"createTime\": \"2025-08-01T07:49:43.934521Z\",\n        \"updateTime\": \"2025-08-01T07:49:43.934521Z\",\n        \"expirationTime\": \"2025-08-03T07:49:43.796168282Z\",\n        \"sha256Hash\": \"ZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NQ==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/e07k7i825g1y\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
+						},
+						{
+							"name": "upload text book",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Goog-Upload-Offset",
+										"value": "0",
+										"type": "text"
+									},
+									{
+										"key": "X-Goog-Upload-Command",
+										"value": "upload, finalize",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "postman-cloud:///1f06eaf1-14fc-4ce0-8a85-7068dc519972"
+									}
+								},
+								"url": {
+									"raw": "{{upload_url_PDF}}",
+									"host": [
+										"{{upload_url_PDF}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "X-GUploader-UploadID",
+									"value": "ABgVH89NH7xfoZEywYYh5jRMPN9trBsE6UxBx2uvM1aunla1FynyCim66-AIpAxV_DKR1BphR45uUvncUhX6l29sxLuk5HEudm8B2K9Fxie0m2g"
+								},
+								{
+									"key": "X-Goog-Upload-Status",
+									"value": "final"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Length",
+									"value": "545"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 08:11:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "UploadServer"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "{\n    \"file\": {\n        \"name\": \"files/y7qtdbws154o\",\n        \"displayName\": \"history_book\",\n        \"mimeType\": \"application/pdf\",\n        \"sizeBytes\": \"233149\",\n        \"createTime\": \"2025-08-01T08:11:09.154532Z\",\n        \"updateTime\": \"2025-08-01T08:11:09.154532Z\",\n        \"expirationTime\": \"2025-08-03T08:11:08.990461040Z\",\n        \"sha256Hash\": \"MjI3ZTI4ZTU5N2EzY2U1NzJiMGM3ODMxMTViZjY4NDU3NTAwY2FiMWU4OGU4MWIxOGM4ZTY0MmYwNTJlYzIyNQ==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/y7qtdbws154o\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "generate quiz from textbook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Generate a seven question quiz for a student preparing for a test. Include the correct answers in your response\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"application/pdf\",\r\n                        \"file_uri\": \"{{file_uri_PDF}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"response_mime_type\": \"application/json\",\r\n        \"response_schema\": {\r\n            \"type\": \"ARRAY\",\r\n            \"items\": {\r\n                \"type\": \"OBJECT\",\r\n                \"properties\": {\r\n                    \"question\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"option_a\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"option_b\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"option_c\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"option_d\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"answer\": {\r\n                        \"type\": \"string\",\r\n                        \"enum\": [\"A\", \"B\", \"C\", \"D\"],\r\n                        \"description\": \"The correct asnwer to the question\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						},
+						"description": "- Now that everything's done, just tell the model to generate content based on the PDF Uploaded."
+					},
+					"response": [
+						{
+							"name": "Document : 3.Generate Content",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Summarize the document.\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE_PDF}}\",\r\n                        \"file_uri\": \"{{file_uri_PDF}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Jul 2025 10:12:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=10578"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"The document is a sample or placeholder document, primarily composed of \\\"Lorem ipsum\\\" text. Its main purpose appears to be to demonstrate document layout and formatting rather than conveying specific information.\\n\\nIt includes various structural and visual components such as:\\n*   Headings and subheadings\\n*   Paragraphs of text\\n*   Bulleted lists\\n*   A bar chart visualizing \\\"Column 1,\\\" \\\"Column 2,\\\" and \\\"Column 3\\\" across \\\"Row 1\\\" to \\\"Row 4\\\"\\n*   A data table with \\\"Lorem ipsum\\\" headers\\n*   An image of a laptop keyboard\\n\\nMuch of the textual content is repeated across multiple pages to fill space. Therefore, the document does not contain any specific factual or substantive information to summarize beyond its structure and design elements.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 1295,\n        \"candidatesTokenCount\": 161,\n        \"totalTokenCount\": 2619,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 5\n            },\n            {\n                \"modality\": \"DOCUMENT\",\n                \"tokenCount\": 1290\n            }\n        ],\n        \"thoughtsTokenCount\": 1163\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"okBuaIvIEtjUz7IP9PiNqAk\"\n}"
+						},
+						{
+							"name": "generate quiz from textbook",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Generate a seven question quiz for a student preparing for a test. Include the correct answers in your response\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"application/pdf\",\r\n                        \"file_uri\": \"{{file_uri_PDF}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generationConfig\": {\r\n        \"response_mime_type\": \"application/json\",\r\n        \"response_schema\": {\r\n            \"type\": \"ARRAY\",\r\n            \"items\": {\r\n                \"type\": \"OBJECT\",\r\n                \"properties\": {\r\n                    \"question\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"option_a\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"option_b\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"option_c\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"option_d\": {\r\n                        \"type\": \"STRING\"\r\n                    },\r\n                    \"answer\": {\r\n                        \"type\": \"string\",\r\n                        \"enum\": [\"A\", \"B\", \"C\", \"D\"],\r\n                        \"description\": \"The correct asnwer to the question\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+									"protocol": "https",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"{{version}}",
+										"models",
+										"{{model}}:generateContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "X-Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Referer"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 01 Aug 2025 08:11:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "scaffolding on HTTPServer2"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "gfet4t7; dur=9017"
+								},
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"[{\\\"answer\\\": \\\"A\\\", \\\"option_a\\\": \\\"The development of agriculture\\\", \\\"option_b\\\": \\\"The arrival of European colonists\\\", \\\"option_c\\\": \\\"The extinction of the mammoth\\\", \\\"option_d\\\": \\\"The depletion of natural resources\\\", \\\"question\\\": \\\"What significant event led to the bison taking the place of the mammoth as the primary food source for early North Americans?\\\"}, {\\\"answer\\\": \\\"C\\\", \\\"option_a\\\": \\\"Central America\\\", \\\"option_b\\\": \\\"South America\\\", \\\"option_c\\\": \\\"North America\\\", \\\"option_d\\\": \\\"Europe\\\", \\\"question\\\": \\\"Where did the first attempts at primitive agriculture appear, leading to the cultivation of corn, squash, and beans?\\\"}, {\\\"answer\\\": \\\"B\\\", \\\"option_a\\\": \\\"3000 BC\\\", \\\"option_b\\\": \\\"300 BC\\\", \\\"option_c\\\": \\\"1000 BC\\\", \\\"option_d\\\": \\\"10000 BC\\\", \\\"question\\\": \\\"By what time did signs of early village life begin to appear in the river valleys of New Mexico and Arizona?\\\"}, {\\\"answer\\\": \\\"D\\\", \\\"option_a\\\": \\\"The arrival of the Spanish\\\", \\\"option_b\\\": \\\"The depletion of natural resources\\\", \\\"option_c\\\": \\\"Internal conflict among tribes\\\", \\\"option_d\\\": \\\"The introduction of European diseases\\\", \\\"question\\\": \\\"What was the most devastating effect on the indigenous population of the Americas after initial contact with Europeans?\\\"}, {\\\"answer\\\": \\\"A\\\", \\\"option_a\\\": \\\"The Pacific Northwest\\\", \\\"option_b\\\": \\\"The Southwest\\\", \\\"option_c\\\": \\\"The Southeast\\\", \\\"option_d\\\": \\\"The Northeast\\\", \\\"question\\\": \\\"Where did the most affluent of the pre-Columbian Native Americans reside, due to the abundance of fish and raw materials?\\\"}, {\\\"answer\\\": \\\"C\\\", \\\"option_a\\\": \\\"The cultivation of maize\\\", \\\"option_b\\\": \\\"The development of large-scale irrigation systems\\\", \\\"option_c\\\": \\\"The construction of mounds\\\", \\\"option_d\\\": \\\"The establishment of complex trade networks\\\", \\\"question\\\": \\\"What is a distinctive characteristic of the Adenan culture in what is now the United States?\\\"}, {\\\"answer\\\": \\\"B\\\", \\\"option_a\\\": \\\"They were primarily hunter-gatherers\\\", \\\"option_b\\\": \\\"They combined hunting, gathering, and agriculture\\\", \\\"option_c\\\": \\\"They were primarily sedentary farmers\\\", \\\"option_d\\\": \\\"They were primarily nomadic pastoralists\\\", \\\"question\\\": \\\"How did the majority of Native American tribes in the wooded eastern region of North America primarily obtain food?\\\"}]\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.17165902513976491\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 2633,\n        \"candidatesTokenCount\": 545,\n        \"totalTokenCount\": 3178,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"DOCUMENT\",\n                \"tokenCount\": 2580\n            },\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 53\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 545\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"t3aMaOWUDcWs698P6Lrh-Q4\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
