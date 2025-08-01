@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "cbb6fa6e-ab0f-413a-b1a9-fa0f9c179fcd",
+		"name": "Gemini API [Eval]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42721875"
+	},
+	"item": [
+		{
+			"name": "[eval] text-and-image input",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Tell me about this instrument\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": \"{{guitar image base64 encoded}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"{{version}}",
+						"models",
+						"{{model}}:generateContent"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[eval] text-and-image input",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Tell me about this instrument\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": \"{{guitar image base64 encoded}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
+							"protocol": "https",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{version}}",
+								"models",
+								"{{model}}:generateContent"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "X-Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Referer"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 01 Aug 2025 06:56:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "scaffolding on HTTPServer2"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Server-Timing",
+							"value": "gfet4t7; dur=2468"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"That's a Fender FA-115 acoustic guitar.  It's a dreadnought-style guitar, meaning it has a large, deep body, known for its full, resonant sound.  The FA-115 is generally considered an entry-level or beginner instrument, often chosen for its affordability and decent quality for its price.  It's made of wood, likely a combination of spruce (for the top) and nato or mahogany (for the back and sides), but the exact woods used vary. The cutaway allows easier access to the higher frets.\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.37882543611927194\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 263,\n        \"candidatesTokenCount\": 119,\n        \"totalTokenCount\": 382,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 5\n            },\n            {\n                \"modality\": \"IMAGE\",\n                \"tokenCount\": 258\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 119\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"E2WMaPijONqp2PgPhcbJiAM\"\n}"
+				}
+			]
+		},
+		{
+			"name": "[result] temp vs output tokens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[result] temp vs output response time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{vault:api key}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "key",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
