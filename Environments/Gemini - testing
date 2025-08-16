@@ -21,6 +21,26 @@
 			"enabled": true
 		},
 		{
+			"key": "Gemini - API Mock Server URL",
+			"value": "https://ec2df728-b79f-460b-bc9d-15f6015b309f.mock.pstmn.io",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Gemini API [Eval] Mock Server URL",
+			"value": "https://dafe8977-dd7e-417e-b271-2ba8da2b6a90.mock.pstmn.io",
+			"type": "default",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "Gemini API [use cases] Mock Server URL",
+			"value": "https://509b31fd-6bd1-49a5-b7b2-1dab3966b3ad.mock.pstmn.io",
+			"type": "default",
+			"description": "",
+			"enabled": true
+		},
+		{
 			"key": "project ID",
 			"value": "",
 			"type": "default",
@@ -184,6 +204,6 @@
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2025-07-11T07:16:47.276Z",
-	"_postman_exported_using": "Postman/11.53.3"
+	"_postman_exported_at": "2025-08-16T17:04:57.002Z",
+	"_postman_exported_using": "Postman/11.58.5"
 }
