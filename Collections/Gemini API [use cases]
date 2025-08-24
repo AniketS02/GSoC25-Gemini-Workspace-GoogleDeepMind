@@ -136,11 +136,11 @@
 								},
 								{
 									"key": "X-Goog-Upload-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAudn0301Nwp9dswiHnezKC5zbZETlof6c&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
 								},
 								{
 									"key": "X-Goog-Upload-Control-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAudn0301Nwp9dswiHnezKC5zbZETlof6c&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
 								},
 								{
 									"key": "X-Goog-Upload-Chunk-Granularity",
@@ -602,11 +602,11 @@
 								},
 								{
 									"key": "X-Goog-Upload-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAudn0301Nwp9dswiHnezKC5zbZETlof6c&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
 								},
 								{
 									"key": "X-Goog-Upload-Control-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAudn0301Nwp9dswiHnezKC5zbZETlof6c&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
 								},
 								{
 									"key": "X-Goog-Upload-Chunk-Granularity",
