@@ -218,7 +218,27 @@ and now that you have configured the key , you can start exploring the collectio
 # OpenAI Compatibility
 
 - [Access Using OpenAI libraries](https://web.postman.co/workspace/%5BGSoC%5D-Develop-a-Gemini-Workspa~3b07f56f-41b4-4561-b731-eec56c9fbaf6/request/42721875-29fe6c50-bc99-430b-a314-6a1bf39a0c7a?action=share&source=copy-link&creator=42721875&ctx=documentation)
+
+---
     
+| Model variant | Input(s) | Output | Optimized for |
+| --- | --- | --- | --- |
+| [Gemini 2.5 Pro](https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro)  <br>`gemini-2.5-pro` | Audio, images, videos, text, and PDF | Text | Enhanced thinking and reasoning, multimodal understanding, advanced coding, and more |
+| [Gemini 2.5 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash)  <br>`gemini-2.5-flash` | Audio, images, videos, and text | Text | Adaptive thinking, cost efficiency |
+| [Gemini 2.5 Flash-Lite](https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-lite)  <br>`gemini-2.5-flash-lite` | Text, image, video, audio | Text | Most cost-efficient model supporting high throughput |
+| [Gemini 2.5 Flash Live](https://ai.google.dev/gemini-api/docs/models#live-api)  <br>`gemini-live-2.5-flash-preview` | Audio, video, and text | Text, audio | Low-latency bidirectional voice and video interactions |
+| [Gemini 2.5 Flash Native Audio](https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-native-audio)  <br>`gemini-2.5-flash-preview-native-audio-dialog` &  <br>`gemini-2.5-flash-exp-native-audio-thinking-dialog` | Audio, videos, and text | Text and audio, interleaved | High quality, natural conversational audio outputs, with or without thinking |
+| [Gemini 2.5 Flash Preview TTS](https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-preview-tts)  <br>`gemini-2.5-flash-preview-tts` | Text | Audio | Low latency, controllable, single- and multi-speaker text-to-speech audio generation |
+| [Gemini 2.5 Pro Preview TTS](https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro-preview-tts)  <br>`gemini-2.5-pro-preview-tts` | Text | Audio | Low latency, controllable, single- and multi-speaker text-to-speech audio generation |
+| [Gemini 2.0 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash)  <br>`gemini-2.0-flash` | Audio, images, videos, and text | Text | Next generation features, speed, and realtime streaming. |
+| [Gemini 2.0 Flash Preview Image Generation](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash-preview-image-generation)  <br>`gemini-2.0-flash-preview-image-generation` | Audio, images, videos, and text | Text, images | Conversational image generation and editing |
+| [Gemini 2.0 Flash-Lite](https://ai.google.dev/gemini-api/docs/models#gemini-2.0-flash-lite)  <br>`gemini-2.0-flash-lite` | Audio, images, videos, and text | Text | Cost efficiency and low latency |
+| [Gemini 2.0 Flash Live](https://ai.google.dev/gemini-api/docs/models#live-api-2.0)  <br>`gemini-2.0-flash-live-001` | Audio, video, and text | Text, audio | Low-latency bidirectional voice and video interactions |
+| [Gemini 1.5 Flash](https://ai.google.dev/gemini-api/docs/models#gemini-1.5-flash)  <br>`gemini-1.5-flash` | Audio, images, videos, and text | Text | Fast and versatile performance across a diverse variety of tasks  <br>Deprecated |
+| [Gemini 1.5 Flash-8B](https://ai.google.dev/gemini-api/docs/models#gemini-1.5-flash-8b)  <br>`gemini-1.5-flash-8b` | Audio, images, videos, and text | Text | High volume and lower intelligence tasks  <br>Deprecated |
+| [Gemini 1.5 Pro](https://ai.google.dev/gemini-api/docs/models#gemini-1.5-pro)  <br>`gemini-1.5-pro` | Audio, images, videos, and text | Text | Complex reasoning tasks requiring more intelligence  <br>Deprecated |
+
+You can view the rate limits for each model on the [rate limits page](https://ai.google.dev/gemini-api/docs/rate-limits).
 
 ---
 
