@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "d9955f84-eb3c-4610-89b6-dce8c92e4259",
 		"name": "Gemini API [use cases]",
+		"description": "This collection highlights some practical workflows using Gemini APIs, showcasing:\n\n- Song commercial generation for a company given its name.\n    \n- News report generation by converting an old newspaper image into a virtual journalist report.\n    \n- Interactive US history quiz creation from a textbook, complete with a UI built with Postman Visualization.\n    \n\n## Step 1 : Fork the collection\n\nYou cannot directly make changes to the orignal collection , so you need to fork it first before using it. To fork the collection , simply click the fork button on the top right side. You can also click the below button to fork the collection.\n\n<img src=\"https://content.pstmn.io/3a5b447d-6821-42c8-9218-87fcc06176ba/Zm9yayBpbWcucG5n\">\n\n## Step 2 : Getting the API key\n\nTo get started working with Gemini APIs, you must first be authorized to access them. The easiest way to authenticate to the Gemini API is to configure an API key.\n\n1. Go to the [Google AI Studio ](https://aistudio.google.com/prompts/new_chat) and click on **Get API key button**.\n    \n\n<img src=\"https://content.pstmn.io/32c9c665-ad5a-4538-b86e-11b1c007c7fc/MXN0IEd1aWRlLnBuZw==\">\n\n2\\. Click on **Create API key button** to create the API key.\n\n<img src=\"https://content.pstmn.io/7c531cdf-2128-40ed-8f66-17a1acf126fb/R3VpZGUgMi5wbmc=\">\n\n3\\. Copy the generated API key and you are good to go !\n\n## Step 3 : Configure your API key in Postman Vault\n\nNow that you have generated your API key , it's time to store it in **Postman Vault** so that it can be used as an authorization to access the Gemini API's and send requests.\n\n#### Why we recommend storing your Gemini API key in Postman Vault ?\n\nPostman provides a Vault for storing sensitive data locally. Data stored in this vault is not synced with Postman Cloud and can only be accessed in your local Postman Instance.\n\n> We recommend using [Postman Vault](https://learning.postman.com/docs/sending-requests/postman-vault/postman-vault-secrets/) to store sensitive data. \n  \n\n1. Click on the vault button present on the bottom right corner of the Gemini API collection or use the shorcut key : `Ctrl + Shift + V` to access the vault.\n    \n\n<img src=\"https://content.pstmn.io/e2006ad3-469d-4405-834c-d47061ec512d/U2NyZWVuc2hvdCAyMDI1LTA3LTExIDEzMDQzNS5wbmc=\">\n\n2\\. After Opening Postman vault, paste your API key as a value to key - api key\n\n<img src=\"https://content.pstmn.io/8057e938-19fe-45eb-a59f-a20481bd321f/aW1hZ2UucG5n\" width=\"1381\" height=\"437\">\n\n## Step 4 : Configure auth token and Project Id\n\nGo to the Gemini - Testing Environment to store the Project Id and authentication token for your project.\n\n<img src=\"https://content.pstmn.io/f88f1e74-33f2-46e0-b11e-26e0763dc8d0/aW1hZ2UucG5n\" width=\"1331\" height=\"746\">\n\nand now that you have configured the key , you can start exploring the collection !\n\n---\n\n# 🛠️ Troubleshooting or Stuck ?\n\nIf you’re having issues:\n\n- Double-check if your API key is correctly set in the testing environment\n    \n- Ensure you’ve selected the right environment. **Gemini-Testing Environment**\n    \n- Look for detailed errors in the **response body and console**\n    \n\nFor a detailed walkthrough on getting started with this workspace and other onboarding videos, please refer to our [YouTube channel](https://youtube.com/@gemini-workspace?si=qhGk521dJ6MK4eS1).\n\n**Watch this video**: [Getting Started with the Gemini Workspace](https://youtu.be/YETs9UNij1I)\n\n---\n\n# Ask for help\n\nWe want you to get the best support possible when working with this workspace. If you're stuck and need help with specific Gemini issues, we recommend that you explore the following channels.\n\n- [Google AI Studio](https://aistudio.google.com/prompts/new_chat)\n    \n\nTo test the Gemini models using the user interface\n\n- [Gemini API docs](https://ai.google.dev/gemini-api/docs)\n    \n\nFor detailed Understanding/Information of every capabilites of the Gemini Models.\n\n- [Gemini Developer Forum](https://discuss.ai.google.dev/c/gemini-api/4)\n    \n\nFor Postman specific questions or feedback about this workspace:\n\n- [Postman's Community Forum](https://community.postman.com/t/ai-provider-workspaces-and-collections/74143) - Provide feedback and ask questions about this workspace, ask general Postman questions, understand how to use a feature, how to build a workflow, etc.\n    \n\nFor Postman specific issues:\n\n- [Postman Github Issues](https://github.com/postmanlabs/postman-app-support) - Submit feature requests, bug reports, etc here",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42721875"
 	},
@@ -122,7 +123,6 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								},
@@ -136,11 +136,11 @@
 								},
 								{
 									"key": "X-Goog-Upload-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAudn0301Nwp9dswiHnezKC5zbZETlof6c&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
 								},
 								{
 									"key": "X-Goog-Upload-Control-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAudn0301Nwp9dswiHnezKC5zbZETlof6c&upload_id=ABgVH8_M7q9q7Ib1ah61zN93zmP0QMmIrs-zL1Zpq73rRHZ2I-OZ8FPwswd1kzcg1GHC5yU3VqaFU4aDL1oeYmosTHGFkTOR0UaXMK0F_vI_ehQ&upload_protocol=resumable"
 								},
 								{
 									"key": "X-Goog-Upload-Chunk-Granularity",
@@ -201,7 +201,9 @@
 							],
 							"cookie": [
 								{
-									"expires": "Invalid Date"
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
 								}
 							],
 							"body": ""
@@ -293,7 +295,6 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								},
@@ -336,7 +337,9 @@
 							],
 							"cookie": [
 								{
-									"expires": "Invalid Date"
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
 								}
 							],
 							"body": "{\n    \"file\": {\n        \"name\": \"files/mvu6fu5w6z35\",\n        \"displayName\": \"Newspaper\",\n        \"mimeType\": \"image/jpeg\",\n        \"sizeBytes\": \"138575\",\n        \"createTime\": \"2025-08-01T07:39:32.542854Z\",\n        \"updateTime\": \"2025-08-01T07:39:32.542854Z\",\n        \"expirationTime\": \"2025-08-03T07:39:32.352333055Z\",\n        \"sha256Hash\": \"NGZiY2FhMTFjNDZiZmYyMmFhNTM1Y2FkM2E5MDY5MmU5N2Y3ZGJkZmUyY2JmMzgxNzAzMGYzYWFiMGFiMWUyMQ==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/mvu6fu5w6z35\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
@@ -373,93 +376,6 @@
 					},
 					"response": [
 						{
-							"name": "3.Generate Content",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE}}\",\r\n                        \"file_uri\": \"{{file_uri_image}}\"\r\n                    }\r\n                },\r\n                {\r\n                    \"text\": \"Caption this image.\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
-									"protocol": "https",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"{{version}}",
-										"models",
-										"{{model}}:generateContent"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=UTF-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "X-Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Referer"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 09 Jul 2025 07:57:32 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "scaffolding on HTTPServer2"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server-Timing",
-									"value": "gfet4t7; dur=9589"
-								},
-								{
-									"key": "Alt-Svc",
-									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"Here are a few options for captioning this image, ranging from descriptive to more poetic:\\n\\n**Descriptive:**\\n\\n*   \\\"A breathtaking sunset paints the sky and ocean in vibrant hues of gold and orange, reflecting beautifully on the wet sand of a rugged beach, with dramatic cliffs towering on the right.\\\"\\n*   \\\"Golden hour at its finest: the sun dips below the horizon, casting a warm, shimmering glow across the water and illuminating the textured face of the coastal cliffs.\\\"\\n*   \\\"The sun sets over a tranquil ocean, its light creating a dazzling path on the wet sand, framed by a majestic rock formation on the right.\\\"\\n\\n**Evocative/Poetic:**\\n\\n*   \\\"Nature's masterpiece unfolding as the sun sets, bathing the rugged coastline in a warm, ethereal glow.\\\"\\n*   \\\"Lost in the golden embrace of a perfect beach sunset, where the waves whisper secrets to the ancient cliffs.\\\"\\n*   \\\"Where the sky meets the sea in a symphony of light and shadow, kissed by the last rays of the sun.\\\"\\n\\n**Short & Sweet (Good for social media):**\\n\\n*   \\\"Golden hour magic on the coast.\\\"\\n*   \\\"Sunset perfection.\\\"\\n*   \\\"Pure serenity by the sea.\\\"\\n*   \\\"Coastal dreams.\\\"\\n*   \\\"Breathtaking view to end the day.\\\"\\n\\n**You can also add relevant hashtags, such as:**\\n#Sunset #BeachSunset #GoldenHour #CoastalLife #NaturePhotography #Landscape #OceanView #Cliffs #TravelGram #BeautifulDestinations #Peaceful #Serene #BeachLife\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 262,\n        \"candidatesTokenCount\": 328,\n        \"totalTokenCount\": 1747,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 4\n            },\n            {\n                \"modality\": \"IMAGE\",\n                \"tokenCount\": 258\n            }\n        ],\n        \"thoughtsTokenCount\": 1157\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"7CBuaLziHpatz7IP2oXD8Ak\"\n}"
-						},
-						{
 							"name": "generating newscasting script",
 							"originalRequest": {
 								"method": "POST",
@@ -493,7 +409,6 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								},
@@ -548,14 +463,17 @@
 							],
 							"cookie": [
 								{
-									"expires": "Invalid Date"
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
 								}
 							],
 							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"**(Camera opens on a shot of Times Square, bustling with activity.  The camera then focuses on a newscaster, impeccably dressed, standing in front of a backdrop featuring The New York Times logo.)**\\n\\n**Newscaster:** Good evening, and welcome to Times Square.  I'm [Your Name], bringing you the latest headlines from The New York Times.\\n\\n**(The camera shows a close-up of the newscaster.)**\\n\\n**Newscaster:**  Today's news is a curious mix of the personal and the profoundly global.  First, a local story:  Katie Nicholson, a New York resident, celebrates her 50th birthday today, officially entering the ranks of what the Daily News charmingly refers to as \\\"the wrinkly oldies.\\\"  We wish her a very happy birthday!\\n\\n**(A picture of Katie Nicholson, from the Daily News article, is briefly displayed on screen.)**\\n\\n**Newscaster:** But while one New Yorker marks a milestone, a much larger story unfolds across continents.  China’s ambitious investment in moose infrastructure is paying off handsomely.  The country has expanded its moose pasture dramatically, leading to a significant increase in moose population and transforming China into a net exporter of moose for the first time. This is good news for neighbouring Mongolia, which has long struggled with a shortage of moose, but also raises questions about the changing balance of trade in the far east.\\n\\n**(A simple graphic showing the increase in China's moose population could be displayed here.)**\\n\\n**Newscaster:**  The impact reaches even further.  Scientists are studying the implications of this surge in moose numbers, particularly in relation to the recent unusual activity around the moon.  Preliminary research suggests a previously unforeseen connection, a finding that's sure to stimulate further investigation.\\n\\n**(The camera shows a wider shot of Times Square, with the New York Times building visible in the background.)**\\n\\n**Newscaster:**  We will keep you updated on both these stories as they develop.  For now, from the heart of Times Square, thank you for watching.  And goodnight.\\n\\n**(The camera focuses on the newscaster one last time before fading to black.)**\\n\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"avgLogprobs\": -0.48195407443576388\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 298,\n        \"candidatesTokenCount\": 450,\n        \"totalTokenCount\": 748,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 40\n            },\n            {\n                \"modality\": \"IMAGE\",\n                \"tokenCount\": 258\n            }\n        ],\n        \"candidatesTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 450\n            }\n        ]\n    },\n    \"modelVersion\": \"gemini-1.5-flash\",\n    \"responseId\": \"k2-MaI_iL4Ku3NoP1_qUmQE\"\n}"
 						}
 					]
 				}
-			]
+			],
+			"description": "## News Reporting Video\n\nThis Use Case takes an old newspaper and generates a news casting audio from this newspaper.\n\n- ﻿[Upload Request](https://web.postman.co/workspace/3b07f56f-41b4-4561-b731-eec56c9fbaf6/request/42721875-9daa2f09-a4cf-4459-bd38-09213f717ab5?action=share&source=copy-link&creator=42721875&ctx=documentation): Request an upload url for the old newspaper\n    \n- ﻿[Upload newspaper](https://web.postman.co/workspace/3b07f56f-41b4-4561-b731-eec56c9fbaf6/request/42721875-80d6652d-59f1-4e2a-8821-0624a2b84f87?action=share&source=copy-link&creator=42721875&ctx=documentation): Upload the old newspaper\n    \n- ﻿[Generate Script](https://web.postman.co/workspace/3b07f56f-41b4-4561-b731-eec56c9fbaf6/request/42721875-ee8aca51-7e26-464d-8ea7-ea6b0263af40?action=share&source=copy-link&creator=42721875&ctx=documentation): Generate a transcript for the newscaster\n    \n- Generate News Casting Audio:\n    \n- Generate A Newscasting video:\n    \n- Merge the newscasting video and audio:"
 		},
 		{
 			"name": "Generate Quiz From Textbook",
@@ -624,133 +542,6 @@
 					},
 					"response": [
 						{
-							"name": "Document : 1.Get the upload url for PDF",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-Goog-Upload-Command",
-										"value": "start",
-										"type": "text"
-									},
-									{
-										"key": "X-Goog-Upload-Header-Content-Type",
-										"value": "{{MIME_TYPE_PDF}}",
-										"type": "text"
-									},
-									{
-										"key": "X-Goog-Upload-Protocol",
-										"value": "resumable",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"file\": {\r\n        \"display_name\": \"{{Display_Name_PDF}}\"\r\n    }\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://{{host}}/upload/{{version}}/files",
-									"protocol": "https",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"upload",
-										"{{version}}",
-										"files"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "plain",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain; charset=utf-8"
-								},
-								{
-									"key": "X-GUploader-UploadID",
-									"value": "ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA"
-								},
-								{
-									"key": "X-Goog-Upload-Status",
-									"value": "active"
-								},
-								{
-									"key": "X-Goog-Upload-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA&upload_protocol=resumable"
-								},
-								{
-									"key": "X-Goog-Upload-Control-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH88DhTQ0qhc8ilC-4Wq2q1hLrl0uZorWeYuc7BsfQam6Ztd0Ci8q-6J9z9NBn1vHMg21Vq6KAkAClkZXLZiHjkaPaILjUKQS1cvcYvNIdA&upload_protocol=resumable"
-								},
-								{
-									"key": "X-Goog-Upload-Chunk-Granularity",
-									"value": "8388608"
-								},
-								{
-									"key": "X-Goog-Upload-Header-x-google-esf-cloud-client-params",
-									"value": "backend_service_name: \"generativelanguage.googleapis.com\" backend_fully_qualified_method: \"google.ai.generativelanguage.v1beta.FileService.CreateFile\""
-								},
-								{
-									"key": "X-Goog-Upload-Header-X-Google-Session-Info",
-									"value": "GgQYECgLIAE6IxIhZ2VuZXJhdGl2ZWxhbmd1YWdlLmdvb2dsZWFwaXMuY29t"
-								},
-								{
-									"key": "X-Goog-Upload-Header-X-Google-Backends",
-									"value": "unix:/tmp/esfbackend.1751969205.834630.1315945"
-								},
-								{
-									"key": "X-Goog-Upload-Header-Content-Type",
-									"value": "application/json; charset=UTF-8"
-								},
-								{
-									"key": "X-Goog-Upload-Header-X-Google-Security-Signals",
-									"value": "FRAMEWORK=ONE_PLATFORM,ENV=borg,ENV_DEBUG=borg_user:genai-api;borg_job:prod.genai-api"
-								},
-								{
-									"key": "X-Goog-Upload-Header-Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "X-Goog-Upload-Header-Vary",
-									"value": "X-Origin"
-								},
-								{
-									"key": "X-Goog-Upload-Header-Vary",
-									"value": "Referer"
-								},
-								{
-									"key": "X-Goog-Upload-Header-X-Google-GFE-Backend-Request-Cost",
-									"value": "9.4228"
-								},
-								{
-									"key": "Content-Length",
-									"value": "0"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 09 Jul 2025 10:09:49 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "UploadServer"
-								},
-								{
-									"key": "Alt-Svc",
-									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
-								}
-							],
-							"cookie": [],
-							"body": null
-						},
-						{
 							"name": "upload request",
 							"originalRequest": {
 								"method": "POST",
@@ -795,7 +586,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "Content-Type",
@@ -811,11 +602,11 @@
 								},
 								{
 									"key": "X-Goog-Upload-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAudn0301Nwp9dswiHnezKC5zbZETlof6c&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
 								},
 								{
 									"key": "X-Goog-Upload-Control-URL",
-									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=api key&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
+									"value": "https://generativelanguage.googleapis.com/upload/v1beta/files?key=AIzaSyAudn0301Nwp9dswiHnezKC5zbZETlof6c&upload_id=ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw&upload_protocol=resumable"
 								},
 								{
 									"key": "X-Goog-Upload-Chunk-Granularity",
@@ -875,7 +666,7 @@
 								}
 							],
 							"cookie": [],
-							"body": ""
+							"body": null
 						}
 					]
 				},
@@ -947,173 +738,6 @@
 								"body": {
 									"mode": "file",
 									"file": {
-										"src": "postman-cloud:///1f06eabe-df25-44f0-b1c6-91776e8deae3"
-									}
-								},
-								"url": {
-									"raw": "{{upload_url_PDF}}",
-									"host": [
-										"{{upload_url_PDF}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "X-GUploader-UploadID",
-									"value": "ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw"
-								},
-								{
-									"key": "X-Goog-Upload-Status",
-									"value": "final"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "X-Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Referer"
-								},
-								{
-									"key": "Content-Length",
-									"value": "518"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 01 Aug 2025 07:49:44 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "UploadServer"
-								},
-								{
-									"key": "Alt-Svc",
-									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
-								}
-							],
-							"cookie": [
-								{
-									"expires": "Invalid Date"
-								}
-							],
-							"body": "{\n    \"file\": {\n        \"name\": \"files/e07k7i825g1y\",\n        \"displayName\": \"history_book\",\n        \"mimeType\": \"application/pdf\",\n        \"createTime\": \"2025-08-01T07:49:43.934521Z\",\n        \"updateTime\": \"2025-08-01T07:49:43.934521Z\",\n        \"expirationTime\": \"2025-08-03T07:49:43.796168282Z\",\n        \"sha256Hash\": \"ZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NQ==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/e07k7i825g1y\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
-						},
-						{
-							"name": "upload text book Copy",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-Goog-Upload-Offset",
-										"value": "0",
-										"type": "text"
-									},
-									{
-										"key": "X-Goog-Upload-Command",
-										"value": "upload, finalize",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "file",
-									"file": {
-										"src": "postman-cloud:///1f06eabe-df25-44f0-b1c6-91776e8deae3"
-									}
-								},
-								"url": {
-									"raw": "{{upload_url_PDF}}",
-									"host": [
-										"{{upload_url_PDF}}"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "X-GUploader-UploadID",
-									"value": "ABgVH89Uy6u7A5ZHT-2JaBOFoRtxknCMwMZEbl4sI59YJa-vTZA10DNtGY79SNWd0ZTJve8_ezZKymZL4YpCAV7JnYEfjrSy-7UO2l73-5NgDw"
-								},
-								{
-									"key": "X-Goog-Upload-Status",
-									"value": "final"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "X-Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Referer"
-								},
-								{
-									"key": "Content-Length",
-									"value": "518"
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 01 Aug 2025 07:49:44 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "UploadServer"
-								},
-								{
-									"key": "Alt-Svc",
-									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
-								}
-							],
-							"cookie": [
-								{
-									"expires": "Invalid Date"
-								}
-							],
-							"body": "{\n    \"file\": {\n        \"name\": \"files/e07k7i825g1y\",\n        \"displayName\": \"history_book\",\n        \"mimeType\": \"application/pdf\",\n        \"createTime\": \"2025-08-01T07:49:43.934521Z\",\n        \"updateTime\": \"2025-08-01T07:49:43.934521Z\",\n        \"expirationTime\": \"2025-08-03T07:49:43.796168282Z\",\n        \"sha256Hash\": \"ZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NQ==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/e07k7i825g1y\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
-						},
-						{
-							"name": "upload text book",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "X-Goog-Upload-Offset",
-										"value": "0",
-										"type": "text"
-									},
-									{
-										"key": "X-Goog-Upload-Command",
-										"value": "upload, finalize",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "file",
-									"file": {
 										"src": "postman-cloud:///1f06eaf1-14fc-4ce0-8a85-7068dc519972"
 									}
 								},
@@ -1131,7 +755,6 @@
 								{
 									"key": "Content-Type",
 									"value": "application/json",
-									"name": "Content-Type",
 									"description": "",
 									"type": "text"
 								},
@@ -1174,7 +797,9 @@
 							],
 							"cookie": [
 								{
-									"expires": "Invalid Date"
+									"expires": "Invalid Date",
+									"domain": "",
+									"path": ""
 								}
 							],
 							"body": "{\n    \"file\": {\n        \"name\": \"files/y7qtdbws154o\",\n        \"displayName\": \"history_book\",\n        \"mimeType\": \"application/pdf\",\n        \"sizeBytes\": \"233149\",\n        \"createTime\": \"2025-08-01T08:11:09.154532Z\",\n        \"updateTime\": \"2025-08-01T08:11:09.154532Z\",\n        \"expirationTime\": \"2025-08-03T08:11:08.990461040Z\",\n        \"sha256Hash\": \"MjI3ZTI4ZTU5N2EzY2U1NzJiMGM3ODMxMTViZjY4NDU3NTAwY2FiMWU4OGU4MWIxOGM4ZTY0MmYwNTJlYzIyNQ==\",\n        \"uri\": \"https://generativelanguage.googleapis.com/v1beta/files/y7qtdbws154o\",\n        \"state\": \"ACTIVE\",\n        \"source\": \"UPLOADED\"\n    }\n}"
@@ -1211,93 +836,6 @@
 					},
 					"response": [
 						{
-							"name": "Document : 3.Generate Content",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Summarize the document.\"\r\n                },\r\n                {\r\n                    \"file_data\": {\r\n                        \"mime_type\": \"{{MIME_TYPE_PDF}}\",\r\n                        \"file_uri\": \"{{file_uri_PDF}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://{{host}}/{{version}}/models/{{model}}:generateContent",
-									"protocol": "https",
-									"host": [
-										"{{host}}"
-									],
-									"path": [
-										"{{version}}",
-										"models",
-										"{{model}}:generateContent"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=UTF-8"
-								},
-								{
-									"key": "Vary",
-									"value": "Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "X-Origin"
-								},
-								{
-									"key": "Vary",
-									"value": "Referer"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip"
-								},
-								{
-									"key": "Date",
-									"value": "Wed, 09 Jul 2025 10:12:50 GMT"
-								},
-								{
-									"key": "Server",
-									"value": "scaffolding on HTTPServer2"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "Server-Timing",
-									"value": "gfet4t7; dur=10578"
-								},
-								{
-									"key": "Alt-Svc",
-									"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"candidates\": [\n        {\n            \"content\": {\n                \"parts\": [\n                    {\n                        \"text\": \"The document is a sample or placeholder document, primarily composed of \\\"Lorem ipsum\\\" text. Its main purpose appears to be to demonstrate document layout and formatting rather than conveying specific information.\\n\\nIt includes various structural and visual components such as:\\n*   Headings and subheadings\\n*   Paragraphs of text\\n*   Bulleted lists\\n*   A bar chart visualizing \\\"Column 1,\\\" \\\"Column 2,\\\" and \\\"Column 3\\\" across \\\"Row 1\\\" to \\\"Row 4\\\"\\n*   A data table with \\\"Lorem ipsum\\\" headers\\n*   An image of a laptop keyboard\\n\\nMuch of the textual content is repeated across multiple pages to fill space. Therefore, the document does not contain any specific factual or substantive information to summarize beyond its structure and design elements.\"\n                    }\n                ],\n                \"role\": \"model\"\n            },\n            \"finishReason\": \"STOP\",\n            \"index\": 0\n        }\n    ],\n    \"usageMetadata\": {\n        \"promptTokenCount\": 1295,\n        \"candidatesTokenCount\": 161,\n        \"totalTokenCount\": 2619,\n        \"promptTokensDetails\": [\n            {\n                \"modality\": \"TEXT\",\n                \"tokenCount\": 5\n            },\n            {\n                \"modality\": \"DOCUMENT\",\n                \"tokenCount\": 1290\n            }\n        ],\n        \"thoughtsTokenCount\": 1163\n    },\n    \"modelVersion\": \"gemini-2.5-flash\",\n    \"responseId\": \"okBuaIvIEtjUz7IP9PiNqAk\"\n}"
-						},
-						{
 							"name": "generate quiz from textbook",
 							"originalRequest": {
 								"method": "POST",
@@ -1326,7 +864,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "Content-Type",

@@ -2,18 +2,41 @@
 	"info": {
 		"_postman_id": "cbb6fa6e-ab0f-413a-b1a9-fa0f9c179fcd",
 		"name": "Gemini API [Eval]",
+		"description": "This collection shows different Evaluation examples and attempts to compare different Gemini models. This, in turn, can help you understand how you can use Postman to evaluate Gemini models and determine which model works best for your user case.\n\nThis evaluation helps you visualize how increasing temperature in a model affects the number of output tokens generated(which can, in turn, affect costs) and the time it takes for the model to generate an output. It compares this metric against three Gemini models: Gemini-15-flash, Gemini-1.5-flash8b, and Gemini-1.5-pro.\n\nIt generates two Postman visualizations showing how increasing temperature affects response time and output token count. Please watch this loom video to see how it works.\n\n<video src=\"https://youtube.com/embed/i41a4SUosrY\" width=\"657\" height=\"290\"></video>\n\n---\n\n# Get Started\n\n## Step 1 : Fork the collection\n\nYou cannot directly make changes to the orignal collection , so you need to fork it first before using it. To fork the collection , simply click the fork button on the top right side. You can also click the below button to fork the collection.\n\n<img src=\"https://content.pstmn.io/3a5b447d-6821-42c8-9218-87fcc06176ba/Zm9yayBpbWcucG5n\">\n\n## Step 2 : Getting the API key\n\nTo get started working with Gemini APIs, you must first be authorized to access them. The easiest way to authenticate to the Gemini API is to configure an API key.\n\n1. Go to the [Google AI Studio ](https://aistudio.google.com/prompts/new_chat) and click on **Get API key button**.\n    \n\n<img src=\"https://content.pstmn.io/32c9c665-ad5a-4538-b86e-11b1c007c7fc/MXN0IEd1aWRlLnBuZw==\">\n\n2\\. Click on **Create API key button** to create the API key.\n\n<img src=\"https://content.pstmn.io/7c531cdf-2128-40ed-8f66-17a1acf126fb/R3VpZGUgMi5wbmc=\">\n\n3\\. Copy the generated API key and you are good to go !\n\n## Step 3 : Configure your API key in Postman Vault\n\nNow that you have generated your API key , it's time to store it in **Postman Vault** so that it can be used as an authorization to access the Gemini API's and send requests.\n\n#### Why we recommend storing your Gemini API key in Postman Vault ?\n\nPostman provides a Vault for storing sensitive data locally. Data stored in this vault is not synced with Postman Cloud and can only be accessed in your local Postman Instance.\n\n> We recommend using [Postman Vault](https://learning.postman.com/docs/sending-requests/postman-vault/postman-vault-secrets/) to store sensitive data. \n  \n\n1. Click on the vault button present on the bottom right corner of the Gemini API collection or use the shorcut key : `Ctrl + Shift + V` to access the vault.\n    \n\n<img src=\"https://content.pstmn.io/e2006ad3-469d-4405-834c-d47061ec512d/U2NyZWVuc2hvdCAyMDI1LTA3LTExIDEzMDQzNS5wbmc=\">\n\n2\\. After Opening Postman vault, paste your API key as a value to key - api key\n\n<img src=\"https://content.pstmn.io/8057e938-19fe-45eb-a59f-a20481bd321f/aW1hZ2UucG5n\" width=\"1381\" height=\"437\">\n\n## Step 4 : Configure auth token and Project Id\n\nGo to the Gemini - Testing Environment to store the Project Id and authentication token for your project.\n\n<img src=\"https://content.pstmn.io/f88f1e74-33f2-46e0-b11e-26e0763dc8d0/aW1hZ2UucG5n\" width=\"1331\" height=\"746\">\n\nand now that you have configured the key , you can start exploring the collection !\n\n---\n\n# 🛠️ Troubleshooting or Stuck ?\n\nIf you’re having issues:\n\n- Double-check if your API key is correctly set in the testing environment\n    \n- Ensure you’ve selected the right environment. **Gemini-Testing Environment**\n    \n- Look for detailed errors in the **response body and console**\n    \n\nFor a detailed walkthrough on getting started with this workspace and other onboarding videos, please refer to our [YouTube channel](https://youtube.com/@gemini-workspace?si=qhGk521dJ6MK4eS1).\n\n**Watch this video**: [Getting Started with the Gemini Workspace](https://youtu.be/YETs9UNij1I)\n\n---\n\n# Ask for help\n\nWe want you to get the best support possible when working with this workspace. If you're stuck and need help with specific Gemini issues, we recommend that you explore the following channels.\n\n- [Google AI Studio](https://aistudio.google.com/prompts/new_chat)\n    \n\nTo test the Gemini models using the user interface\n\n- [Gemini API docs](https://ai.google.dev/gemini-api/docs)\n    \n\nFor detailed Understanding/Information of every capabilites of the Gemini Models.\n\n- [Gemini Developer Forum](https://discuss.ai.google.dev/c/gemini-api/4)\n    \n\nFor Postman specific questions or feedback about this workspace:\n\n- [Postman's Community Forum](https://community.postman.com/t/ai-provider-workspaces-and-collections/74143) - Provide feedback and ask questions about this workspace, ask general Postman questions, understand how to use a feature, how to build a workflow, etc.\n    \n\nFor Postman specific issues:\n\n- [Postman Github Issues](https://github.com/postmanlabs/postman-app-support) - Submit feature requests, bug reports, etc here",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42721875"
 	},
 	"item": [
 		{
 			"name": "[eval] text-and-image input",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"Tell me about this instrument\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": \"{{guitar image base64 encoded}}\"\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"raw": " {\r\n    \"contents\": [\r\n        {\r\n            \"parts\": [\r\n                {\r\n                    \"text\": \"What is this instrument made of\"\r\n                },\r\n                {\r\n                    \"inline_data\": {\r\n                        \"mime_type\": \"image/jpeg\",\r\n                        \"data\": {{guitar image base64 encoded}}\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"generation_config\": {\r\n        \"temperature\": {{temperature}}\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -202,6 +225,12 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "model",
+			"value": ""
 		}
 	]
 }
