@@ -31,7 +31,7 @@ jobs:
         env:
           POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
           POSTMAN_WORKSPACE_ID: ${{ secrets.POSTMAN_WORKSPACE_ID }}
-          COLLECTION_ID: ${{ secrets.TEXT_GENERATION_COLLECTION_ID }}
+          COLLECTION_ID: ${{ secrets.GEMINI_API_COLLECTION_ID }}
 
       - name: Commit and Push Changes
         run: |
