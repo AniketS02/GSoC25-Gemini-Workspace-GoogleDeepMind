@@ -13,6 +13,8 @@ For a detailed walkthrough on getting started with this workspace and other onbo
 
 You cannot directly make changes to the orignal collection , so you need to fork it first before using it. To fork the collection , simply click the fork button on the top right side.With the new update the developers can now send API requests without forking the workspace or collection. You can also click the below button to fork the collection.
 
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman">](https://app.getpostman.com/run-collection/42721875-eefa27af-54f9-4bb6-884d-62cb16a58716?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D42721875-eefa27af-54f9-4bb6-884d-62cb16a58716%26entityType%3Dcollection%26workspaceId%3D3b07f56f-41b4-4561-b731-eec56c9fbaf6)
+
 <img src="https://content.pstmn.io/3a5b447d-6821-42c8-9218-87fcc06176ba/Zm9yayBpbWcucG5n">
 
 ## Step 2 : Getting the API key
