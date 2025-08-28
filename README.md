@@ -153,3 +153,56 @@ For Postman specific questions or feedback about this workspace:
 For Postman specific issues:
 
 - [Postman Github Issues](https://github.com/postmanlabs/postman-app-support) - Submit feature requests, bug reports, etc here
+
+
+
+## 🤝 Contributing
+
+We love contributions from the community! Thank you for taking the time to contribute.
+
+Please follow these steps to get your pull request merged.
+
+### 🐛 Reporting Bugs
+
+If you find a bug, please open an issue on our [issues page](https://github.com/your-username/your-repository-name/issues).
+
+Please include:
+* A clear and descriptive title.
+* A detailed description of the problem, including steps to reproduce it.
+* Screenshots or logs if applicable.
+* Your operating system and project version.
+
+### ✨ Suggesting Enhancements
+
+If you have an idea for a new feature or an improvement, please open an issue to discuss it first. This allows us to align on the direction and avoid duplicate work.
+
+###  Pull Request Workflow
+
+1.  **Fork the repository** to your own GitHub account.
+2.  **Clone your fork** to your local machine:
+    ```sh
+    git clone [https://github.com/AniketS02/GSoC25-Gemini-Workspace-GoogleDeepMind.git](https://github.com/AniketS02/GSoC25-Gemini-Workspace-GoogleDeepMind.git)
+    ```
+3.  **Create a new branch** for your changes. Please use a descriptive name.
+    ```sh
+    # For a new feature
+    git checkout -b feat/your-feature-name
+
+    # For a bug fix
+    git checkout -b fix/bug-description
+    ```
+4.  **Make your changes** and add/update tests if necessary.
+5.  **Commit your changes** with a clear and concise commit message.
+    ```sh
+    git add .
+    git commit -m "feat: Implement user authentication"
+    ```
+6.  **Push your branch** to your fork on GitHub.
+    ```sh
+    git push origin feat/your-feature-name
+    ```
+7.  **Open a Pull Request (PR)** to the `main` branch of the original repository.
+    * Provide a clear title and a detailed description of your changes.
+    * Link to the issue you are addressing (e.g., `Closes #123`).
+
+We will review your PR as soon as possible. Thank you for your contribution!
