@@ -210,6 +210,6 @@ We will review your PR as soon as possible. Thank you for your contribution!
 ---
 
 # 🔗 Useful Links
-[Google AI Studio](https://aistudio.google.com/prompts/new_chat)
-[Gemini API Docs](https://ai.google.dev/gemini-api/docs)
+[Google AI Studio](https://aistudio.google.com/prompts/new_chat) <br>
+[Gemini API Docs](https://ai.google.dev/gemini-api/docs) <br>
 [Google DeepMind](https://deepmind.google/)
