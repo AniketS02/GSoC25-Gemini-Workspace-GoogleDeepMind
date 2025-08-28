@@ -181,7 +181,7 @@ If you have an idea for a new feature or an improvement, please open an issue to
 1.  **Fork the repository** to your own GitHub account.
 2.  **Clone your fork** to your local machine:
     ```sh
-    git clone [https://github.com/AniketS02/GSoC25-Gemini-Workspace-GoogleDeepMind.git](https://github.com/AniketS02/GSoC25-Gemini-Workspace-GoogleDeepMind.git)
+    git clone https://github.com/AniketS02/GSoC25-Gemini-Workspace-GoogleDeepMind.git
     ```
 3.  **Create a new branch** for your changes. Please use a descriptive name.
     ```sh
