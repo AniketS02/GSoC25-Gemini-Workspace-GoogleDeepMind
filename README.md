@@ -206,3 +206,10 @@ If you have an idea for a new feature or an improvement, please open an issue to
     * Link to the issue you are addressing (e.g., `Closes #123`).
 
 We will review your PR as soon as possible. Thank you for your contribution!
+
+---
+
+# 🔗 Useful Links
+[Google AI Studio](https://aistudio.google.com/prompts/new_chat)
+[Gemini API Docs](https://ai.google.dev/gemini-api/docs)
+[Google DeepMind](https://deepmind.google/)
