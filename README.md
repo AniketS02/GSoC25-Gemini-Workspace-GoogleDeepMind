@@ -154,7 +154,7 @@ For Postman specific issues:
 
 - [Postman Github Issues](https://github.com/postmanlabs/postman-app-support) - Submit feature requests, bug reports, etc here
 
-
+---
 
 ## 🤝 Contributing
 
